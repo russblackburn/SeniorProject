@@ -1,0 +1,203 @@
+@charset "UTF-8";
+/*custom css*/
+
+/*------------------------------------------ global elements ------------------------------------------*/
+
+/*----- body(global changes), header, nav, and footer -----*/
+/* body(global changes) */
+body {
+	font-family: 'Open Sans', sans-serif;
+	
+	/*---smooth the text to help with the flicker from the bootstrap carousel---*/
+	-webkit-font-smoothing: subpixel-antialiased;
+	-webkit-backface-visibility: hidden; /* Chrome, Safari, Opera */
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden; 
+   	backface-visibility: hidden;
+	}
+
+/* header */
+header {
+	height: 100px;
+	}
+	
+header img {
+	max-width: 300px;
+	padding-top: 10px;
+	}
+	
+.logo {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	}
+	
+/* nav */
+
+/* footer */
+footer {
+	background-color: #f5f5f5;
+	margin-top: 20px;
+	}
+	
+.paddingTop {
+	padding-top: 20px;
+	}
+	
+.paddingBottom {
+	padding-bottom: 20px;
+	}
+	
+.facebook {
+	float: left;
+	padding-right: 20px;
+	margin-left: -58px;
+	}
+	
+.socialIcons {
+	padding-left: 50%;
+	padding-right: 50%;
+	padding-bottom: 20px;
+	}
+
+
+/*----- pages -----*/
+/* all pages */
+.mobileHidden {
+	display: none;
+	}
+	
+.clear {
+	clear: both;
+	}
+	
+.noUnderline {
+	text-decoration: none !important;
+	}
+	
+/* home */
+.marginTop {
+	margin-top: 20px;
+	}
+	
+.border {
+	border: 1px solid #dddddd;
+	border-radius: 5px;
+	}
+	
+.floatImage {
+	float: left;
+	}
+	
+.imagePadding {
+	margin: 10px 25px 10px 25px;
+	}
+	
+.firstImageVerticalAlign {
+	margin-top: 45px;
+	}
+		
+.secondImageVerticalAlign {
+	margin-top: 30px;
+	}
+
+.sizeImage {
+	width: 100px;
+	height: 100px;
+	}
+	
+.rowTwoSize {
+	width: 100%;
+	}
+	
+.paddingRight {
+	padding-right: 20px;
+	}
+
+#myCarousel { /* fix the carousel flicker issue*/
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    z-index: 1;
+	}
+
+	
+/*------------------------------------------ begin responsive elements ------------------------------------------*/
+/* Small devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+	/* header */
+	.logo {
+		display: inline;
+		}
+		
+	/*----- pages -----*/
+	/* all pages */
+	.mobileHidden {
+		display: block;
+		}
+		
+	.desktopHidden {
+		display: none;
+		}
+	
+	/* home */
+	.missonStatement {
+		margin-top: 10px;
+		}
+	
+	.marginTop {
+		margin-top: 0px;
+		}
+		
+	.sizeImage {
+		width: 110px;
+		height: 110px;;
+		}
+		
+	.rowTwoSize {
+		width: 49%;
+		}
+		
+	.firstImageVerticalAlign {
+  		margin-top: 40px;
+		}
+		
+	.secondImageVerticalAlign {
+		margin-top: 30px;
+		}
+
+}
+
+
+
+
+/* Medium devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+	/* home */
+	.sizeImage {
+		width: 120px;
+		height: 120px;;
+		}
+		
+	.firstImageVerticalAlign {
+  		margin-top: 55px;
+		}
+		
+	.secondImageVerticalAlign {
+		margin-top: 45px;
+		}
+
+}
+
+/* Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+	.firstImageVerticalAlign {
+  		margin-top: 60px;
+		}
+		
+	.secondImageVerticalAlign {
+  		margin-top: 60px;
+		}
+	
+		
+}
