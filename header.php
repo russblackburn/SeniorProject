@@ -25,7 +25,7 @@
 	else if($secondaryPage=='requestServiceProposal'){echo 'Request Service Proposal';} 
 	else if($page=='contact' && $secondaryPage == false){echo 'Contact';} 
 	else if($page=='faq' && $secondaryPage == false){echo 'FAQ';} 
-	else {'ICDP';}?></title>
+	else {echo 'ICDP';}?></title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
