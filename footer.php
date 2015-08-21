@@ -3,7 +3,7 @@
     <footer>
     	<div class="container">
     		<p class="text-center paddingTop">&copy; Intermountain Center for Disaster Preparedness</p>
-            <p class="text-center"><a href="#">Site Map</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="#">Admin</a></p>
+            <p class="text-center"><a href="#">Site Map</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="adminLanding.php">Admin</a></p>
             
             
             <address itemscope itemtype="http://schema.org/Organization">

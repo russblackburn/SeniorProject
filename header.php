@@ -56,7 +56,7 @@
     </header>
     
     <!-- Static navbar -->
-    <nav class="navbar navbar-default navbar-static-top">
+    <nav class="navbar navbar-default navbar-static-top <?php if($page == admin){echo 'hidden';}?>">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -133,5 +133,7 @@
         </div><!--/.nav-collapse -->
       </div>
     </nav>
+    
+    <?php if($page == admin){require_once('adminNav.php');}?>
     
     <div class="container">
