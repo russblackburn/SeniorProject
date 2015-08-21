@@ -18,10 +18,10 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Home (Update)</li>
-                <li><a href="#">Update Slide 1</a></li>
+                <li><a href="adminSlideOne.php">Update Slide 1</a></li>
                 <li><a href="#">Update Slide 2</a></li>
-                <li><a href="#">Update Slide 3</a></li>
-                <li><a href="#">Update Mission Statement</a></li>
+                <li><a href="adminSlideThree.php">Update Slide 3</a></li>
+                <li><a href="adminMissionStatement.php">Update Mission Statement</a></li>
               </ul>
             </li>
             <!-- end of home page admin -->
