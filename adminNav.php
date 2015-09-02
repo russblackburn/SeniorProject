@@ -31,15 +31,15 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Purpose (Update)</li>
-                <li><a href="#">Update Page</a></li>
-                <li><a href="#">Update Image</a></li>
+                <li><a href="adminPurposePage.php">Update Page</a></li>
+                <li><a href="adminPurposeImage.php">Update Image</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Personnel (Update/Change/Add/Delete)</li>
-                <li><a href="#">Update a Personnel Record</a></li>
-                <li><a href="#">Update a Personnel Image</a></li>
+                <li><a href="adminPersonnelUpdateText.php">Update a Personnel Record</a></li>
+                <li><a href="adminPersonnelImage.php">Update a Personnel Image</a></li>
                 <li><a href="#">Change the Personnel List Order</a></li>
-                <li><a href="#">Add a New Personnel Record</a></li>
-                <li><a href="#">Delete a Personnel Record</a></li>
+                <li><a href="adminPersonnelAdd.php">Add a New Personnel Record</a></li>
+                <li><a href="adminPersonnelDelete.php">Delete a Personnel Record</a></li>
               </ul>
             </li>
             <!-- end of about page admin -->
@@ -58,8 +58,8 @@
                 <li><a href="#">Delete a Course</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Exercises (Update)</li>
-                <li><a href="#">Update Page</a></li>
-                <li><a href="#">Update Image</a></li>
+                <li><a href="adminExercisePage.php">Update Page</a></li>
+                <li><a href="adminExerciseImage.php">Update Image</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Assessment (Update)</li>
                 <li><a href="#">Update Page</a></li>
@@ -67,12 +67,12 @@
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Research (Update/Add/Hide/Delete)</li>
                 <li><a href="#">Update Page</a></li>
-                <li><a href="#">Update Image</a></li>
-                <li><a href="#">Update Existing Research</a></li>
-                <li><a href="#">Update Existing Research Image</a></li>
-                <li><a href="#">Add New Research</a></li>
+                <li><a href="adminResearchImage.php">Update Image</a></li>
+                <li><a href="adminResearchUpdateText.php">Update Existing Research</a></li>
+                <li><a href="adminExResearchImage.php">Update Existing Research Image</a></li>
+                <li><a href="adminResearchAdd.php">Add New Research</a></li>
                 <li><a href="#">Hide/Un-hide Research</a></li>
-                <li><a href="#">Delete Research</a></li>
+                <li><a href="adminResearchDelete.php">Delete Research</a></li>
               </ul>
             </li>
             <!-- end of services page admin -->
