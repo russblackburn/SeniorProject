@@ -1,6 +1,24 @@
 <?php $page = index; ?>
 <?php $secondaryPage = false; ?>
-<?php require_once('header.php'); ?>
+<?php 
+require_once('header.php'); 
+require_once('adminRuss.php');
+
+// build the database connection with host, user, password, database
+$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
+
+// build the query to display the current mission statement
+$query = "SELECT * FROM mission_statement";
+
+//communicate with the database
+$result = mysqli_query($dbc, $query) or die('The query has failed!');
+
+//put what is found from the query into a variable
+$found = mysqli_fetch_array($result);
+
+// terminate the connection
+mysqli_close($dbc);
+?>
 
         <!-- slider -->
         <!-- div to hide slider on mobile -->
@@ -19,6 +37,7 @@
                     <div class="carousel-caption">
                       <h1>Example headline.</h1>
                       <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
+                      <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                     </div>
                   </div>
                 </div>
@@ -28,6 +47,7 @@
                     <div class="carousel-caption">
                       <h1>Another example headline.</h1>
                       <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                     </div>
                   </div>
                 </div>
@@ -37,6 +57,7 @@
                     <div class="carousel-caption">
                       <h1>One more for good measure.</h1>
                       <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
+                      <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
                     </div>
                   </div>
                 </div>
@@ -54,7 +75,7 @@
         
         <!-- mission statement -->
         <div class="row mobileHidden">
-            <p class="col-xs-12 missonStatement">Sed luctus mauris vel turpis semper, vitae elementum ante ultricies. Donec convallis, leo eu scelerisque consequat, mauris urna sagittis erat, ac convallis elit mauris sodales felis? Morbi ornare bibendum justo, sed aliquam quam placerat eu. Fusce in lectus tortor. Fusce accumsan mauris urna. Vivamus mollis gravida euismod. Aenean lobortis tristique nulla non elementum. Morbi congue justo id nulla vulputate volutpat. Vivamus nec purus ut ipsum condimentum tincidunt. <a href="purpose.php">Learn more about us...</a></p>
+            <p class="col-xs-12 missonStatement"><?php echo $found['mission_statement']; ?><a href="purpose.php"> Learn more about us...</a></p>
         </div><!-- end of mission statement -->
         
         <!-- three images row -->
