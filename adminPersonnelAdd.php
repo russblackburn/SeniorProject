@@ -24,10 +24,11 @@ require_once('header.php');
 	$paragraph9 = mysqli_real_escape_string($dbc, trim($_POST[paragraph9]));
 	$paragraph10 = mysqli_real_escape_string($dbc, trim($_POST[paragraph10]));
 	$photo = $_POST[photo];
+	$image_name = 'personnel';
 	
 	//--------make dynamic photo path and name-------------
 	$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
-	$filename = $firstName . $lastName . time() . '.' . $ext;
+	$filename = $image_name . time() . '.' . $ext;
 	$filepath = 'images/personnel/';
 	
 	//--------------verify the image is valid-----------------------
