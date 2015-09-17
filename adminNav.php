@@ -62,8 +62,7 @@
                 <li><a href="adminAssessment.php">Update Assessment</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Research (Update/Add/Hide/Delete)</li>
-                <li><a href="#">Update Page</a></li>
-                <li><a href="adminResearchImage.php">Update Image</a></li>
+                <li><a href="adminResearchPage.php">Update Research</a></li>
                 <li><a href="adminResearchUpdateText.php">Update Existing Research</a></li>
                 <li><a href="adminExResearchImage.php">Update Existing Research Image</a></li>
                 <li><a href="adminResearchAdd.php">Add New Research</a></li>
