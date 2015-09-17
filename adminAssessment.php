@@ -6,7 +6,7 @@ require_once('adminRuss.php');
 $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 
 // build the query to display the current mission statement
-$query = "SELECT * FROM exercises";
+$query = "SELECT * FROM assessment";
 
 //communicate with the database
 $result = mysqli_query($dbc, $query) or die('The query has failed!');
@@ -34,7 +34,7 @@ if(isset($_POST['submitButton'])){
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 	
 	//build the query
-		$query = "UPDATE exercises SET paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registration_instructions='$registration_instructions' WHERE id=$id ";
+		$query = "UPDATE assessment SET paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registration_instructions='$registration_instructions' WHERE id=$id ";
 	
 	// talk with the database
 	$result = mysqli_query($dbc, $query) or die('your query has failed');
@@ -50,11 +50,11 @@ if(isset($_POST['submitButton'])){
 <?php $page = admin; ?>
 <?php require_once('header.php'); ?>
 
-<h1>Update Exercises</h1>
+<h1>Update Assessment</h1>
 
 <hr>
 
-<form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_exercises">
+<form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_assessment">
 
   <div class="form-group">
     <label for="paragraph1">Paragraph 1</label>
@@ -115,7 +115,7 @@ if(isset($_POST['submitButton'])){
   
   <br>
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton">Update Exercises</button>
+  <button type="submit" class="btn btn-default" name="submitButton">Update Assessment</button>
 </form>
 
 <?php require_once('footer.php'); ?>

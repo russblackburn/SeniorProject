@@ -35,7 +35,7 @@
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Personnel (Update/Change/Add/Delete)</li>
                 <li><a href="adminPersonnelUpdateText.php">Update a Personnel Record</a></li>
-                <li><a href="#">Change the Personnel List Order</a></li>
+                <li><a href="adminPersonnelOrder.php">Change the Personnel List Order</a></li>
                 <li><a href="adminPersonnelAdd.php">Add a New Personnel Record</a></li>
                 <li><a href="adminPersonnelDelete.php">Delete a Personnel Record</a></li>
               </ul>
@@ -56,12 +56,10 @@
                 <li><a href="#">Delete a Course</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Exercises (Update)</li>
-                <li><a href="adminExercisePage.php">Update Page</a></li>
-                <li><a href="adminExerciseImage.php">Update Image</a></li>
+                <li><a href="adminExercisePage.php">Update Exercises</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Assessment (Update)</li>
-                <li><a href="#">Update Page</a></li>
-                <li><a href="#">Update Image</a></li>
+                <li><a href="adminAssessment.php">Update Assessment</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Research (Update/Add/Hide/Delete)</li>
                 <li><a href="#">Update Page</a></li>
