@@ -31,12 +31,10 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Purpose (Update)</li>
-                <li><a href="adminPurposePage.php">Update Page</a></li>
-                <li><a href="adminPurposeImage.php">Update Image</a></li>
+                <li><a href="adminPurposePage.php">Update Purpose</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Personnel (Update/Change/Add/Delete)</li>
                 <li><a href="adminPersonnelUpdateText.php">Update a Personnel Record</a></li>
-                <li><a href="adminPersonnelImage.php">Update a Personnel Image</a></li>
                 <li><a href="#">Change the Personnel List Order</a></li>
                 <li><a href="adminPersonnelAdd.php">Add a New Personnel Record</a></li>
                 <li><a href="adminPersonnelDelete.php">Delete a Personnel Record</a></li>
