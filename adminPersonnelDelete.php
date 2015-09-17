@@ -1,27 +1,36 @@
-<?php require_once('adminAuthorize.php'); ?>
-<?php $page = admin; ?>
-<?php require_once('header.php'); ?>
+<?php 
+	require_once('adminAuthorize.php'); 
+	require_once('adminJake.php');
+	$page = admin; 
+	require_once('header.php'); 
+	
+	//BUILD THE DATABASE CONNECTION WITH host, user, pass, database
+	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
+	
+	//BUILD THE QUERY
+	$query = "SELECT * FROM personnel ORDER BY first_name ASC";
+
+	//TRY AND TALK TO THE DB
+	$result = mysqli_query($dbc, $query) or die('query failed');
+?>
 
 <h1>Delete Personnel</h1>
 
 <hr>
 
-<form>
+<?php
 
-  <div class="form-group">
-  	<label for="exampleInputFile">Select Personnel</label>
-  		<select class="form-control">
-    		<option>Select...</option>
-  			<option>Name 1</option>
-  			<option>Name 2</option>
-  			<option>Name 3</option>
-  			<option>Name 4</option>
-  			<option>Name 5</option>
-		</select>
-  </div>
-  
-  <button type="submit" class="btn btn-danger" name="submitButton">Delete Personnel</button>
-  <a href="adminLanding.php" class="btn btn-link" role="button">Cancel</a>
-</form>
+//DISPLAY WHAT WE FOUND
+while($row = mysqli_fetch_array($result)){
+	echo'<p>';
+	echo $row['first_name'].' '. $row['last_name'];
+	echo ' <a href="adminPersonnelDeleteConf.php?id='. $row['id'].'">[delete]</a>';
+	echo'</p>';
+	};
+
+//WE'RE DONE SO HANG UP
+mysqli_close($dbc);
+?>
+
 
 <?php require_once('footer.php'); ?>

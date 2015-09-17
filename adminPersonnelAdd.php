@@ -1,26 +1,28 @@
 <?php
 require_once('adminAuthorize.php');
 require_once('adminJake.php');
-
 $page = admin; 
 require_once('header.php');
+
+// build the database connection with host, user, password, database
+	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 
 	if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
-	$firstName = $_POST[firstName];
-	$lastName= $_POST[lastName];
-	$qualifications = $_POST[qualifications];
-	$paragraph1 = $_POST[paragraph1];
-	$paragraph2 = $_POST[paragraph2];
-	$paragraph3 = $_POST[paragraph3];
-	$paragraph4 = $_POST[paragraph4];
-	$paragraph5 = $_POST[paragraph5];
-	$paragraph6 = $_POST[paragraph6];
-	$paragraph7 = $_POST[paragraph7];
-	$paragraph8 = $_POST[paragraph8];
-	$paragraph9 = $_POST[paragraph9];
-	$paragraph10 = $_POST[paragraph10];
+	$firstName = mysqli_real_escape_string($dbc, trim($_POST[firstName]));
+	$lastName= mysqli_real_escape_string($dbc, trim($_POST[lastName]));
+	$qualifications = mysqli_real_escape_string($dbc, trim($_POST[qualifications]));
+	$paragraph1 = mysqli_real_escape_string($dbc, trim($_POST[paragraph1]));
+	$paragraph2 = mysqli_real_escape_string($dbc, trim($_POST[paragraph2]));
+	$paragraph3 = mysqli_real_escape_string($dbc, trim($_POST[paragraph3]));
+	$paragraph4 = mysqli_real_escape_string($dbc, trim($_POST[paragraph4]));
+	$paragraph5 = mysqli_real_escape_string($dbc, trim($_POST[paragraph5]));
+	$paragraph6 = mysqli_real_escape_string($dbc, trim($_POST[paragraph6]));
+	$paragraph7 = mysqli_real_escape_string($dbc, trim($_POST[paragraph7]));
+	$paragraph8 = mysqli_real_escape_string($dbc, trim($_POST[paragraph8]));
+	$paragraph9 = mysqli_real_escape_string($dbc, trim($_POST[paragraph9]));
+	$paragraph10 = mysqli_real_escape_string($dbc, trim($_POST[paragraph10]));
 	$photo = $_POST[photo];
 	
 	//--------make dynamic photo path and name-------------
@@ -59,9 +61,6 @@ require_once('header.php');
 		@unlink($_FILES['photo']['tmp_name']);
 		
 	//upload the information to the database since all photo conditions are met and true
-	
-	// build the database connection with host, user, password, database
-	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 	
 	// build the query
 	$query = "INSERT INTO personnel(first_name, last_name, qualifications, paragraph_1, paragraph_2, paragraph_3, paragraph_4, paragraph_5, paragraph_6, paragraph_7, paragraph_8, paragraph_9, paragraph_10, photo)". 
