@@ -24,6 +24,7 @@ if(isset($_POST['submitButton']))
 	$slider_button_description = mysqli_real_escape_string($dbc, trim($_POST[slider_button_description]));
 	$photo = $_POST[photo];
 	$old_image = $_POST[old_image];
+	$image_name = 'slideOne';
 	
 	if($_FILES['photo']['size'] == 0){
 		// build the database connection with host, user, password, database
@@ -48,7 +49,7 @@ if(isset($_POST['submitButton']))
 			//------original photo upload code starts here-------------------------------------------------------
 			//--------make dynamic photo path and name-------------
 			$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
-			$filename = $slider_title . time() . '.' . $ext;
+			$filename = $image_name . time() . '.' . $ext;
 			$filepath = 'images/home/';
 			
 			//--------------verify the image is valid-----------------------
@@ -87,9 +88,6 @@ if(isset($_POST['submitButton']))
 			$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 			
 			// build the query
-			$query = "INSERT INTO final_add_movie(title, rating, description, photo)".
-			 "VALUES ('$title','$rating','$description','$filename')";
-			 
 			 $query = "UPDATE slider SET slider_title='$slider_title', slider_description='$slider_description', slider_link='$slider_link', slider_button_description='$slider_button_description', slider_image='$filename' WHERE id=$id ";
 			
 			// communicate the query with the database
