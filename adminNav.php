@@ -64,9 +64,8 @@
                 <li class="dropdown-header">Research (Update/Add/Hide/Delete)</li>
                 <li><a href="adminResearchPage.php">Update Research</a></li>
                 <li><a href="adminResearchUpdateText.php">Update Existing Research</a></li>
-                <li><a href="adminExResearchImage.php">Update Existing Research Image</a></li>
                 <li><a href="adminResearchAdd.php">Add New Research</a></li>
-                <li><a href="#">Hide/Un-hide Research</a></li>
+                <li><a href="adminResearchHide.php">Hide/Un-hide Research</a></li>
                 <li><a href="adminResearchDelete.php">Delete Research</a></li>
               </ul>
             </li>

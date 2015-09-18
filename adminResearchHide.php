@@ -14,7 +14,7 @@
 	$result = mysqli_query($dbc, $query) or die('query failed');
 ?>
 
-<h1>Delete Research</h1>
+<h1>Hide/Un-hide Research</h1>
 
 <hr>
 
@@ -24,7 +24,9 @@
 while($row = mysqli_fetch_array($result)){
 	echo'<p>';
 	echo $row['researchTitle'];
-	echo ' <a href="adminResearchDeleteConf.php?id='. $row['id'].'">[delete]</a>';
+	echo ' is currently ';
+	if($row['hide'] == T){ echo 'hidden';}else{echo 'visible';}
+	echo ' <a href="adminResearchHideConf.php?id='. $row['id'].'">[select]</a>';
 	echo'</p>';
 	};
 
