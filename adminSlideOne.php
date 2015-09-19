@@ -128,13 +128,13 @@ if(isset($_POST['submitButton']))
   </div>
   
   <div class="form-group">
-    <label for="link">Link</label>
-    <input type="text" class="form-control" id="link" name="slider_link" placeholder="Link" value="<?php echo $found['slider_link']; ?>">
+    <label for="buttonText">Button Text</label>
+    <input type="text" class="form-control" id="buttonText" name="slider_button_description" placeholder="Button Text" value="<?php echo $found['slider_button_description']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="buttonText">Button Text</label>
-    <input type="text" class="form-control" id="buttonText" name="slider_button_description" placeholder="Button Text" value="<?php echo $found['slider_button_description']; ?>">
+    <label for="link">Link</label>
+    <input type="text" class="form-control" id="link" name="slider_link" placeholder="Link" value="<?php echo $found['slider_link']; ?>">
   </div>
   
   <div class="form-group">

@@ -1,8 +1,8 @@
 <?php
-require_once('../00UVU Stuff/senior_project/adminAuthorize.php');
-require_once('../00UVU Stuff/senior_project/adminRuss.php');
+require_once('adminAuthorize.php');
+require_once('adminRuss.php');
 $page = admin; 
-require_once('../00UVU Stuff/senior_project/header.php');
+require_once('header.php');
 
 // build the database connection with host, user, password, database
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
@@ -10,7 +10,7 @@ require_once('../00UVU Stuff/senior_project/header.php');
 	if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
-	$researchTitle = mysqli_real_escape_string($dbc, trim($_POST[researchTitle]));
+	$courseTitle = mysqli_real_escape_string($dbc, trim($_POST[courseTitle]));
 	$paragraph1 = mysqli_real_escape_string($dbc, trim($_POST[paragraph1]));
 	$paragraph2 = mysqli_real_escape_string($dbc, trim($_POST[paragraph2]));
 	$paragraph3 = mysqli_real_escape_string($dbc, trim($_POST[paragraph3]));
@@ -21,15 +21,25 @@ require_once('../00UVU Stuff/senior_project/header.php');
 	$paragraph8 = mysqli_real_escape_string($dbc, trim($_POST[paragraph8]));
 	$paragraph9 = mysqli_real_escape_string($dbc, trim($_POST[paragraph9]));
 	$paragraph10 = mysqli_real_escape_string($dbc, trim($_POST[paragraph10]));
+	$registrationInstructions = mysqli_real_escape_string($dbc, trim($_POST[registrationInstructions]));
+	$linkTitle1 = mysqli_real_escape_string($dbc, trim($_POST[linkTitle1]));
+	$link1 = mysqli_real_escape_string($dbc, trim($_POST[link1]));
+	$linkTitle2 = mysqli_real_escape_string($dbc, trim($_POST[linkTitle2]));
+	$link2 = mysqli_real_escape_string($dbc, trim($_POST[link2]));
+	$linkTitle3 = mysqli_real_escape_string($dbc, trim($_POST[linkTitle3]));
+	$link3 = mysqli_real_escape_string($dbc, trim($_POST[link3]));
 	$hide = 'F';
 	$photo = $_POST[photo];
-	$image_name = 'newResearch';
+	$image_name = 'thirdPartyCourse';
 	
+	//load the data for the slider
+	$slide_hidden = 'T';
 	
+	//-----------------------------------------------------upload the first photo------------------------------------------
 	//--------make dynamic photo path and name-------------
 	$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
 	$filename = $image_name . time() . '.' . $ext;
-	$filepath = 'images/research/';
+	$filepath = 'images/training/course/';
 	
 	//--------------verify the image is valid-----------------------
 	$validImage = true;
@@ -64,8 +74,8 @@ require_once('../00UVU Stuff/senior_project/header.php');
 	//upload the information to the database since all photo conditions are met and true
 	
 	// build the query
-	$query = "INSERT INTO newResearch(researchTitle, paragraph1, paragraph2, paragraph3, paragraph4, paragraph5, paragraph6, paragraph7, paragraph8, paragraph9, paragraph10, photo, hide)". 
-	"VALUES ('$researchTitle','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10','$filename', '$hide')";
+	$query = "INSERT INTO thirdPartyCourse(courseTitle, paragraph1, paragraph2, paragraph3, paragraph4, paragraph5, paragraph6, paragraph7, paragraph8, paragraph9, paragraph10, registrationInstructions, linkTitle1, link1, linkTitle2, link2, linkTitle3, link3, photo, hide, slide_hidden)". 
+	"VALUES ('$courseTitle','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10','$registrationInstructions','$linkTitle1','$link1','$linkTitle2','$link2','$linkTitle3','$link3','$filename','$hide','$slide_hidden')";
 	
 	// communicate the query with the database
 	$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
@@ -74,7 +84,7 @@ require_once('../00UVU Stuff/senior_project/header.php');
 	mysqli_close($dbc);
 	
 	echo '<p>';
-	echo $researchTitle.' is now in the directory.';
+	echo $courseTitle.' is now in the directory.';
 	echo '</p>';
 	
 	}else{
@@ -86,15 +96,15 @@ require_once('../00UVU Stuff/senior_project/header.php');
 	
 	?>
 
-<h1>Add Third Party Course</h1>
+<h1>Add a New Third Party Course</h1>
 
 <hr>
 
-<form action="<?php $_SERVER['../00UVU Stuff/senior_project/PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_research">
+<form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_course">
 
   <div class="form-group">
-    <label for="researchTitle">Course Title</label>
-    <input type="text" class="form-control" id="researchTitle" name="researchTitle" placeholder="C.P.R.">
+    <label for="courseTitle">Course Title</label>
+    <input type="text" class="form-control" id="courseTitle" name="courseTitle" placeholder="Course Title">
   </div>
   
   <div class="form-group">
@@ -104,7 +114,6 @@ require_once('../00UVU Stuff/senior_project/header.php');
   
   <div class="form-group">
     <label for="paragraph2">Paragraph 2</label>
-
     <textarea class="form-control" rows="2" name="paragraph2" placeholder="Paragraph 2"></textarea>
   </div>
   
@@ -148,45 +157,58 @@ require_once('../00UVU Stuff/senior_project/header.php');
     <textarea class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"></textarea>
   </div>
   
+  <hr>
+  
   <div class="form-group">
-    <label for="paragraph10">Registration Instructions</label>
-    <textarea class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"></textarea>
+    <label for="registrationInstructions">Registration Instructions</label>
+    <textarea class="form-control" rows="2" name="registrationInstructions" placeholder="Registration Instructions"></textarea>
+  </div>
+  
+  <hr>
+  
+  <div class="form-group">
+    <label for="linkTitle">Link Title</label>
+    <input type="text" class="form-control" id="linkTitle" name="linkTitle1" placeholder="Link Title">
   </div>
   
   <div class="form-group">
-    <label for="paragraph10">Link 1</label>
-    <input class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"></input>
+    <label for="link">Link</label>
+    <input type="text" class="form-control" id="link" name="link1" placeholder="Link">
+  </div>
+  
+  <hr>
+  
+  <div class="form-group">
+    <label for="linkTitle">Link Title</label>
+    <input type="text" class="form-control" id="linkTitle" name="linkTitle2" placeholder="Link Title">
   </div>
   
   <div class="form-group">
-    <label for="paragraph10">Link 2</label>
-    <input class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"></input>
+    <label for="link">Link</label>
+    <input type="text" class="form-control" id="link" name="link2" placeholder="Link">
+  </div>
+  
+  <hr>
+  
+  <div class="form-group">
+    <label for="linkTitle">Link Title</label>
+    <input type="text" class="form-control" id="linkTitle" name="linkTitle3" placeholder="Link Title">
   </div>
   
   <div class="form-group">
-    <label for="paragraph10">Link 3</label>
-    <input class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"></input>
+    <label for="link">Link</label>
+    <input type="text" class="form-control" id="link" name="link3" placeholder="Link">
   </div>
   
-  <div class="form-group">
-    <label for="paragraph10">Link 4</label>
-    <input class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"></input>
-  </div>
+  <hr>
   
   <div class="form-group">
-    <label for="paragraph10">Link 5</label>
-    <input class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"></input>
-  </div>
-  
-  <div class="form-group">
-    <label for="exampleInputFile">New Image</label>
+    <label for="exampleInputFile">New Course Image</label>
     <input type="file" id="slideImage" name="photo">
     <p class="help-block">Image size must be (width and height)</p>
   </div>
   
-  <!-- add t/f database -->
-  
-  <button type="submit" class="btn btn-default" name="submitButton">Add Course</button>
+  <button type="submit" class="btn btn-default" name="submitButton">Add Third Party Course</button>
 </form>
 
-<?php require_once('../00UVU Stuff/senior_project/footer.php'); ?>
+<?php require_once('footer.php'); ?>

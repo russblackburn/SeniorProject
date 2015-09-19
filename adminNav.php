@@ -17,11 +17,12 @@
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              	<li class="dropdown-header">Home (Update)</li>
+              	<li class="dropdown-header">Home (Update/Hide)</li>
                 <li><a href="adminSlideOne.php">Update Slide 1</a></li>
-                <li><a href="#">Update Slide 2</a></li>
+                <li><a href="#">Update/Add a Course Slide</a></li>
                 <li><a href="adminSlideThree.php">Update Slide 3</a></li>
                 <li><a href="adminMissionStatement.php">Update Mission Statement</a></li>
+                <li><a href="#">Hide/Un-hide a Course Slide</a></li>
               </ul>
             </li>
             <!-- end of home page admin -->
@@ -47,13 +48,11 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Training (Update/Add/Hide/Delete)</li>
-                <li><a href="#">Update a Course</a></li>
-                <li><a href="#">Update a Course Image</a></li>
-                <li><a href="#">Update a Course Slider Image</a></li>
-                <li><a href="#">Add a New Core Course</a></li>
-                <li><a href="#">Add a New Third Party Course</a></li>
-                <li><a href="#">Hide/Un-hide a Course</a></li>
-                <li><a href="#">Delete a Course</a></li>
+                <li><a href="adminTrainingUpdateText.php">Update a Course</a></li>
+                <li><a href="adminCoreCourseForm.php">Add a New Core Course</a></li>
+                <li><a href="adminThirdPartyCoursesForm.php">Add a New Third Party Course</a></li>
+                <li><a href="adminTrainingHide.php">Hide/Un-hide a Course</a></li>
+                <li><a href="adminTrainingDelete.php">Delete a Course</a></li>
                 <li role="separator" class="divider"></li>
                 <li class="dropdown-header">Exercises (Update)</li>
                 <li><a href="adminExercisePage.php">Update Exercises</a></li>
