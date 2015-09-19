@@ -16,7 +16,7 @@
 	$result2 = mysqli_query($dbc, $query2) or die('query failed 2');
 ?>
 
-<h1>Hide/Un-hide Research</h1>
+<h1>Hide/Un-hide a Course</h1>
 
 <hr>
 
