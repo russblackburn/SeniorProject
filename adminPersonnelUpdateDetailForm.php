@@ -50,7 +50,7 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		header('Location: adminPersonnelUpdateText.php');
+		$feedback = '<p style="color:#5fb760">'.$firstName.' '.$lastName.' has been updated. <a href="adminPersonnelUpdateText.php">&#8617; Personnel List</a></p>';
 		}
 		
 		else{
@@ -107,8 +107,7 @@ if(isset($_POST['submitButton']))
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			// redirect to the adminLanind page
-			header('Location: adminPersonnelUpdateText.php');
+			$feedback = '<p style="color:#5fb760">'.$firstName.' '.$lastName.' has been updated. <a href="adminPersonnelUpdateText.php">&#8617; Personnel List</a></p>';
 			
 			}else{
 				//let the user try again
@@ -125,7 +124,7 @@ if(isset($_POST['submitButton']))
 <h1>Update <?php echo $found['first_name'].' '.$found['last_name'];?></h1>
 
 <hr>
-
+<?php echo $feedback;?>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_personnel">
 
 <div class="form-group">
