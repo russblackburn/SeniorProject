@@ -70,6 +70,18 @@
             </li>
             <!-- end of services page admin -->
             
+            <!-- FAQ page admin -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FAQ <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+              	<li class="dropdown-header">FAQ (Update/Add/Delete)</li>
+                <li><a href="adminFAQUpdate.php">Update a FAQ</a></li>
+                <li><a href="adminFAQAdd.php">Add a New FAQ</a></li>
+                <li><a href="adminFAQDelete.php">Delete a FAQ</a></li>
+              </ul>
+            </li>
+            <!-- end of FAQ page admin -->
+            
             
             
             
