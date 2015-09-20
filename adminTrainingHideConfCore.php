@@ -21,13 +21,14 @@ if(isset($_POST['submitButton']))
 	// load the data from the form
 	$id = $_POST[id];
 	$hide = mysqli_real_escape_string($dbc, trim($_POST[hide]));
+	$slide_hidden = 'T';
 	
 	
 		// build the database connection with host, user, password, database
 		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 		
 		//build the query
-		$query = "UPDATE coreCourse SET hide='$hide' WHERE id=$id ";
+		$query = "UPDATE coreCourse SET hide='$hide', slide_hidden='$slide_hidden' WHERE id=$id ";
 		
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');

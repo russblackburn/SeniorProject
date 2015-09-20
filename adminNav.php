@@ -19,10 +19,10 @@
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Home (Update/Hide)</li>
                 <li><a href="adminSlideOne.php">Update Slide 1</a></li>
-                <li><a href="#">Update/Add a Course Slide</a></li>
+                <li><a href="adminUpdateCourseSlide.php">Update/Add a Course Slide</a></li>
                 <li><a href="adminSlideThree.php">Update Slide 3</a></li>
                 <li><a href="adminMissionStatement.php">Update Mission Statement</a></li>
-                <li><a href="#">Hide/Un-hide a Course Slide</a></li>
+                <li><a href="adminHideCourseSlide.php">Hide/Un-hide a Course Slide</a></li>
               </ul>
             </li>
             <!-- end of home page admin -->
