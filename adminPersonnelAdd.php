@@ -23,6 +23,7 @@ require_once('header.php');
 	$paragraph8 = mysqli_real_escape_string($dbc, trim($_POST[paragraph8]));
 	$paragraph9 = mysqli_real_escape_string($dbc, trim($_POST[paragraph9]));
 	$paragraph10 = mysqli_real_escape_string($dbc, trim($_POST[paragraph10]));
+	$priority=$_POST[priority];
 	$photo = $_POST[photo];
 	$image_name = 'personnel';
 	
@@ -64,8 +65,8 @@ require_once('header.php');
 	//upload the information to the database since all photo conditions are met and true
 	
 	// build the query
-	$query = "INSERT INTO personnel(first_name, last_name, qualifications, paragraph_1, paragraph_2, paragraph_3, paragraph_4, paragraph_5, paragraph_6, paragraph_7, paragraph_8, paragraph_9, paragraph_10, photo)". 
-	"VALUES ('$firstName','$lastName','$qualifications','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10','$filename')";
+	$query = "INSERT INTO personnel(first_name, last_name, qualifications, paragraph_1, paragraph_2, paragraph_3, paragraph_4, paragraph_5, paragraph_6, paragraph_7, paragraph_8, paragraph_9, paragraph_10, priority, photo)". 
+	"VALUES ('$firstName','$lastName','$qualifications','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10', '$priority', '$filename')";
 	
 	// communicate the query with the database
 	$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
@@ -73,7 +74,7 @@ require_once('header.php');
 	// terminate the connection with the database
 	mysqli_close($dbc);
 	
-	echo '<p>';
+	echo '<p style="color:#5fb760">';
 	echo $firstName.' '.$lastName.' is now in the directory.';
 	echo '</p>';
 	
@@ -162,6 +163,8 @@ require_once('header.php');
     <input type="file" id="slideImage" name="photo">
     <p class="help-block">Image size must be (width and height)</p>
   </div>
+  
+  <input type="hidden" name="priority" value="99">
   
   <button type="submit" class="btn btn-default" name="submitButton">Add Personnel</button>
 </form>
