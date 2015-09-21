@@ -7,6 +7,7 @@ require_once('adminRuss.php');
 // build the database connection with host, user, password, database
 $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 
+// mission statement connection---------------------------------------------------------------------
 // build the query to display the current mission statement
 $query = "SELECT * FROM mission_statement";
 
@@ -16,48 +17,91 @@ $result = mysqli_query($dbc, $query) or die('The query has failed!');
 //put what is found from the query into a variable
 $found = mysqli_fetch_array($result);
 
-// terminate the connection
-mysqli_close($dbc);
+// slider connection for slide 1---------------------------------------------------------------------
+// build the query to display the current slide
+$query1 = "SELECT * FROM slider WHERE id='1'";
+
+//communicate with the database
+$result1 = mysqli_query($dbc, $query1) or die('The query has failed!');
+
+//put what is found from the query into a variable
+$found1 = mysqli_fetch_array($result1);
+
+// slider connection for slide 3---------------------------------------------------------------------
+// build the query to display the current slide
+$query2 = "SELECT * FROM slider WHERE id='2'";
+
+//communicate with the database
+$result2 = mysqli_query($dbc, $query2) or die('The query has failed!');
+
+//put what is found from the query into a variable
+$found2 = mysqli_fetch_array($result2);
+
+// slider connection for coreCourse slides---------------------------------------------------------------------
+// build the query to display the current course slide
+$query3 = "SELECT * FROM coreCourse WHERE slide_hidden='F'";
+
+//communicate with the database
+$result3 = mysqli_query($dbc, $query3) or die('The query has failed!');
+
+// slider connection for thirdPartyCourse slides---------------------------------------------------------------------
+// build the query to display the current third party slide
+$query4 = "SELECT * FROM thirdPartyCourse WHERE slide_hidden='F'";
+
+//communicate with the database
+$result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
 ?>
 
         <!-- slider -->
         <!-- div to hide slider on mobile -->
         <div class="mobileHidden">
             <div id="myCarousel" class="carousel slide" data-ride="carousel">
-              <!-- Indicators -->
-              <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-              </ol>
               <div class="carousel-inner" role="listbox">
                 <div class="item active">
-                  <img class="first-slide" src="images/home/slider.jpg" alt="First slide">
+                  <img class="first-slide" src="images/home/<?php echo $found1['slider_image']; ?>" alt="First slide">
                   <div class="container">
                     <div class="carousel-caption">
-                      <h1>Example headline.</h1>
-                      <p>Note: If you're viewing this page via a <code>file://</code> URL, the "next" and "previous" Glyphicon buttons on the left and right might not load/display properly due to web browser security rules.</p>
-                      <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                      <h1><?php echo $found1['slider_title']; ?></h1>
+                      <p><?php echo $found1['slider_description']; ?></p>
+                      <p><a class="btn btn-lg btn-primary" href="<?php echo $found1['slider_link']; ?>" role="button"><?php echo $found1['slider_button_description']; ?></a></p>
                     </div>
                   </div>
                 </div>
+                <?php
+				while($row3 = mysqli_fetch_array($result3)){
+                echo '<div class="item">';
+                  echo '<img class="second-slide" src="images/training/slider/'.$row3['slide_image'].'" alt="course slide">';
+                  echo '<div class="container">';
+                    echo '<div class="carousel-caption">';
+                      echo '<h1>'.$row3['courseTitle'].'</h1>';
+                      echo '<p>'.$row3['slider_description'].'</p>';
+                      echo '<p><a class="btn btn-lg btn-primary" href="'.$row3['slider_link'].'" role="button">'.$row3['slider_button_description'].'</a></p>';
+                    echo '</div>';
+                  echo '</div>';
+                echo '</div>';
+				}
+				?>
+                <?php
+				while($row4 = mysqli_fetch_array($result4)){
+                echo '<div class="item">';
+                  echo '<img class="second-slide" src="images/training/slider/'.$row4['slide_image'].'" alt="course slide">';
+                  echo '<div class="container">';
+                    echo '<div class="carousel-caption">';
+                      echo '<h1>'.$row4['courseTitle'].'</h1>';
+                      echo '<p>'.$row4['slider_description'].'</p>';
+                      echo '<p><a class="btn btn-lg btn-primary" href="'.$row4['slider_link'].'" role="button">'.$row4['slider_button_description'].'</a></p>';
+                    echo '</div>';
+                  echo '</div>';
+                echo '</div>';
+				}
+				?>
                 <div class="item">
-                  <img class="second-slide" src="images/home/slider.jpg" alt="Second slide">
+                  <img class="third-slide" src="images/home/<?php echo $found2['slider_image']; ?>" alt="Third slide">
                   <div class="container">
                     <div class="carousel-caption">
-                      <h1>Another example headline.</h1>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                      <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <img class="third-slide" src="images/home/slider.jpg" alt="Third slide">
-                  <div class="container">
-                    <div class="carousel-caption">
-                      <h1>One more for good measure.</h1>
-                      <p>Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
-                      <p><a class="btn btn-lg btn-primary" href="#" role="button">Learn more</a></p>
+                      <h1><?php echo $found2['slider_title']; ?></h1>
+                      <p><?php echo $found2['slider_description']; ?></p>
+                      <p><a class="btn btn-lg btn-primary" href="<?php echo $found2['slider_link']; ?>" role="button"><?php echo $found2['slider_button_description']; ?></a></p>
                     </div>
                   </div>
                 </div>
@@ -141,4 +185,8 @@ mysqli_close($dbc);
             <div class="clear"></div>
         <!-- end of two images row -->
         
-<?php require_once('footer.php'); ?>
+<?php
+//WE'RE DONE SO HANG UP
+mysqli_close($dbc);
+require_once('footer.php');
+?>
