@@ -27,9 +27,9 @@
 	while($row = mysqli_fetch_array($result)){
 		
 		echo '<div class="panel panel-default">';
-		echo '<div class="panel-heading">';
+		echo '<div class="panel-heading" style="background-color:#6b96c7">';
 		echo '<h4 class="panel-title">';
-		echo '<a data-toggle="collapse" data-parent="#accordion" href="#'.$row['id'].'">';
+		echo '<a data-toggle="collapse" data-parent="#accordion" style="color:#fff" href="#'.$row['id'].'">';
 		echo $row['question'];
 		echo '</a>';
 		echo '</h4>';
