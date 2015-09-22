@@ -7,7 +7,7 @@ $personnel_id = $_GET[id];
 // build the database connection with host, user, password, database
 $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 
-// build the query to display the current mission statement
+// build the query to display the current personnel
 $query = "SELECT * FROM personnel WHERE id=$personnel_id";
 
 //communicate with the database
@@ -111,7 +111,7 @@ if(isset($_POST['submitButton']))
 			
 			}else{
 				//let the user try again
-				echo ' Please Try Again';
+				$feedback =  ' Please Try Again';
 				};//end of upload the file if everything is ok
 			}//end of else statement
 	
