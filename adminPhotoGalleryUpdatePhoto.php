@@ -14,6 +14,8 @@
 	$result = mysqli_query($dbc, $query) or die('query failed');
 ?>
 
+<p>Select the Photo's Category</p>
+
 <h1>Update a Photo</h1>
 
 <hr>

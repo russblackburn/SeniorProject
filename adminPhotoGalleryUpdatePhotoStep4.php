@@ -3,6 +3,9 @@
 	require_once('adminRuss.php');
 	
 	$photo_id = $_GET[id];
+	$subcategoryID = $_GET[subcategoryID];
+	$n1 = $_GET[n1];
+	$n2 = $_GET[n2];
 	
 	//BUILD THE DATABASE CONNECTION WITH host, user, pass, database
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
@@ -38,7 +41,7 @@
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		header('Location: adminPhotoGalleryUpdatePhoto.php');
+		header('Location: adminPhotoGalleryUpdatePhotoStep3.php?id='.$n2.'&n1='.$n1.'');
 		}
 		
 		else{
@@ -96,7 +99,7 @@
 			mysqli_close($dbc);
 			
 			// redirect to the adminLanind page
-			header('Location: adminPhotoGalleryUpdatePhoto.php');
+			header('Location: adminPhotoGalleryUpdatePhotoStep3.php?id='.$n2.'&n1='.$n1.'');
 			
 			}else{
 				//let the user try again
@@ -109,6 +112,8 @@
 ?>
 <?php $page = admin; ?>
 <?php require_once('header.php'); ?>
+
+<p><a href="adminPhotoGalleryUpdatePhoto.php">Select the Photo's Category</a> ><a href="adminPhotoGalleryUpdatePhotoStep2.php?id=<?php echo $n1; ?>"> Select the Photo's Subcategory</a> ><a href="adminPhotoGalleryUpdatePhotoStep3.php?id=<?php echo $n2; ?>&n1=<?php echo $n1; ?>"> Select the Photo</a> > Update the Photo</p>
 
 <h1>Update a Photo</h1>
 
@@ -139,6 +144,7 @@
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
   <input type="hidden" name="old_image" value="<?php echo $found['photo']; ?>">
+  <input type="hidden" name="getSubcategoryID" value="<?php echo $subcategoryID; ?>">
   <button type="submit" class="btn btn-default" name="submitButton">Update <?php echo $found['researchTitle']; ?></button>
 </form>
 

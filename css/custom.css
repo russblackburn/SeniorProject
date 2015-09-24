@@ -131,6 +131,10 @@ footer {
     z-index: 1;
 	}
 
+/* admin */
+.paddingBottom {
+	padding-bottom: 20px;
+	}
 
 	
 /*------------------------------------------ begin responsive elements ------------------------------------------*/
