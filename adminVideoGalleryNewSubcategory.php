@@ -7,7 +7,7 @@ require_once('adminRuss.php');
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 	
 	// build the query to display the categories statement
-	$query = "SELECT * FROM videoCategory";
+	$query = "SELECT * FROM videoCategory ORDER BY id DESC";
 
 	//communicate with the database
 	$result = mysqli_query($dbc, $query) or die('The query has failed!');
@@ -68,7 +68,7 @@ require_once('adminRuss.php');
 	// terminate the connection with the database
 	mysqli_close($dbc);
 	
-	header('Location: adminVideoGalleryNewPhoto.php');
+	header('Location: adminVideoGalleryNewVideo.php');
 	
 	}else{
 		//let the user try again

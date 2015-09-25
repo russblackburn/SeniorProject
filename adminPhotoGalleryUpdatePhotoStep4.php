@@ -145,7 +145,7 @@
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
   <input type="hidden" name="old_image" value="<?php echo $found['photo']; ?>">
   <input type="hidden" name="getSubcategoryID" value="<?php echo $subcategoryID; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton">Update <?php echo $found['researchTitle']; ?></button>
+  <button type="submit" class="btn btn-default" name="submitButton">Update</button>
 </form>
 
 <?php

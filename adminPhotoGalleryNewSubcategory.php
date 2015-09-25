@@ -7,7 +7,7 @@ require_once('adminRuss.php');
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 	
 	// build the query to display the categories statement
-	$query = "SELECT * FROM photoCategory";
+	$query = "SELECT * FROM photoCategory ORDER BY id DESC";
 
 	//communicate with the database
 	$result = mysqli_query($dbc, $query) or die('The query has failed!');

@@ -8,7 +8,7 @@ require_once('header.php');
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 	
 	// build the query to display the categories statement
-	$query1 = "SELECT * FROM photoSubcategory";
+	$query1 = "SELECT * FROM photoSubcategory ORDER BY id DESC";
 
 	//communicate with the database
 	$result1 = mysqli_query($dbc, $query1) or die('The query has failed!');
