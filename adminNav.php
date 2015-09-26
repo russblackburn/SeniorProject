@@ -127,10 +127,7 @@
               </ul>
             </li>
             <!-- end of FAQ page admin -->
-            
-            
-            
-            
+
           </ul>
         </div><!--/.nav-collapse -->
       </div>
