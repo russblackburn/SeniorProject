@@ -37,6 +37,9 @@
     <link href="css/facebook.css" rel="stylesheet">
     <link href="css/twitter.css" rel="stylesheet">
     
+    <!-- CSS transitions for images -->
+    <link href="css/transitionsCSS/set1.css" rel="stylesheet" type="text/css">
+    
     <!-- Google fonts open sans -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
 

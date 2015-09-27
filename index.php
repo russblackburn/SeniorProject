@@ -62,7 +62,7 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   <div class="container">
                     <div class="carousel-caption">
                       <h1><?php echo $found1['slider_title']; ?></h1>
-                      <p><?php echo $found1['slider_description']; ?></p>
+                      <p class="smallTabletHidden"><?php echo $found1['slider_description']; ?></p>
                       <p><a class="btn btn-lg btn-primary" href="<?php echo $found1['slider_link']; ?>" role="button"><?php echo $found1['slider_button_description']; ?></a></p>
                     </div>
                   </div>
@@ -74,7 +74,7 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   echo '<div class="container">';
                     echo '<div class="carousel-caption">';
                       echo '<h1>'.$row3['courseTitle'].'</h1>';
-                      echo '<p>'.$row3['slider_description'].'</p>';
+                      echo '<p class="smallTabletHidden">'.$row3['slider_description'].'</p>';
                       echo '<p><a class="btn btn-lg btn-primary" href="'.$row3['slider_link'].'" role="button">'.$row3['slider_button_description'].'</a></p>';
                     echo '</div>';
                   echo '</div>';
@@ -88,7 +88,7 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   echo '<div class="container">';
                     echo '<div class="carousel-caption">';
                       echo '<h1>'.$row4['courseTitle'].'</h1>';
-                      echo '<p>'.$row4['slider_description'].'</p>';
+                      echo '<p class="smallTabletHidden">'.$row4['slider_description'].'</p>';
                       echo '<p><a class="btn btn-lg btn-primary" href="'.$row4['slider_link'].'" role="button">'.$row4['slider_button_description'].'</a></p>';
                     echo '</div>';
                   echo '</div>';
@@ -100,7 +100,7 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   <div class="container">
                     <div class="carousel-caption">
                       <h1><?php echo $found2['slider_title']; ?></h1>
-                      <p><?php echo $found2['slider_description']; ?></p>
+                      <p class="smallTabletHidden"><?php echo $found2['slider_description']; ?></p>
                       <p><a class="btn btn-lg btn-primary" href="<?php echo $found2['slider_link']; ?>" role="button"><?php echo $found2['slider_button_description']; ?></a></p>
                     </div>
                   </div>
@@ -122,34 +122,62 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
             <p class="col-xs-12 missonStatement"><?php echo $found['mission_statement']; ?><a href="purpose.php"> Learn more about us...</a></p>
         </div><!-- end of mission statement -->
         
-        <!-- three images row -->
+        <!-- four images row -->
         <div class="row">
         
         	<!-- training image -->
-            <a href="training.php">
-            <img class="col-xs-12 col-sm-3 marginTop" src="images/home/training.jpg" alt="training">
-            </a>
+            <div class="grid col-xs-12 col-sm-6 col-lg-3">
+                <figure class="effect-lily">
+                    <img src="images/home/training.jpg" alt="training">
+                    <figcaption>
+                        <h2>Training <span></span></h2>
+                        <p>Small amount of training text here.</p>
+                        <a href="training.php">View</a>
+                    </figcaption>			
+                </figure>
+            </div>
             <!-- end of training image -->
         
             <!-- exercises image -->
-            <a href="exercises.php">
-            <img class="col-xs-12 col-sm-3 marginTop" src="images/home/exercises.jpg" alt="exercises">
-            </a>
+            <div class="grid col-xs-12 col-sm-6 col-lg-3">
+                <figure class="effect-lily">
+                    <img src="images/home/exercises.jpg" alt="exercises">
+                    <figcaption>
+                        <h2>Exercises <span></span></h2>
+                        <p>Small amount of training text here.</p>
+                        <a href="exercises.php">View</a>
+                    </figcaption>			
+                </figure>
+            </div>
             <!-- end of exercises image -->
             
             <!-- assessment image -->
-            <a href="assessment.php">
-            <img class="col-xs-12 col-sm-3 marginTop" src="images/home/assessment.jpg" alt="assessment">
-            </a>
+            <div class="grid col-xs-12 col-sm-6 col-lg-3">
+                <figure class="effect-lily">
+                    <img src="images/home/assessment.jpg" alt="assessment">
+                    <figcaption>
+                        <h2>Assessment <span></span></h2>
+                        <p>Small amount of training text here.</p>
+                        <a href="assessment.php">View</a>
+                    </figcaption>			
+                </figure>
+            </div>
             <!-- end of assessment image -->
             
             <!-- research image -->
-            <a href="research.php">
-            <img class="col-xs-12 col-sm-3 marginTop" src="images/home/research.jpg" alt="research">
-            </a>
+            <div class="grid col-xs-12 col-sm-6 col-lg-3">
+                <figure class="effect-lily">
+                    <img src="images/home/research.jpg" alt="research">
+                    <figcaption>
+                        <h2>Research <span></span></h2>
+                        <p>Small amount of training text here.</p>
+                        <a href="research.php">View</a>
+                    </figcaption>			
+                </figure>
+            </div>
             <!-- end of research image -->
         
-        </div><!-- end of three images row -->
+        </div><!-- end of four images row -->
         
         <!-- start two images row -->
         	<!-- create space between previous section -->

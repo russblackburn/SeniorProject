@@ -154,8 +154,20 @@ footer {
 	.desktopHidden {
 		display: none;
 		}
+		
+	.smallTabletHidden {
+		display: none;
+		}
 	
 	/* home */
+	.carousel-caption {
+      max-width: 550px;
+      padding: 0 20px;
+      margin:0 auto;
+      margin-top: 200px;
+      text-align: center;
+		}
+		
 	.missonStatement {
 		margin-top: 10px;
 		}
@@ -188,6 +200,13 @@ footer {
 
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
+	
+	/*----- pages -----*/
+	/* all pages */
+	.smallTabletHidden {
+		display: block;
+		}
+	
 	/* home */
 	.sizeImage {
 		width: 120px;
