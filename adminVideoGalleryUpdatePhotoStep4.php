@@ -62,10 +62,10 @@
 
 <label for="oldVideo">Old Video</label>
 <?php
-echo '<div class="centeriFrame">';
-echo '<iframe class="videoiFrame paddingTop"'. $found['videoLink'].' frameborder="0" allowfullscreen></iframe>';
-echo '</div><!-- end of centeriFrame -->';
-			?>
+	echo '<div class="centeriFrame">';
+	echo '<iframe class="videoiFrame paddingTop"'. $found['videoLink'].' frameborder="0" allowfullscreen></iframe>';
+	echo '</div><!-- end of centeriFrame -->';
+?>
 
 <br>
 

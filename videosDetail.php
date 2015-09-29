@@ -37,9 +37,7 @@ $subcategory_id = $_GET[id];
 	<?php
 		while($row2 = mysqli_fetch_array($result2)){
 			echo '<div class="centeriFrame">';
-					$string = $row2['videoLink'];
-					$newstring = str_ireplace('width="560" height="315"', 'class="videoiFrame paddingTop"', $string);
-					echo $newstring;
+					echo '<iframe class="videoiFrame paddingTop"'. $row2['videoLink'].' frameborder="0" allowfullscreen></iframe>';
 			echo '</div><!-- end of centeriFrame -->';
 			
 			echo '<div class="centeriFrame alignLeft">';

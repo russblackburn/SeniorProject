@@ -33,9 +33,11 @@
 
 
 <label for="oldImage">Video</label>
-<div class="row">
-<p><?php echo $found['videoLink'];?></p>
-</div>
+<?php
+	echo '<div class="centeriFrame">';
+	echo '<iframe class="videoiFrame paddingTop"'. $found['videoLink'].' frameborder="0" allowfullscreen></iframe>';
+	echo '</div><!-- end of centeriFrame -->';
+?>
 
 
 <a href="adminVideoGalleryDeleteVideoStep5.php?id=<?php echo $photo_id;?>&subcategoryID=<?php echo $subcategory_id; ?>&n1=<?php echo $n1; ?>&n2=<?php echo $n2; ?>" type="submit" class="btn btn-danger" name="submit">DELETE</a>
