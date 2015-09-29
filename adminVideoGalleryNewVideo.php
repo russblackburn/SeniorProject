@@ -15,8 +15,14 @@ require_once('header.php');
 
 	if(isset($_POST['submitButton']))
 	{
+	// PREPARE THE VIDEOLINK FOR UPLOAD TO THE DATABASE
+	$string = $_POST[videoLink];
+	$newstring = str_ireplace('<iframe width="560" height="315"', '', $string);
+	$newstring = str_ireplace('frameborder="0" allowfullscreen></iframe>', '', $newstring);
+	
+		
 	// load the data from the form
-	$videoLink = mysqli_real_escape_string($dbc, trim($_POST[videoLink]));
+	$videoLink = mysqli_real_escape_string($dbc, trim($newstring));
 	$videoDescription = mysqli_real_escape_string($dbc, trim($_POST[videoDescription]));
 	$subcategoryID = $_POST[subcategoryID];
 		

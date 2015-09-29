@@ -21,9 +21,14 @@
 
 	if(isset($_POST['submitButton']))
 	{
+	// PREPARE THE VIDEOLINK FOR UPLOAD TO THE DATABASE
+	$string = $_POST[videoLink];
+	$newstring = str_ireplace('<iframe width="560" height="315"', '', $string);
+	$newstring = str_ireplace('frameborder="0" allowfullscreen></iframe>', '', $newstring);
+	
 	// load the data from the form
 	$id = $_POST[id];
-	$videoLink = mysqli_real_escape_string($dbc, trim($_POST[videoLink]));
+	$videoLink = mysqli_real_escape_string($dbc, trim($newstring));
 	$videoDescription = mysqli_real_escape_string($dbc, trim($_POST[videoDescription]));
 	
 		// build the database connection with host, user, password, database
@@ -56,9 +61,11 @@
 
 
 <label for="oldVideo">Old Video</label>
-<div class="row">
-<p><?php echo $found['videoLink']; ?></p>
-</div>
+<?php
+echo '<div class="centeriFrame">';
+echo '<iframe class="videoiFrame paddingTop"'. $found['videoLink'].' frameborder="0" allowfullscreen></iframe>';
+echo '</div><!-- end of centeriFrame -->';
+			?>
 
 <br>
 
@@ -66,7 +73,7 @@
 
 <div class="form-group">
     <label for="videoLink">Video Link</label>
-    <input type="text" class="form-control" id="videoLink" name="videoLink" placeholder="Video Link" value="<?php echo $found['videoLink']; ?>">
+    <input type="text" class="form-control" id="videoLink" name="videoLink" placeholder="Video Link" value="<?php echo htmlentities($found['videoLink']); ?>">
   </div>
   
   <div class="form-group">

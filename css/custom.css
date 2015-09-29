@@ -130,6 +130,20 @@ footer {
     width: 100%;
     z-index: 1;
 	}
+	
+/* gallery videos */
+.centeriFrame {
+	text-align: center;
+	}
+	
+.alignLeft {
+	text-align: left;
+	}
+	
+.videoiFrame {
+	height: 300px;
+	width: 100%;
+	}
 
 /* admin */
 .paddingBottom {
@@ -192,6 +206,15 @@ footer {
 	.secondImageVerticalAlign {
 		margin-top: 30px;
 		}
+		
+	/* gallery videos */
+	.centeriFrame {
+	padding: 0 15%;
+	}
+
+	.videoiFrame {
+		height: 350px;
+		}
 
 }
 
@@ -219,6 +242,11 @@ footer {
 		
 	.secondImageVerticalAlign {
 		margin-top: 45px;
+		}
+		
+	/* gallery videos */
+	.videoiFrame {
+		height: 400px;
 		}
 
 }
