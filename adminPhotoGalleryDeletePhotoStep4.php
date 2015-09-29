@@ -1,6 +1,6 @@
 <?php 
 	require_once('adminAuthorize.php'); 
-	require_once('adminRuss.php');
+	require_once('adminVariables.php');
 	
 	$photo_id = $_GET[id];
 	$subcategoryID = $_GET[subcategoryID];

@@ -1,6 +1,6 @@
 <?php
 require_once('adminAuthorize.php');
-require_once('adminRuss.php');
+require_once('adminVariables.php');
 
 // build the database connection with host, user, password, database
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');

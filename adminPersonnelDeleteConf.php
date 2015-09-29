@@ -1,7 +1,7 @@
 <?php 
 //CHANGE LOCATION REDIRECT - CHANGE ADMINJAKE.PHP TO NEW DB
 	require_once('adminAuthorize.php');
-	require_once('adminJake.php');  
+	require_once('adminVariables.php');  
 
 	$personnel_id = $_GET[id];
 

@@ -1,6 +1,6 @@
 <?php
 require_once('adminAuthorize.php');
-require_once('adminJake.php');
+require_once('adminVariables.php');
 $page = admin; 
 require_once('header.php');
 
@@ -46,12 +46,12 @@ require_once('header.php');
   
   <div class="form-group">
     <label for="question">Question</label>
-    <textarea class="form-control" rows="2" name="question" placeholder="Add Question" required="required" ></textarea>
+    <textarea class="form-control" rows="2" name="question" placeholder="Add Question" required ></textarea>
   </div>
   
   <div class="form-group">
     <label for="answer">Answer</label>
-    <textarea class="form-control" rows="2" name="answer" placeholder="Add Answer" required="required" ></textarea>
+    <textarea class="form-control" rows="2" name="answer" placeholder="Add Answer" required ></textarea>
   </div>
 
   <input type="hidden" name="priority" value="99">

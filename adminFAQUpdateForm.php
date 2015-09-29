@@ -1,6 +1,6 @@
 <?php
 require_once('adminAuthorize.php');
-require_once('adminJake.php');
+require_once('adminVariables.php');
 
 $faq_id = $_GET[id];
 

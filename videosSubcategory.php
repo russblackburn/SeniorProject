@@ -3,7 +3,7 @@ $page = gallery;
 $secondaryPage = videos;
 
 require_once('header.php'); 
-require_once('adminRuss.php');
+require_once('adminVariables.php');
 
 $category_id = $_GET[id];
 

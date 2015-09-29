@@ -1,7 +1,7 @@
 <?php 
 	$page = faq;
 	$secondaryPage = false; 
-	require_once('adminJake.php');
+	require_once('adminVariables.php');
 	require_once('header.php');
 
 	//BUILD THE DATABASE CONNECTION WITH host, user, pass, database

@@ -1,6 +1,6 @@
 <?php
 require_once('adminAuthorize.php');
-require_once('adminJake.php');
+require_once('adminVariables.php');
 $page = admin; 
 require_once('header.php');
 

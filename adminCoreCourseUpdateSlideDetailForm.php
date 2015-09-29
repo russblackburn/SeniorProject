@@ -1,6 +1,6 @@
 <?php
 require_once('adminAuthorize.php');
-require_once('adminRuss.php');
+require_once('adminVariables.php');
 
 $course_id = $_GET[id];
 
