@@ -19,13 +19,17 @@
 
 <hr>
 
+<div class="centeriFrame">
+<iframe class="videoiFrame paddingTop" src="virtualTour/" frameborder="0"></iframe>
+</div>
+
 <?php
 
 	//DISPLAY WHAT WE FOUND
 	while($row = mysqli_fetch_array($result)){
-		echo '<p>';
+		echo '<div class="centeriFrame alignLeft">';
 		echo $row['description'];
-		echo '</p>';
+		echo '</div><!-- end of centeriFrame -->';
 	};
 
 	//WE'RE DONE SO HANG UP
