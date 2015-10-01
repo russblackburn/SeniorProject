@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Intermountain Center for Disaster Preparedness | <?php if($page=='index' && $secondaryPage == false){echo 'Home';} 
+    <title><?php if($page=='index' && $secondaryPage == false){echo 'Home';} 
 	else if($page=='about' && $secondaryPage == false){echo 'About';} 
 	else if($secondaryPage=='purpose'){echo 'Purpose';} 
 	else if($secondaryPage=='personnel'){echo 'Personnel';} 
@@ -25,7 +25,7 @@
 	else if($secondaryPage=='requestServiceProposal'){echo 'Request Service Proposal';} 
 	else if($page=='contact' && $secondaryPage == false){echo 'Contact';} 
 	else if($page=='faq' && $secondaryPage == false){echo 'FAQ';} 
-	else {echo 'ICDP';}?></title>
+	else {echo 'ICDP';}?> | Intermountain Center for Disaster Preparedness</title>
 
     <!-- Bootstrap -->
     <link href="css/bootstrap.min.css" rel="stylesheet">

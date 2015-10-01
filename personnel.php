@@ -23,12 +23,18 @@
 
 	//DISPLAY WHAT WE FOUND
 	while($row = mysqli_fetch_array($result)){
-		echo '<figure>';
-		echo '<a href="details.php?id='. $row['id'].'">';
-		echo '<img src="images/personnel/'.$row['photo'].'" alt="'.$row['first_name'].' '.$row['last_name'].'" width="280" height="415">';
-		echo '</a>';
-  		echo '<figcaption>'.$row['first_name'].' '.$row['last_name'].'|'.$row['qualifications'].'</figcaption>';
-		echo '</figure>';
+		echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
+                echo '<figure class="effect-lily2">';
+                    echo '<img src="images/personnel/'.$row['photo'].'" alt="exercises">';
+                    echo '<figcaption>';
+					echo '<div class="hoverDiv">';
+                        echo '<h2>'.$row['first_name'].' <span>'.$row['last_name'].'</span></h2>';
+                        echo '<p>'.$row['qualifications'].'</p>';
+						echo '</div>';
+                        echo '<a href="personnelDetail.php?id='. $row['id'].'">View</a>';
+                    echo '</figcaption>';			
+                echo '</figure>';
+            echo '</div>';
 	};
 
 	//WE'RE DONE SO HANG UP
