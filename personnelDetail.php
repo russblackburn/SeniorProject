@@ -19,11 +19,22 @@ require_once('adminVariables.php');
 	$found = mysqli_fetch_array($result);
 ?>
 
-<h1><?php echo $found[first_name].' '.$found[last_name].' <span class="thinText"> | '.$found[qualifications];?></span></h1>
+<?php
+if($found[position] != NULL) {
+	$pipe = '|';
+	}
+?>
+
+<div class="pagePadding">
+<h1><?php echo $found[first_name].' '.$found[last_name].' <span class="thinText"> <span class="mobileHiddenInline">'.$pipe.'</span><br class="desktopHidden"> <span class="smallText">'.$found[position];?></span></span></h1>
 
 <hr>
 
+
+
 <img class="col-xs-12 col-sm-6 pull-right paddingBottom" src="images/personnel/<?php echo $found['photo']; ?>" alt="personnel">
+
+<?php echo '<h2 class="qualifications">'.$found['qualifications'].'</h2>'; ?>
 
 <?php
 
@@ -81,6 +92,6 @@ if($found['paragraph_1'] != NULL) {
 	}
 
 ?>
-
+</div>
 
 <?php require_once('footer.php'); ?>

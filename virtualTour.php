@@ -15,9 +15,12 @@
 
 ?>
 
+<div class="pagePadding">
 <h1>Virtual Tour</h1>
 
+
 <hr>
+
 
 <div class="centeriFrame">
 <iframe class="videoiFrame paddingTop" src="virtualTour/" frameborder="0"></iframe>
@@ -35,5 +38,7 @@
 	//WE'RE DONE SO HANG UP
 	mysqli_close($dbc);
 ?>
+
+</div>
 
 <?php require_once('footer.php'); ?>

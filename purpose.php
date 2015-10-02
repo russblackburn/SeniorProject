@@ -16,9 +16,13 @@ require_once('adminVariables.php');
 	$found = mysqli_fetch_array($result);
 ?>
 
+<div class="pagePadding">
 <h1>Purpose</h1>
 
+
 <hr>
+
+
 
 <img class="col-xs-12 col-sm-6 pull-right paddingBottom" src="images/purpose/<?php echo $found['purpose_image']; ?>" alt="purpose">
 
@@ -78,6 +82,6 @@ if($found['paragraph1'] != NULL) {
 	}
 
 ?>
-
+</div>
 
 <?php require_once('footer.php'); ?>

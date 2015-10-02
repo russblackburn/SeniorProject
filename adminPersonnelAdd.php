@@ -12,6 +12,7 @@ require_once('header.php');
 	// load the data from the form
 	$firstName = mysqli_real_escape_string($dbc, trim($_POST[firstName]));
 	$lastName= mysqli_real_escape_string($dbc, trim($_POST[lastName]));
+	$position = mysqli_real_escape_string($dbc, trim($_POST[position]));
 	$qualifications = mysqli_real_escape_string($dbc, trim($_POST[qualifications]));
 	$paragraph1 = mysqli_real_escape_string($dbc, trim($_POST[paragraph1]));
 	$paragraph2 = mysqli_real_escape_string($dbc, trim($_POST[paragraph2]));
@@ -65,8 +66,8 @@ require_once('header.php');
 	//upload the information to the database since all photo conditions are met and true
 	
 	// build the query
-	$query = "INSERT INTO personnel(first_name, last_name, qualifications, paragraph_1, paragraph_2, paragraph_3, paragraph_4, paragraph_5, paragraph_6, paragraph_7, paragraph_8, paragraph_9, paragraph_10, priority, photo)". 
-	"VALUES ('$firstName','$lastName','$qualifications','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10', '$priority', '$filename')";
+	$query = "INSERT INTO personnel(first_name, last_name, position, qualifications, paragraph_1, paragraph_2, paragraph_3, paragraph_4, paragraph_5, paragraph_6, paragraph_7, paragraph_8, paragraph_9, paragraph_10, priority, photo)". 
+	"VALUES ('$firstName','$lastName','$position','$qualifications','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10', '$priority', '$filename')";
 	
 	// communicate the query with the database
 	$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
@@ -101,6 +102,11 @@ require_once('header.php');
   <div class="form-group">
     <label for="lastName">Last Name</label>
     <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe">
+  </div>
+  
+  <div class="form-group">
+    <label for="position">Position</label>
+    <input type="text" class="form-control" id="position" name="position" placeholder="Position">
   </div>
   
   <div class="form-group">

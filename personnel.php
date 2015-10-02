@@ -15,10 +15,14 @@
 
 ?>
 
+<div class="pagePadding">
 <h1>Personnel</h1>
+
 
 <hr>
 
+
+<div class="row">
 <?php
 
 	//DISPLAY WHAT WE FOUND
@@ -29,7 +33,7 @@
                     echo '<figcaption>';
 					echo '<div class="hoverDiv">';
                         echo '<h2>'.$row['first_name'].' <span>'.$row['last_name'].'</span></h2>';
-                        echo '<p>'.$row['qualifications'].'</p>';
+                        echo '<p>'.$row['position'].'</p>';
 						echo '</div>';
                         echo '<a href="personnelDetail.php?id='. $row['id'].'">View</a>';
                     echo '</figcaption>';			
@@ -40,5 +44,7 @@
 	//WE'RE DONE SO HANG UP
 	mysqli_close($dbc);
 ?>
+</div>
+</div>
 
 <?php require_once('footer.php'); ?>

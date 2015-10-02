@@ -23,6 +23,7 @@
 	{
 	// PREPARE THE VIDEOLINK FOR UPLOAD TO THE DATABASE
 	$string = $_POST[videoLink];
+	$string = stripslashes($string);
 	$newstring = str_ireplace('<iframe width="560" height="315"', '', $string);
 	$newstring = str_ireplace('frameborder="0" allowfullscreen></iframe>', '', $newstring);
 	

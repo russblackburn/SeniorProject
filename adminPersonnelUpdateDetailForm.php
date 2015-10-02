@@ -22,6 +22,7 @@ if(isset($_POST['submitButton']))
 	$id = $_POST[id];
 	$firstName = mysqli_real_escape_string($dbc, trim($_POST[firstName]));
 	$lastName = mysqli_real_escape_string($dbc, trim($_POST[lastName]));
+	$position = mysqli_real_escape_string($dbc, trim($_POST[position]));
 	$qualifications = mysqli_real_escape_string($dbc, trim($_POST[qualifications]));
 	$paragraph1 = mysqli_real_escape_string($dbc, trim($_POST[paragraph1]));
 	$paragraph2 = mysqli_real_escape_string($dbc, trim($_POST[paragraph2]));
@@ -42,7 +43,7 @@ if(isset($_POST['submitButton']))
 		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 		
 		//build the query
-		$query = "UPDATE personnel SET first_name='$firstName', last_name='$lastName', qualifications='$qualifications', paragraph_1='$paragraph1', paragraph_2='$paragraph2', paragraph_3='$paragraph3', paragraph_4='$paragraph4', paragraph_5='$paragraph5', paragraph_6='$paragraph6', paragraph_7='$paragraph7', paragraph_8='$paragraph8', paragraph_9='$paragraph9', paragraph_10='$paragraph10' WHERE id=$id ";
+		$query = "UPDATE personnel SET first_name='$firstName', last_name='$lastName', position='$position', qualifications='$qualifications', paragraph_1='$paragraph1', paragraph_2='$paragraph2', paragraph_3='$paragraph3', paragraph_4='$paragraph4', paragraph_5='$paragraph5', paragraph_6='$paragraph6', paragraph_7='$paragraph7', paragraph_8='$paragraph8', paragraph_9='$paragraph9', paragraph_10='$paragraph10' WHERE id=$id ";
 		
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
@@ -99,7 +100,7 @@ if(isset($_POST['submitButton']))
 			$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 			 
 			 //build the query
-		$query = "UPDATE personnel SET first_name='$firstName', last_name='$lastName', qualifications='$qualifications', paragraph_1='$paragraph1', paragraph_2='$paragraph2', paragraph_3='$paragraph3', paragraph_4='$paragraph4', paragraph_5='$paragraph5', paragraph_6='$paragraph6', paragraph_7='$paragraph7', paragraph_8='$paragraph8', paragraph_9='$paragraph9', paragraph_10='$paragraph10', photo='$filename' WHERE id=$id ";
+		$query = "UPDATE personnel SET first_name='$firstName', last_name='$lastName', position='$position', qualifications='$qualifications', paragraph_1='$paragraph1', paragraph_2='$paragraph2', paragraph_3='$paragraph3', paragraph_4='$paragraph4', paragraph_5='$paragraph5', paragraph_6='$paragraph6', paragraph_7='$paragraph7', paragraph_8='$paragraph8', paragraph_9='$paragraph9', paragraph_10='$paragraph10', photo='$filename' WHERE id=$id ";
 			
 			// communicate the query with the database
 			$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
@@ -135,6 +136,11 @@ if(isset($_POST['submitButton']))
   <div class="form-group">
     <label for="lastName">Last Name</label>
     <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" value="<?php echo $found['last_name']; ?>">
+  </div>
+  
+  <div class="form-group">
+    <label for="position">Position</label>
+    <input type="text" class="form-control" id="position" name="position" placeholder="Position" value="<?php echo $found['position']; ?>">
   </div>
   
   <div class="form-group">

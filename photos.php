@@ -15,9 +15,12 @@ require_once('adminVariables.php');
 	$result = mysqli_query($dbc, $query) or die('query failed');
 ?>
 
+<div class="pagePadding">
 <h1>Photos</h1>
 
+
 <hr>
+
 
 <div class="row">
 
@@ -37,6 +40,7 @@ require_once('adminVariables.php');
 		?>
 
 </div><!-- end of row -->
+</div>
 
 
 

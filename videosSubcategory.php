@@ -28,9 +28,12 @@ $category_id = $_GET[id];
 	
 ?>
 
+<div class="pagePadding">
 <h1><?php echo $found1['category']; ?></h1>
 
+
 <hr>
+
 
 <div class="row">
 
@@ -50,6 +53,7 @@ $category_id = $_GET[id];
 		?>
 
 </div><!-- end of row -->
+</div>
 
 
 

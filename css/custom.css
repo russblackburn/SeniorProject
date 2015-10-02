@@ -77,6 +77,14 @@ footer {
 	display: none;
 	}
 	
+.smallText {
+	font-size: .8em;
+	}
+	
+.mobileHiddenInline {
+	display: none;
+	}
+	
 .clear {
 	clear: both;
 	}
@@ -135,8 +143,13 @@ footer {
 	.thinText{
 		font-weight:300;
 		}
+		
 	.hoverDiv{
 		padding-top:50% !important;
+		}
+		
+	.qualifications {
+		font-weight: 300;
 		}
 	
 /* gallery videos */
@@ -199,6 +212,10 @@ footer {
 		display: block;
 		}
 		
+	.mobileHiddenInline {
+		display: inline;
+		}
+		
 	.desktopHidden {
 		display: none;
 		}
@@ -206,6 +223,10 @@ footer {
 	.smallTabletHidden {
 		display: none;
 		}
+		
+	.smallText {
+	font-size: 1em;
+	}
 	
 	/* home */
 	.carousel-caption {
@@ -313,6 +334,13 @@ footer {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	
+	.pagePadding {
+		width:85%;
+		margin-left:auto;
+		margin-right:auto;
+		}
+		
 	.firstImageVerticalAlign {
   		margin-top: 60px;
 		}

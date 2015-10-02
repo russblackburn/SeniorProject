@@ -14,6 +14,7 @@
 	$result = mysqli_query($dbc, $query) or die('query failed');
 ?>
 
+<div class="pagePadding">
 <h1>Frequently Asked Questions</h1>
 
 <hr>
@@ -51,6 +52,7 @@
 ?>
         
     </div>
+</div>
 </div>
 
 

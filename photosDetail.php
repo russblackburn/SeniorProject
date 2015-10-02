@@ -28,15 +28,18 @@ $subcategory_id = $_GET[id];
 	
 ?>
 
+<div class="pagePadding">
 <h1><?php echo $found1['subcategory']; ?></h1>
 
+
 <hr>
+
 
 <div class="row">
 
 	<?php
 		while($row2 = mysqli_fetch_array($result2)){
-			echo '<div class="grid col-xs-12 col-sm-3">';
+			echo '<div class="grid col-xs-12 col-sm-4">';
 				echo '<figure class="effect-lily">';
 					echo '<img src="images/gallery/photo/photo/'.$row2['photo'].'">';
 					echo '<figcaption>';
@@ -50,6 +53,7 @@ $subcategory_id = $_GET[id];
 		?>
 
 </div><!-- end of row -->
+</div>
 
 
 

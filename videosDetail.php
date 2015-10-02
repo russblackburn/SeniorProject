@@ -28,7 +28,9 @@ $subcategory_id = $_GET[id];
 	
 ?>
 
+<div class="pagePadding">
 <h1><?php echo $found1['subcategory']; ?></h1>
+
 
 <hr>
 
@@ -46,7 +48,7 @@ $subcategory_id = $_GET[id];
 			}
 	?>
 
-
+</div>
 
 
 
