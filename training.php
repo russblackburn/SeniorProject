@@ -22,7 +22,8 @@ require_once('adminVariables.php');
 	
 ?>
 
-<h1>Training Core Courses</h1>
+<div class="pagePadding">
+<h1>Training <span class="thinText">| Core Courses</span></h1>
 
 <hr>
 
@@ -30,7 +31,7 @@ require_once('adminVariables.php');
 
 	<?php
 		while($row1 = mysqli_fetch_array($result1)){
-			echo '<div class="grid col-xs-12 col-sm-4">';
+			echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
 				echo '<figure class="effect-lily">';
 					echo '<img src="images/training/course/'.$row1['photo'].'">';
 					echo '<figcaption>';
@@ -45,7 +46,7 @@ require_once('adminVariables.php');
 
 </div><!-- end of row -->
 
-<h1>Training Third Party Courses</h1>
+<h1>Training <span class="thinText">| Third Party Courses</span></h1>
 
 <hr>
 
@@ -53,7 +54,7 @@ require_once('adminVariables.php');
 
 	<?php
 		while($row2 = mysqli_fetch_array($result2)){
-			echo '<div class="grid col-xs-12 col-sm-4">';
+			echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
 				echo '<figure class="effect-lily">';
 					echo '<img src="images/training/course/'.$row2['photo'].'">';
 					echo '<figcaption>';
@@ -67,6 +68,8 @@ require_once('adminVariables.php');
 		?>
 
 </div><!-- end of row -->
+
+</div>
 
 
 

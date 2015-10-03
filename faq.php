@@ -15,7 +15,7 @@
 ?>
 
 <div class="pagePadding">
-<h1>Frequently Asked Questions</h1>
+<h1>FAQ <span class="thinText">| Frequently Asked Questions</span></h1>
 
 <hr>
 

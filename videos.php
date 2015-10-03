@@ -28,7 +28,7 @@ require_once('adminVariables.php');
 
 	<?php
 		while($row = mysqli_fetch_array($result)){
-			echo '<div class="grid col-xs-12 col-sm-4">';
+			echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
 				echo '<figure class="effect-lily">';
 					echo '<img src="images/gallery/video/category/'.$row['photo'].'">';
 					echo '<figcaption>';

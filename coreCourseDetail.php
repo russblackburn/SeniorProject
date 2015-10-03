@@ -1,13 +1,16 @@
 <?php $page = services; ?>
-<?php $secondaryPage = assessment; ?>
+<?php $secondaryPage = training; ?>
 <?php require_once('header.php');
 require_once('adminVariables.php');
+
+// GET THE SELECTED COURSE FROM THE URL
+$courseID = $_GET[id];
 
 //BUILD THE DATABASE CONNECTION WITH host, user, pass, database
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 	
 	//BUILD THE QUERY
-	$query = "SELECT * FROM assessment";
+	$query = "SELECT * FROM coreCourse WHERE id=$courseID";
 
 	//TRY AND TALK TO THE DB
 	$result = mysqli_query($dbc, $query) or die('query failed');
@@ -17,12 +20,12 @@ require_once('adminVariables.php');
 ?>
 
 <div class="pagePadding">
-<h1>Assessment</h1>
+<h1><?php echo $found[courseTitle]; ?></h1>
 
 
 <hr>
 
-<img class="col-xs-12 col-sm-6 pull-right paddingBottom" src="images/home/assessment.jpg" alt="assessment">
+<img class="col-xs-12 col-sm-6 pull-right paddingBottom" src="images/training/course/<?php echo $found['photo']; ?>" alt="course photo">
 
 <!-- paragraphs -->
 <?php
@@ -82,12 +85,40 @@ if($found['paragraph1'] != NULL) {
 <!-- end of paragraphs -->
 
 
+<!-- upcoming events -->
+<h2 class="thinText">Upcoming Events</h2>
+<hr>
+<p>Page events here</p>
+<!-- end of upcoming events -->
+
+
 <!-- registration instructions -->
 <h2 class="thinText">Registration Instructions</h2>
 <hr>
-<p><?php echo $found[registration_instructions]; ?></p>
+<p><?php echo $found[registrationInstructions]; ?></p>
 <!-- end of registration instructions -->
 
+
+<!-- links -->
+<?php
+// CHECK LINKTITLE 1
+if($found[linkTitle1] != NULL) {
+	echo '<p><a href="'.$found[link1].'"><button type="button" class="btn btn-primary">'.$found[linkTitle1].'</button></a></p>';
+	
+	// CHECK LINKTITLE 2
+	if($found[linkTitle2] != NULL) {
+		echo '<p><a href="'.$found[link2].'"><button type="button" class="btn btn-primary">'.$found[linkTitle2].'</button></a></p>';
+		
+		// CHECK LINKTITLE 3
+		if($found[linkTitle2] != NULL) {
+			echo '<p><a href="'.$found[link3].'"><button type="button" class="btn btn-primary">'.$found[linkTitle3].'</button></a></p>';
+			}
+		}
+	}
+
+
+?>
+<!-- end of links -->
 
 
 </div><!-- end of pagePadding -->
