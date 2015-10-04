@@ -20,16 +20,35 @@ require_once('adminVariables.php');
 	//TRY AND TALK TO THE DB
 	$result2 = mysqli_query($dbc, $query2) or die('query failed 2');
 	
+	// BUILD THE QUERIES TO CHECK AND SEE IF THERE IS A COURSE IF THERE IS DISPLAY THE TITLE AND <HR>
+		//BUILD THE QUERY TO CHECK CORE COURSES
+		$query3 = "SELECT * FROM coreCourse WHERE hide='F'";
+	
+		//TRY AND TALK TO THE DB
+		$result3 = mysqli_query($dbc, $query3) or die('query failed 3');
+		
+		//put what is found from the query into a variable
+		$found3 = mysqli_fetch_array($result3);
+		
+		//BUILD THE QUERY TO CHECK THIRD PARTY COURSES
+		$query4 = "SELECT * FROM thirdPartyCourse WHERE hide='F'";
+	
+		//TRY AND TALK TO THE DB
+		$result4 = mysqli_query($dbc, $query4) or die('query failed 4');
+		
+		//put what is found from the query into a variable
+		$found4 = mysqli_fetch_array($result4);
+	
 ?>
 
 <div class="pagePadding">
-<h1>Training <span class="thinText">| Core Courses</span></h1>
 
-<hr>
+<?php
+if($found3[id] != NULL) {
+	echo '<h1>Training <span class="thinText">| Core Courses</span></h1>';
+	echo '<hr>';
+	echo '<div class="row">';
 
-<div class="row">
-
-	<?php
 		while($row1 = mysqli_fetch_array($result1)){
 			echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
 				echo '<figure class="effect-lily">';
@@ -42,17 +61,15 @@ require_once('adminVariables.php');
 				echo '</figure>';
 			echo '</div>';
 			}
-		?>
-
-</div><!-- end of row -->
-
-<h1>Training <span class="thinText">| Third Party Courses</span></h1>
-
-<hr>
-
-<div class="row">
-
-	<?php
+	echo '</div><!-- end of row -->';
+	}
+?>
+<?php
+if($found4[id] != NULL) {
+	echo '<h1>Training <span class="thinText">| Third Party Courses</span></h1>';
+	echo '<hr>';
+	echo '<div class="row">';
+	
 		while($row2 = mysqli_fetch_array($result2)){
 			echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
 				echo '<figure class="effect-lily">';
@@ -65,13 +82,12 @@ require_once('adminVariables.php');
 				echo '</figure>';
 			echo '</div>';
 			}
-		?>
+	echo '</div><!-- end of row -->';
+	}
+?>
 
-</div><!-- end of row -->
+
 
 </div>
-
-
-
 
 <?php require_once('footer.php'); ?>

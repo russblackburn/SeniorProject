@@ -3,46 +3,33 @@
 <?php require_once('header.php');
 require_once('adminVariables.php');
 
+// GET THE ID OF THE CHOOSEN RESEARCH
+$researchID = $_GET[id];
+
 //BUILD THE DATABASE CONNECTION WITH host, user, pass, database
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 	
 	//BUILD THE QUERY
-	$query = "SELECT * FROM research";
+	$query = "SELECT * FROM newResearch WHERE id=$researchID";
 
 	//TRY AND TALK TO THE DB
 	$result = mysqli_query($dbc, $query) or die('query failed');
 	
 	//put what is found from the query into a variable
 	$found = mysqli_fetch_array($result);
-	
-	// BUILD THE QUERY FOR THE RESEARCH TITLE BAR AND <HR>
-		//BUILD THE QUERY
-		$query1 = "SELECT * FROM newResearch WHERE hide='F'";
-
-		//TRY AND TALK TO THE DB
-		$result1 = mysqli_query($dbc, $query1) or die('query failed');
-		
-		// put what is found from the query into a variable
-		$found1 = mysqli_fetch_array($result1);
-		
-	// BUILD THE QUERY FOR THE RESEARCH
-		//BUILD THE QUERY
-		$query2 = "SELECT * FROM newResearch WHERE hide='F'";
-
-		//TRY AND TALK TO THE DB
-		$result2 = mysqli_query($dbc, $query2) or die('query failed');
 ?>
 
 <div class="pagePadding">
-<h1>Research</h1>
+<h1><?php echo $found[researchTitle]; ?></h1>
 
 
 <hr>
 
-<img class="col-xs-12 col-sm-6 pull-right paddingBottom" src="images/home/research.jpg" alt="research">
 
-<!-- paragraphs -->
+<img class="col-xs-12 col-sm-6 pull-right paddingBottom" src="images/research/<?php echo $found['photo']; ?>" alt="research">
+
 <?php
+
 if($found['paragraph1'] != NULL) {
 	// CHECK PARAGRAPH 1
 	echo '<p>'.$found['paragraph1'].'</p>';
@@ -95,44 +82,8 @@ if($found['paragraph1'] != NULL) {
 	else {
 		echo '<p>Page needs content</p>';
 	}
-?>
-<!-- end of paragraphs -->
 
-<?php
-// DISPLAY THE TITLE AND <HR> IF THERE IS A RESEARCH PROJECT TO DISPLAY
-if($found1[id] != NULL) {
-	echo '<h2 class="thinText">Research Projects</h2>';
-	echo '<hr>';
-	}
 ?>
-
-<!-- display research -->
-<div class="row">
-<?php
-		while($row2 = mysqli_fetch_array($result2)){
-			echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
-				echo '<figure class="effect-lily">';
-					echo '<img src="images/research/'.$row2['photo'].'">';
-					echo '<figcaption>';
-						echo '<h2>'.$row2['researchTitle'].'<span></span></h2>';
-						echo '<p></p>';
-						echo '<a href="researchDetail.php?id='. $row2['id'].'">View</a>';
-					echo '</figcaption>';		
-				echo '</figure>';
-			echo '</div>';
-			}
-		?>
 </div>
-<!-- end of display research -->
 
-
-<!-- registration instructions -->
-<h2 class="thinText">Registration Instructions</h2>
-<hr>
-<p><?php echo $found[registration_instructions]; ?></p>
-<!-- end of registration instructions -->
-
-
-
-</div><!-- end of pagePadding -->
 <?php require_once('footer.php'); ?>
