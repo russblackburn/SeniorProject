@@ -47,7 +47,9 @@ if(isset($_POST['submitButton']))
 
 <hr>
 
-<p><?php echo $found['researchTitle'];?> is currently <?php if($found['hide'] == T){ echo 'hidden';}else{echo 'visible';} ?></p>
+<p><?php if($found['hide'] == T){ echo '<span class="adminRed">hidden</span> ';}else{echo '<span class="adminGreen">visible</span> ';} ?>- <?php echo $found['researchTitle'];?></p>
+
+<br>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="hide_research">
   
@@ -69,7 +71,7 @@ if(isset($_POST['submitButton']))
 		  echo 'Hide';
 		  }
   
-  ?></button>
+  ?></button>&nbsp;<a href="adminResearchHide.php"> Cancel</a>
 </form>
 
 <?php require_once('footer.php'); ?>

@@ -23,9 +23,9 @@
 //DISPLAY WHAT WE FOUND
 while($row = mysqli_fetch_array($result)){
 	echo'<p>';
+	if($row['hide'] == T){ echo '<span class="adminRed">hidden</span> ';}else{echo '<span class="adminGreen">visible</span> ';}
+	echo '- ';
 	echo $row['researchTitle'];
-	echo ' is currently ';
-	if($row['hide'] == T){ echo 'hidden';}else{echo 'visible';}
 	echo ' <a href="adminResearchHideConf.php?id='. $row['id'].'">[select]</a>';
 	echo'</p>';
 	};

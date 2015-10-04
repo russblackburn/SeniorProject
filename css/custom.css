@@ -93,6 +93,14 @@ footer {
 	text-decoration: none !important;
 	}
 	
+.adminRed {
+	color: red;
+	}
+	
+.adminGreen {
+	color: green;
+	}
+	
 /* home */
 .marginTop {
 	margin-top: 20px;

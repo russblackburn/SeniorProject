@@ -93,32 +93,32 @@ if($found['paragraph1'] != NULL) {
 
 
 <!-- registration instructions -->
-<h2 class="thinText">Registration Instructions</h2>
-<hr>
-<p><?php echo $found[registrationInstructions]; ?></p>
-<!-- end of registration instructions -->
-
-
-<!-- links -->
 <?php
-// CHECK LINKTITLE 1
-if($found[linkTitle1] != NULL) {
-	echo '<p><a href="'.$found[link1].'"><button type="button" class="btn btn-primary">'.$found[linkTitle1].'</button></a></p>';
-	
-	// CHECK LINKTITLE 2
-	if($found[linkTitle2] != NULL) {
-		echo '<p><a href="'.$found[link2].'"><button type="button" class="btn btn-primary">'.$found[linkTitle2].'</button></a></p>';
-		
-		// CHECK LINKTITLE 3
-		if($found[linkTitle2] != NULL) {
-			echo '<p><a href="'.$found[link3].'"><button type="button" class="btn btn-primary">'.$found[linkTitle3].'</button></a></p>';
-			}
+if($found[registrationInstructions] != NULL || $found[link1] != NULL) {
+	echo '<h2 class="thinText">Registration Instructions</h2>';
+	echo '<hr>';
+	if($found[registrationInstructions] != NULL) {
+		echo '<p>'.$found[registrationInstructions].'</p>';
 		}
-	}
-
-
+		
+	// -- links --
+	// CHECK LINKTITLE 1
+	if($found[linkTitle1] != NULL) {
+		echo '<p><a href="'.$found[link1].'"><button type="button" class="btn btn-primary">'.$found[linkTitle1].'</button></a></p>';
+		
+		// CHECK LINKTITLE 2
+		if($found[linkTitle2] != NULL) {
+			echo '<p><a href="'.$found[link2].'"><button type="button" class="btn btn-primary">'.$found[linkTitle2].'</button></a></p>';
+			
+			// CHECK LINKTITLE 3
+			if($found[linkTitle2] != NULL) {
+				echo '<p><a href="'.$found[link3].'"><button type="button" class="btn btn-primary">'.$found[linkTitle3].'</button></a></p>';
+				}
+			}
+		}// -- end of links --
+	}// end of first conditional
 ?>
-<!-- end of links -->
+<!-- end of registration instructions -->
 
 
 </div><!-- end of pagePadding -->

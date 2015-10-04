@@ -127,9 +127,13 @@ if($found1[id] != NULL) {
 
 
 <!-- registration instructions -->
-<h2 class="thinText">Registration Instructions</h2>
-<hr>
-<p><?php echo $found[registration_instructions]; ?></p>
+<?php
+if($found[registration_instructions] != NULL) {
+	echo '<h2 class="thinText">Registration Instructions</h2>';
+	echo '<hr>';
+	echo '<p>'.$found[registration_instructions].'</p>';
+	}
+?>
 <!-- end of registration instructions -->
 
 
