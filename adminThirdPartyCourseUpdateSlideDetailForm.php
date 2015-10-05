@@ -65,8 +65,8 @@ if(isset($_POST['submitButton']))
 				};
 				
 			//check to see if the image size is to large
-			if($_FILES['photo']['size'] > 500000){
-				echo 'Your image is to large, it must be smaller than 500KB.';
+			if($_FILES['photo']['size'] > 1000000){
+				echo 'Your image is to large, it must be smaller than 1MB.';
 				$validImage = false;
 				};
 				

@@ -50,8 +50,8 @@ require_once('header.php');
 		};
 		
 	//check to see if the image size is to large
-	if($_FILES['photo']['size'] > 204800){
-		echo ' Your image is to large, it must be smaller than 200KB.';
+	if($_FILES['photo']['size'] > 1000000){
+		echo ' Your image is to large, it must be smaller than 1MB.';
 		$validImage = false;
 		};
 		
