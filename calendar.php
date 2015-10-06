@@ -14,9 +14,9 @@ require_once('adminVariables.php');
 	$return_arr = array();
 
     while ($row = mysqli_fetch_assoc($result)) {
-    $row_array['title'] = $row['title'];
-    $row_array['start'] = $row['start'];
-    $row_array['end'] = $row['end'];
+    $row_array['title'] = $row['courseTitle'];
+    $row_array['start'] = ''.$row['yearStart'].'-'.$row['monthStart'].'-'.$row['dayStart'].''.$row['startTime'].'';
+    $row_array['end'] = ''.$row['yearEnd'].'-'.$row['monthEnd'].'-'.$row['dayEnd'].''.$row['endTime'].'';
 	$row_array['url'] = $row['url'];
 
     array_push($return_arr,$row_array);
