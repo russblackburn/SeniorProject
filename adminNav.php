@@ -75,7 +75,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">Events <span class="caret"></span></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Events (Add/Update/Change/Delete)</li>
-                <li><a href="#">stuff</a></li>
+                <li><a href="adminEventAdd.php">Add a New Event</a></li>
                 <li><a href="#">stuff</a></li>
                 <li><a href="#">stuff</a></li>
                 <li><a href="#">stuff</a></li>
