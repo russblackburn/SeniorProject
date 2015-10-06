@@ -49,6 +49,13 @@
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
+    
+    <!-- if the event page is loaded, load the header information for the calendar -->
+    <?php
+	if($page == events) {
+		require_once('calendar.php');
+		}
+	?>
   </head>
   <body>
   
