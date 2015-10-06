@@ -1,7 +1,8 @@
     </div><!-- /container -->
+    <div id="push"></div>
     </div><!--jake oct5-->
     <footer>
-    	<div class="container">
+    	<div class="container" id="footer">
     		<p class="text-center paddingTop">&copy; Intermountain Center for Disaster Preparedness</p>
             <p class="text-center"><a href="#">Site Map</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="adminLanding.php">Admin</a></p>
             
