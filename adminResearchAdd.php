@@ -35,22 +35,33 @@ require_once('header.php');
 	$validImage = true;
 	//check to see if the image is missing
 	if($_FILES['photo']['size'] == 0){
-		echo 'You did not select an image!';
+		$feedback =  '<p class="adminRed">You did not select an image!</p>';
 		$validImage = false;
 		};
 		
 	//check to see if the image size is to large
 	if($_FILES['photo']['size'] > 1000000){
-		echo ' Your image is to large, it must be smaller than 1MB.';
+		$feedback =  '<p class="adminRed">Your image is to large, it must be smaller than 1MB.</p>';
 		$validImage = false;
 		};
+		
+	//check to see if the image dimensions match 715 x 572
+			$filetmpname=$_FILES['photo']['tmp_name'];
+			$dimension=getimagesize($filetmpname);
+			$width = $dimension[0];
+			$height = $dimension[1];
+
+			if ($width != 715 && $height != 572){
+				$feedback =  '<p class="adminRed">Upload failed, the image needs to be 715w X 572h.</p>';
+				$validImage = false;
+				};
 		
 	//check the file type
 	if($_FILES['photo']['type'] == 'image/gif' || $_FILES['photo']['type'] == 'image/jpeg' || $_FILES['photo']['type'] == 'image/pjpeg' || $_FILES['photo']['type'] == 'image/png'){
 		//that must be a proper format
 		}else{
 			//tell the user the file type is not correct
-			echo ' That is not the correct file format!';
+			$feedback =  '<p class="adminRed">That is not the correct file format!</p>';
 			$validImage = false;
 			};
 			
@@ -73,13 +84,11 @@ require_once('header.php');
 	// terminate the connection with the database
 	mysqli_close($dbc);
 	
-	echo '<p>';
-	echo $researchTitle.' is now in the directory.';
-	echo '</p>';
-	
+	$feedback =  '<p class="adminGreen">'.$researchTitle.' is now in the directory.</p>';
+
 	}else{
 		//let the user try again
-		echo ' Please Try Again';
+		$feedback2 =  '<p class="adminRed">Please Try Again</p>';
 		};//end of upload the file if everything is ok
 	
 	};//end of if submit/isset
@@ -89,6 +98,10 @@ require_once('header.php');
 <h1>Add Research</h1>
 
 <hr>
+
+<?php echo $feedback;?>
+<?php echo $feedback2;?>
+
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_research">
 

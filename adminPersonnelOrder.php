@@ -43,7 +43,7 @@
 		
 		}else{
 			//An account already exists for this username, so display an error message
-			$feedback = '<p style="color:red">That number is already selected. Please choose a different number.</p>';}
+			$feedback = '<p class="adminRed">That number is already selected. Please choose a different number.</p>';}
 }
 ?>
 
