@@ -58,7 +58,7 @@
 	?>
   </head>
   <body>
-  
+  	<div id="wrap">
     <header>
         <div class="container">
         	<a href="index.php"><img class="logo" src="images/header/logo.png"></a>

@@ -5,7 +5,10 @@
 
 /*----- body(global changes), header, nav, and footer -----*/
 /* body(global changes) */
-body {
+html, body{
+	height: 100%;
+	}
+body {height: 100%;
 	font-family: 'Open Sans', sans-serif;
 	
 	/*---smooth the text to help with the flicker from the bootstrap carousel---*/
@@ -204,6 +207,14 @@ footer {
 .paddingBottom {
 	padding-bottom: 20px;
 	}
+	
+#wrap {
+        min-height: 100%;
+        height: auto !important;
+        height: 100%;
+        /* Negative indent footer by it's height */
+        margin: 0 auto -120px;
+      }
 
 	
 /*------------------------------------------ begin responsive elements ------------------------------------------*/

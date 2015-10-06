@@ -1,5 +1,5 @@
     </div><!-- /container -->
-    
+    </div><!--jake oct5-->
     <footer>
     	<div class="container">
     		<p class="text-center paddingTop">&copy; Intermountain Center for Disaster Preparedness</p>
