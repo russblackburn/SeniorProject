@@ -33,8 +33,7 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		// redirect to the adminLanind page
-			header('Location: adminFAQUpdate.php');
+		$feedback = '<p class="adminGreen">Your FAQ has been updated.</p>';
 		
 	
 	};//end of if submit/isset

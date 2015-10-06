@@ -42,7 +42,7 @@ if(isset($_POST['submitButton'])){
 	// terminate the connection
 	mysqli_close($dbc);
 	
-	header('Location: adminLanding.php');
+	$feedback =  '<p class="adminGreen">The Research page has been updated</p>';
 
 }
 
@@ -53,6 +53,10 @@ if(isset($_POST['submitButton'])){
 <h1>Update Research</h1>
 
 <hr>
+
+<?php echo $feedback;?>
+<?php echo $feedback2;?>
+
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_research">
 

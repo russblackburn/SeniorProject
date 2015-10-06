@@ -25,11 +25,11 @@ require_once('header.php');
 	// terminate the connection with the database
 	mysqli_close($dbc);
 
-	$feedback = '<p style="color:#5fb760">Your question has been added.</p>';
+	$feedback = '<p class="adminGreen">Your question has been added.</p>';
 	
 	}else{
 	
-	$feedback = '<p style="color:red">Please complete both boxes.</p>';
+	$feedback = '<p class="adminRed">Please complete both boxes.</p>';
 	};
 
 	};//end of if submit/isset
