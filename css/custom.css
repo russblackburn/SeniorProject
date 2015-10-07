@@ -44,6 +44,10 @@ header img {
 	color: #fff;
 	}
 	
+.adminGray {
+	color: gray;
+	}
+	
 .adminNav .navbar-nav > .open > a:focus {
 	background-color: #4c86c7;
 	}

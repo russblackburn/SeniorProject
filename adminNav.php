@@ -76,7 +76,7 @@
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Events (Add/Update/Change/Delete)</li>
                 <li><a href="adminEventAdd.php">Add a New Event</a></li>
-                <li><a href="#">stuff</a></li>
+                <li><a href="adminEventUpdate.php">Update a Event</a></li>
                 <li><a href="#">stuff</a></li>
                 <li><a href="#">stuff</a></li>
               </ul>
