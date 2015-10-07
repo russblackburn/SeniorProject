@@ -51,7 +51,7 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		$feedback = '<p style="color:#5fb760">'.$firstName.' '.$lastName.' has been updated. <a href="adminPersonnelUpdateText.php">&#8617; Personnel List</a></p>';
+		$feedback = '<p class="adminGreen">'.$firstName.' '.$lastName.' has been updated. <a href="adminPersonnelUpdateText.php">&#8617; Personnel List</a></p>';
 		}
 		
 		else{
@@ -68,13 +68,24 @@ if(isset($_POST['submitButton']))
 			$validImage = true;
 			//check to see if the image is missing
 			if($_FILES['photo']['size'] == 0){
-				echo 'You did not select an image!';
+				$feedback =  '<p>You did not select an image!</p>';
 				$validImage = false;
 				};
 				
 			//check to see if the image size is to large
 			if($_FILES['photo']['size'] > 1000000){
-				echo 'Your image is to large, it must be smaller than 1MB.';
+				$feedback =  '<p>Your image is to large, it must be smaller than 1MB.</p>';
+				$validImage = false;
+				};
+				
+			//check to see if the image dimensions match 715 x 572
+			$filetmpname=$_FILES['photo']['tmp_name'];
+			$dimension=getimagesize($filetmpname);
+			$width = $dimension[0];
+			$height = $dimension[1];
+
+			if ($width != 572 && $height != 715){
+				$feedback =  '<p class="adminRed">Upload failed, the image needs to be 572w X 715h</p>';
 				$validImage = false;
 				};
 				
@@ -83,7 +94,7 @@ if(isset($_POST['submitButton']))
 				//that must be a proper format
 				}else{
 					//tell the user the file type is not correct
-					echo 'That is not the correct file format!';
+					$feedback =  '<p class="adminRed">That is not the correct file format!</p>';
 					$validImage = false;
 					};
 					
@@ -108,11 +119,11 @@ if(isset($_POST['submitButton']))
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			$feedback = '<p style="color:#5fb760">'.$firstName.' '.$lastName.' has been updated. <a href="adminPersonnelUpdateText.php">&#8617; Personnel List</a></p>';
+			$feedback = '<p class="adminGreen">'.$firstName.' '.$lastName.' has been updated. <a href="adminPersonnelUpdateText.php">&#8617; Personnel List</a></p>';
 			
 			}else{
 				//let the user try again
-				$feedback =  ' Please Try Again';
+				$feedback2 =  '<p class="adminRed">Please Try Again</p>';
 				};//end of upload the file if everything is ok
 			}//end of else statement
 	
@@ -126,6 +137,7 @@ if(isset($_POST['submitButton']))
 
 <hr>
 <?php echo $feedback;?>
+<?php echo $feedback2;?>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_personnel">
 
 <div class="form-group">
@@ -201,7 +213,7 @@ if(isset($_POST['submitButton']))
   <div class="form-group">
     <label for="exampleInputFile">New Image</label>
     <input type="file" id="purposeImage" name="photo">
-    <p class="help-block">Image size must be (width and height)</p>
+    <p class="help-block">Image size must be (572 Width X 715 Height)</p>
   </div>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
