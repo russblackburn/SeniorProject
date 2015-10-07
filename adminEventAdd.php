@@ -242,6 +242,7 @@ require_once('header.php');
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthStart">
+               <option>Month</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -257,6 +258,7 @@ require_once('header.php');
             </select>
             
             <select class="form-control" name="dayStart">
+               <option>Day</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -309,13 +311,13 @@ require_once('header.php');
                <option value="07">7</option>
                <option value="08">8</option>
                <option value="09">9</option>
-               <option value="10">10</option>
+               <option value="10" selected="selected">10</option>
                <option value="11">11</option>
-               <option value="12">12</option>
+               <option value="00">12</option>
             </select>
             
             <select class="form-control" name="minStart">
-               <option value="00">00</option>
+               <option value="00" selected="selected">00</option>
                <option value="05">05</option>
                <option value="10">10</option>
                <option value="15">15</option>
@@ -330,7 +332,7 @@ require_once('header.php');
             </select>
             
             <select class="form-control" name="ampmStart">
-               <option value="am">am</option>
+               <option value="am" selected="selected">am</option>
                <option value="pm">pm</option>
             </select>
     
@@ -344,6 +346,7 @@ require_once('header.php');
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthEnd">
+               <option>Month</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -359,6 +362,7 @@ require_once('header.php');
             </select>
             
             <select class="form-control" name="dayEnd">
+               <option>Day</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -406,18 +410,18 @@ require_once('header.php');
                <option value="02">2</option>
                <option value="03">3</option>
                <option value="04">4</option>
-               <option value="05">5</option>
+               <option value="05" selected="selected">5</option>
                <option value="06">6</option>
                <option value="07">7</option>
                <option value="08">8</option>
                <option value="09">9</option>
                <option value="10">10</option>
                <option value="11">11</option>
-               <option value="12">12</option>
+               <option value="00">12</option>
             </select>
             
             <select class="form-control" name="minEnd">
-               <option value="00">00</option>
+               <option value="00" selected="selected">00</option>
                <option value="05">05</option>
                <option value="10">10</option>
                <option value="15">15</option>
@@ -433,7 +437,7 @@ require_once('header.php');
             
             <select class="form-control" name="ampmEnd">
                <option value="am">am</option>
-               <option value="pm">pm</option>
+               <option value="pm" selected="selected">pm</option>
             </select>
     
         </div>
@@ -477,6 +481,7 @@ require_once('header.php');
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthStart">
+               <option>Month</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -492,6 +497,7 @@ require_once('header.php');
             </select>
             
             <select class="form-control" name="dayStart">
+               <option>Day</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -544,13 +550,13 @@ require_once('header.php');
                <option value="07">7</option>
                <option value="08">8</option>
                <option value="09">9</option>
-               <option value="10">10</option>
+               <option value="10" selected="selected">10</option>
                <option value="11">11</option>
-               <option value="12">12</option>
+               <option value="00">12</option>
             </select>
             
             <select class="form-control" name="minStart">
-               <option value="00">00</option>
+               <option value="00" selected="selected">00</option>
                <option value="05">05</option>
                <option value="10">10</option>
                <option value="15">15</option>
@@ -565,7 +571,7 @@ require_once('header.php');
             </select>
             
             <select class="form-control" name="ampmStart">
-               <option value="am">am</option>
+               <option value="am" selected="selected">am</option>
                <option value="pm">pm</option>
             </select>
     
@@ -579,6 +585,7 @@ require_once('header.php');
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthEnd">
+               <option>Month</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -594,6 +601,7 @@ require_once('header.php');
             </select>
             
             <select class="form-control" name="dayEnd">
+               <option>Day</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -641,18 +649,18 @@ require_once('header.php');
                <option value="02">2</option>
                <option value="03">3</option>
                <option value="04">4</option>
-               <option value="05">5</option>
+               <option value="05" selected="selected">5</option>
                <option value="06">6</option>
                <option value="07">7</option>
                <option value="08">8</option>
                <option value="09">9</option>
                <option value="10">10</option>
                <option value="11">11</option>
-               <option value="12">12</option>
+               <option value="00">12</option>
             </select>
             
             <select class="form-control" name="minEnd">
-               <option value="00">00</option>
+               <option value="00" selected="selected">00</option>
                <option value="05">05</option>
                <option value="10">10</option>
                <option value="15">15</option>
@@ -668,7 +676,7 @@ require_once('header.php');
             
             <select class="form-control" name="ampmEnd">
                <option value="am">am</option>
-               <option value="pm">pm</option>
+               <option value="pm" selected="selected">pm</option>
             </select>
     
         </div>
@@ -710,6 +718,7 @@ require_once('header.php');
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthStart">
+               <option>Month</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -725,6 +734,7 @@ require_once('header.php');
             </select>
             
             <select class="form-control" name="dayStart">
+               <option>Day</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -777,13 +787,13 @@ require_once('header.php');
                <option value="07">7</option>
                <option value="08">8</option>
                <option value="09">9</option>
-               <option value="10">10</option>
+               <option value="10" selected="selected">10</option>
                <option value="11">11</option>
-               <option value="12">12</option>
+               <option value="00">12</option>
             </select>
             
             <select class="form-control" name="minStart">
-               <option value="00">00</option>
+               <option value="00" selected="selected">00</option>
                <option value="05">05</option>
                <option value="10">10</option>
                <option value="15">15</option>
@@ -798,7 +808,7 @@ require_once('header.php');
             </select>
             
             <select class="form-control" name="ampmStart">
-               <option value="am">am</option>
+               <option value="am" selected="selected">am</option>
                <option value="pm">pm</option>
             </select>
     
@@ -812,6 +822,7 @@ require_once('header.php');
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthEnd">
+               <option>Month</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -827,6 +838,7 @@ require_once('header.php');
             </select>
             
             <select class="form-control" name="dayEnd">
+               <option>Day</option>
                <option value="01">01</option>
                <option value="02">02</option>
                <option value="03">03</option>
@@ -874,18 +886,18 @@ require_once('header.php');
                <option value="02">2</option>
                <option value="03">3</option>
                <option value="04">4</option>
-               <option value="05">5</option>
+               <option value="05" selected="selected">5</option>
                <option value="06">6</option>
                <option value="07">7</option>
                <option value="08">8</option>
                <option value="09">9</option>
                <option value="10">10</option>
                <option value="11">11</option>
-               <option value="12">12</option>
+               <option value="00">12</option>
             </select>
             
             <select class="form-control" name="minEnd">
-               <option value="00">00</option>
+               <option value="00" selected="selected">00</option>
                <option value="05">05</option>
                <option value="10">10</option>
                <option value="15">15</option>
@@ -901,7 +913,7 @@ require_once('header.php');
             
             <select class="form-control" name="ampmEnd">
                <option value="am">am</option>
-               <option value="pm">pm</option>
+               <option value="pm" selected="selected">pm</option>
             </select>
     
         </div>
