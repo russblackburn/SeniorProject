@@ -44,7 +44,7 @@
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		header('Location: adminVideoGalleryUpdatePhotoStep3.php?id='.$n2.'&n1='.$n1.'');
+		$feedback = '<p class="adminGreen">The video has been updated. <a href="videos.php">&#8617; View VIDEOS Page</a></p>';
 	
 	};//end of if submit/isset
 
@@ -57,6 +57,8 @@
 <h1>Update a Video</h1>
 
 <hr>
+
+<?php echo $feedback;?>
 
 <h3>Update the Video</h3>
 

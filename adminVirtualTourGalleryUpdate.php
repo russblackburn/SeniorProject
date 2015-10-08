@@ -32,7 +32,7 @@ if(isset($_POST['submitButton'])){
 	// terminate the connection
 	mysqli_close($dbc);
 	
-	$feedback =  '<p class="adminGreen">The description has been updated.</p>';
+	$feedback = '<p class="adminGreen">The description has been updated. <a href="virtualTour.php">&#8617; View VIRTUAL TOUR Page</a></p>';
 
 }
 

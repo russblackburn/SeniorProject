@@ -41,7 +41,7 @@
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		header('Location: adminPhotoGalleryUpdatePhotoStep3.php?id='.$n2.'&n1='.$n1.'');
+		$feedback = '<p class="adminGreen">The photo has been updated. <a href="photos.php">&#8617; View PHOTOS Page</a></p>';
 		}
 		
 		else{
@@ -111,8 +111,7 @@
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			// redirect to the adminLanind page
-			header('Location: adminPhotoGalleryUpdatePhotoStep3.php?id='.$n2.'&n1='.$n1.'');
+			$feedback = '<p class="adminGreen">The photo has been updated. <a href="photos.php">&#8617; View PHOTOS Page</a></p>';
 			
 			}else{
 				//let the user try again

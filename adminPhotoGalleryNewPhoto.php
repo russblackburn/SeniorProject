@@ -47,8 +47,9 @@ require_once('header.php');
 			$width = $dimension[0];
 			$height = $dimension[1];
 
-			if ($width != 715 && $height != 572){
-				$feedback =  '<p class="adminRed">Upload failed, the image needs to be 715w X 572h.</p>';
+			if (($width == 715 && $height == 572) || ($width == 572 && $height == 715)){
+				}else{
+				$feedback =  '<p class="adminRed">Upload failed, the image must be 715w X 572h or 572w X 715h.</p>';
 				$validImage = false;
 				};
 		
@@ -80,7 +81,7 @@ require_once('header.php');
 	// terminate the connection with the database
 	mysqli_close($dbc);
 	
-	$feedback =  '<p class="adminGreen">The photo is now in the directory.</p>';
+	$feedback = '<p class="adminGreen">The photo is now in the directory. <a href="photos.php">&#8617; View PHOTOS Page</a></p>';
 	
 	}else{
 		//let the user try again

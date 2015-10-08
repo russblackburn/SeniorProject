@@ -39,7 +39,7 @@ require_once('header.php');
 	// terminate the connection with the database
 	mysqli_close($dbc);
 	
-	$feedback2 =  '<p class="adminGreen">The video is now in the directory.</p>';
+	$feedback = '<p class="adminGreen">The video is now in the directory. <a href="videos.php">&#8617; View VIDEOS Page</a></p>';
 	
 	};//end of if submit/isset
 	
@@ -50,7 +50,6 @@ require_once('header.php');
 <hr>
 
 <?php echo $feedback;?>
-<?php echo $feedback2;?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_video">
 
