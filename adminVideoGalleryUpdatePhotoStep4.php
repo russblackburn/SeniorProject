@@ -30,7 +30,7 @@
 	// load the data from the form
 	$id = $_POST[id];
 	$videoLink = mysqli_real_escape_string($dbc, trim($newstring));
-	$videoDescription = mysqli_real_escape_string($dbc, trim($_POST[videoDescription]));
+	$videoDescription = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[videoDescription])));
 	
 		// build the database connection with host, user, password, database
 		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
@@ -58,7 +58,11 @@
 
 <hr>
 
-<?php echo $feedback;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
+
 
 <h3>Update the Video</h3>
 

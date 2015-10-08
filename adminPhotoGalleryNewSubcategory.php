@@ -15,7 +15,7 @@ require_once('adminVariables.php');
 	if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
-	$subcategory = mysqli_real_escape_string($dbc, trim($_POST[subcategory]));
+	$subcategory = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[subcategory])));
 	$photo = $_POST[photo];
 	$categoryID = $_POST[categoryID];
 	$image_name = 'newPhotoSubcategory';
@@ -98,8 +98,14 @@ require_once('header.php');
 
 <hr>
 
-<?php echo $feedback;?>
-<?php echo $feedback2;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
+<?php
+$feedback2 = stripslashes($feedback2);
+echo $feedback2;
+?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_subcategory">
 

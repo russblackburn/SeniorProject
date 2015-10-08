@@ -29,7 +29,7 @@
 
 //DISPLAY WHAT WE FOUND
 while($row = mysqli_fetch_array($result)){
-	echo ' <a href="adminPhotoGalleryUpdatePhotoStep4.php?id='. $row['id'].'&subcategoryID='.$subcategory_id.'&n1='.$n1.'&n2='.$subcategory_id.'"><img class="paddingBottom col-xs-6 col-sm-3" src="images/gallery/photo/photo/'.$row['photo'].'"></a>';
+	echo ' <a href="adminPhotoGalleryUpdatePhotoStep4.php?id='. $row['id'].'&subcategoryID='.$subcategory_id.'&n1='.$n1.'&n2='.$subcategory_id.'"><img class="paddingBottom col-xs-12 col-sm-6 col-md-4" src="images/gallery/photo/photo/'.$row['photo'].'"></a>';
 	};
 ?>
 </div><!-- end of row -->
