@@ -12,8 +12,8 @@ require_once('header.php');
 	if(!empty($_POST['question']) and !empty($_POST['answer']))
 	{
 	// load the data from the form
-	$question = mysqli_real_escape_string($dbc, trim($_POST[question]));
-	$answer= mysqli_real_escape_string($dbc, trim($_POST[answer]));
+	$question = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[question])));
+	$answer= stripslashes(mysqli_real_escape_string($dbc, trim($_POST[answer])));
 	$priority=$_POST[priority];
 	
 	// build the query
@@ -40,7 +40,10 @@ require_once('header.php');
 
 <hr>
 
-<?php echo $feedback;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_personnel" data-toggle="validator">
   

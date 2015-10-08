@@ -53,17 +53,17 @@
 <hr>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">
-<fieldset>
+
 <?php
 //DISPLAY WHAT WE FOUND
 
-	echo '<h3>';
+	echo '<p>';
 	echo '<strong>Question: </strong>'.$found['question'];
-	echo '</h3>';
+	echo '</p>';
 	
-	echo '<h3>';
+	echo '<p>';
 	echo '<strong>Answer: </strong>'.$found['answer'];
-	echo '</h3><br>';
+	echo '</p><br>';
 
 ?>
 

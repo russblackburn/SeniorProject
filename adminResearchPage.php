@@ -5,33 +5,21 @@ require_once('adminVariables.php');
 // build the database connection with host, user, password, database
 $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 
-// build the query to display the current mission statement
-$query = "SELECT * FROM research";
-
-//communicate with the database
-$result = mysqli_query($dbc, $query) or die('The query has failed!');
-
-//put what is found from the query into a variable
-$found = mysqli_fetch_array($result);
-
 // when submit is pressed
 if(isset($_POST['submitButton'])){
 	// pull the items from the form
 	$id = $_POST[id];
-	$paragraph1 = mysqli_real_escape_string($dbc, trim($_POST[paragraph1]));
-	$paragraph2 = mysqli_real_escape_string($dbc, trim($_POST[paragraph2]));
-	$paragraph3 = mysqli_real_escape_string($dbc, trim($_POST[paragraph3]));
-	$paragraph4 = mysqli_real_escape_string($dbc, trim($_POST[paragraph4]));
-	$paragraph5 = mysqli_real_escape_string($dbc, trim($_POST[paragraph5]));
-	$paragraph6 = mysqli_real_escape_string($dbc, trim($_POST[paragraph6]));
-	$paragraph7 = mysqli_real_escape_string($dbc, trim($_POST[paragraph7]));
-	$paragraph8 = mysqli_real_escape_string($dbc, trim($_POST[paragraph8]));
-	$paragraph9 = mysqli_real_escape_string($dbc, trim($_POST[paragraph9]));
-	$paragraph10 = mysqli_real_escape_string($dbc, trim($_POST[paragraph10]));
-	$registration_instructions = mysqli_real_escape_string($dbc, trim($_POST[registration_instructions]));
-	
-	// build the database connection with host, user, password, database
-	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
+	$paragraph1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph1])));
+	$paragraph2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph2])));
+	$paragraph3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph3])));
+	$paragraph4 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph4])));
+	$paragraph5 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph5])));
+	$paragraph6 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph6])));
+	$paragraph7 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph7])));
+	$paragraph8 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph8])));
+	$paragraph9 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph9])));
+	$paragraph10 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph10])));
+	$registration_instructions = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[registration_instructions])));
 	
 	//build the query
 		$query = "UPDATE research SET paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registration_instructions='$registration_instructions' WHERE id=$id ";
@@ -39,12 +27,21 @@ if(isset($_POST['submitButton'])){
 	// talk with the database
 	$result = mysqli_query($dbc, $query) or die('your query has failed');
 	
-	// terminate the connection
-	mysqli_close($dbc);
-	
 	$feedback = '<p class="adminGreen">The Research page has been updated. <a href="research.php">&#8617; View RESEARCH Page</a></p>';
 
-}
+}// end of isset
+
+// build the query to display the current mission statement
+$query01 = "SELECT * FROM research";
+
+//communicate with the database
+$result01 = mysqli_query($dbc, $query01) or die('The query has failed!');
+
+//put what is found from the query into a variable
+$found = mysqli_fetch_array($result01);
+
+// terminate the connection
+mysqli_close($dbc);
 
 ?>
 <?php $page = admin; ?>
@@ -54,7 +51,10 @@ if(isset($_POST['submitButton'])){
 
 <hr>
 
-<?php echo $feedback;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_research">
 
