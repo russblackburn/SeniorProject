@@ -7,22 +7,13 @@ $course_id = $_GET[id];
 // build the database connection with host, user, password, database
 $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 
-// build the query to display the current mission statement
-$query = "SELECT * FROM thirdPartyCourse WHERE id=$course_id";
-
-//communicate with the database
-$result = mysqli_query($dbc, $query) or die('The query has failed!');
-
-//put what is found from the query into a variable
-$found = mysqli_fetch_array($result);
-
 if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
 	$id = $_POST[id];
-	$slider_description = mysqli_real_escape_string($dbc, trim($_POST[slider_description]));
-	$slider_link = mysqli_real_escape_string($dbc, trim($_POST[slider_link]));
-	$slider_button_description = mysqli_real_escape_string($dbc, trim($_POST[slider_button_description]));
+	$slider_description = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[slider_description])));
+	$slider_link = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[slider_link])));
+	$slider_button_description = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[slider_button_description])));
 	$photo = $_POST[photo];
 	$old_image = $_POST[old_image];
 	$image_name = 'thirdPartyCourseSlide';
@@ -31,17 +22,12 @@ if(isset($_POST['submitButton']))
 		$feedback = 'Upload incomplete, you must add a slide image on the initial update/add';
 	}else{
 	if($_FILES['photo']['size'] == 0){
-		// build the database connection with host, user, password, database
-		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 		
 		//build the query
 		$query = "UPDATE thirdPartyCourse SET slider_description='$slider_description', slider_link='$slider_link', slider_button_description='$slider_button_description' WHERE id=$id ";
 		
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
-		
-		// terminate the connection
-		mysqli_close($dbc);
 		
 		$feedback = '<p class="adminGreen">The slider has been updated. <a href="index.php">&#8617; View HOME Page</a> &#8729; <a href="adminHideCourseSlide.php">Hide &#8260; Unhide Slide</a></p>';
 		}
@@ -98,18 +84,12 @@ if(isset($_POST['submitButton']))
 				@unlink('images/training/slider/'.$old_image);
 				
 			//upload the information to the database since all photo conditions are met and true
-			
-			// build the database connection with host, user, password, database
-			$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 			 
 			 //build the query
 		$query = "UPDATE thirdPartyCourse SET slider_description='$slider_description', slider_link='$slider_link', slider_button_description='$slider_button_description', slide_image='$filename' WHERE id=$id ";
 			
 			// communicate the query with the database
 			$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
-			
-			// terminate the connection with the database
-			mysqli_close($dbc);
 			
 			$feedback = '<p class="adminGreen">The slider has been updated. <a href="index.php">&#8617; View HOME Page</a> &#8729; <a href="adminHideCourseSlide.php">Hide &#8260; Unhide Slide</a></p>';
 			
@@ -121,6 +101,18 @@ if(isset($_POST['submitButton']))
 	}//end of check for initial image conditional
 	
 	};//end of if submit/isset
+	
+	// build the query to display the current mission statement
+	$query01 = "SELECT * FROM thirdPartyCourse WHERE id=$course_id";
+	
+	//communicate with the database
+	$result01 = mysqli_query($dbc, $query01) or die('The query has failed!');
+	
+	//put what is found from the query into a variable
+	$found = mysqli_fetch_array($result01);
+	
+	// terminate the connection with the database
+	mysqli_close($dbc);
 
 ?>
 <?php $page = admin; ?>
@@ -130,8 +122,14 @@ if(isset($_POST['submitButton']))
 
 <hr>
 
-<?php echo $feedback;?>
-<?php echo $feedback2;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
+<?php
+$feedback2 = stripslashes($feedback2);
+echo $feedback2;
+?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_slide">
   
