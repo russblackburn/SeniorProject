@@ -42,10 +42,10 @@ require_once('header.php');
 		$courseTitle = $found[courseTitle];
 		$monthStart = mysqli_real_escape_string($dbc, trim($_POST[monthStart]));
 		$dayStart = mysqli_real_escape_string($dbc, trim($_POST[dayStart]));
-		$yearStart = mysqli_real_escape_string($dbc, trim($_POST[yearStart]));
+		$yearStart = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[yearStart])));
 		$monthEnd = mysqli_real_escape_string($dbc, trim($_POST[monthEnd]));
 		$dayEnd = mysqli_real_escape_string($dbc, trim($_POST[dayEnd]));
-		$yearEnd = mysqli_real_escape_string($dbc, trim($_POST[yearEnd]));
+		$yearEnd = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[yearEnd])));
 		$thirdParty = '1';
 		
 				// get the time and format it correctly
@@ -111,10 +111,10 @@ require_once('header.php');
 		$courseTitle = $found[courseTitle];
 		$monthStart = mysqli_real_escape_string($dbc, trim($_POST[monthStart]));
 		$dayStart = mysqli_real_escape_string($dbc, trim($_POST[dayStart]));
-		$yearStart = mysqli_real_escape_string($dbc, trim($_POST[yearStart]));
+		$yearStart = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[yearStart])));
 		$monthEnd = mysqli_real_escape_string($dbc, trim($_POST[monthEnd]));
 		$dayEnd = mysqli_real_escape_string($dbc, trim($_POST[dayEnd]));
-		$yearEnd = mysqli_real_escape_string($dbc, trim($_POST[yearEnd]));
+		$yearEnd = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[yearEnd])));
 		$thirdParty = '2';
 		
 				// get the time and format it correctly
@@ -165,13 +165,13 @@ require_once('header.php');
 	if(isset($_POST['submitCustom']))
 	{
 		// load the data from the form
-		$courseTitle = mysqli_real_escape_string($dbc, trim($_POST[courseTitle]));
+		$courseTitle = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[courseTitle])));
 		$monthStart = mysqli_real_escape_string($dbc, trim($_POST[monthStart]));
 		$dayStart = mysqli_real_escape_string($dbc, trim($_POST[dayStart]));
-		$yearStart = mysqli_real_escape_string($dbc, trim($_POST[yearStart]));
+		$yearStart = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[yearStart])));
 		$monthEnd = mysqli_real_escape_string($dbc, trim($_POST[monthEnd]));
 		$dayEnd = mysqli_real_escape_string($dbc, trim($_POST[dayEnd]));
-		$yearEnd = mysqli_real_escape_string($dbc, trim($_POST[yearEnd]));
+		$yearEnd = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[yearEnd])));
 		$thirdParty = '3';
 		
 				// get the time and format it correctly

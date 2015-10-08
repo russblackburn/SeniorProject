@@ -7,28 +7,28 @@ $eventID = $_GET[id];
 // build the database connection with host, user, password, database
 $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 
-// build the query to display the current personnel
-$query = "SELECT * FROM events WHERE id=$eventID";
-
-//communicate with the database
-$result = mysqli_query($dbc, $query) or die('The query has failed!');
-
-//put what is found from the query into a variable
-$found = mysqli_fetch_array($result);
+// build the query to display the current events
+	$query = "SELECT * FROM events WHERE id=$eventID";
+	
+	//communicate with the database
+	$result = mysqli_query($dbc, $query) or die('The query has failed!');
+	
+	//put what is found from the query into a variable
+	$found = mysqli_fetch_array($result);
 
 if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
 	$id = $_POST[id];
 	if($found['thirdParty'] == 3) {
-		$courseTitle = mysqli_real_escape_string($dbc, trim($_POST[courseTitle]));
+		$courseTitle = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[courseTitle])));
 	}
 	$monthStart = mysqli_real_escape_string($dbc, trim($_POST[monthStart]));
 	$dayStart = mysqli_real_escape_string($dbc, trim($_POST[dayStart]));
-	$yearStart = mysqli_real_escape_string($dbc, trim($_POST[yearStart]));
+	$yearStart = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[yearStart])));
 	$monthEnd = mysqli_real_escape_string($dbc, trim($_POST[monthEnd]));
 	$dayEnd = mysqli_real_escape_string($dbc, trim($_POST[dayEnd]));
-	$yearEnd = mysqli_real_escape_string($dbc, trim($_POST[yearEnd]));
+	$yearEnd = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[yearEnd])));
 	
 			// get the time and format it correctly
 			$amPm = $_POST[ampmStart];
@@ -57,9 +57,6 @@ if(isset($_POST['submitButton']))
 					$minEnd = $_POST[minEnd];
 					$endTime = 'T'.$hourEndPM.':'.$minEnd.':00';
 					}
-	
-		// build the database connection with host, user, password, database
-		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 		
 		if($found['thirdParty'] == 3) {
 			//UPLOAD THE CUSTOM COURSE WITH THE CHANGED COURSETITLE
@@ -69,7 +66,7 @@ if(isset($_POST['submitButton']))
 			// talk with the database
 			$result = mysqli_query($dbc, $query) or die('your query has failed 1');
 			
-			header('Location: adminEventUpdate.php');
+			$feedback = '<p class="adminGreen">Your event has been updated. <a href="events.php">&#8617; View EVENTS Page</a></p>';
 			
 		}else{
 			// UPLOAD THE COURE COURSE AND THE THIRD PARTY COURSE WITHOUT CHANGING THE COURSETITLE
@@ -79,15 +76,27 @@ if(isset($_POST['submitButton']))
 			// talk with the database
 			$result = mysqli_query($dbc, $query) or die('your query has failed 1');
 			
+			$feedback = '<p class="adminGreen">Your event has been updated. <a href="events.php">&#8617; View EVENTS Page</a></p>';
 			
 			}
-		
-		// terminate the connection
-		mysqli_close($dbc);
-		
-		$feedback = '<p class="adminGreen">Your event has been updated. <a href="events.php">&#8617; View EVENTS Page</a></p>';
-		
 	};//end of if submit/isset
+	
+
+	if(isset($_POST['submitButton'])) {	
+	// build the query to display the current events
+	$query01 = "SELECT * FROM events WHERE id=$id";
+	
+	//communicate with the database
+	$result01 = mysqli_query($dbc, $query01) or die('The query has failed!');
+	
+	$found = NULL;
+	
+	//put what is found from the query into a variable
+	$found = mysqli_fetch_array($result01);
+	}
+	
+	// terminate the connection
+	mysqli_close($dbc);
 
 ?>
 <?php $page = admin; ?>
