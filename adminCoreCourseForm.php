@@ -93,7 +93,7 @@ require_once('header.php');
 	// terminate the connection with the database
 	mysqli_close($dbc);
 	
-	$feedback =  '<p class="adminGreen">'.$courseTitle.' is now in the directory.</p>';
+	$feedback = '<p class="adminGreen">'.$courseTitle.' is now in the directory. <a href="training.php">&#8617; View Training Page</a></p>';
 	
 	}else{
 		//let the user try again

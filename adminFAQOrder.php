@@ -38,7 +38,7 @@
 			// terminate the connection
 			mysqli_close($dbc);
 			
-			$feedback = '<p>The FAQ order has been updated. <a href="adminFAQOrder.php">Change Order</a></p>';
+			$feedback = '<p class="adminGreen">The FAQ order has been updated. <a href="faq.php">&#8617; View FAQ Page</a> &middot; <a href="adminFAQOrder.php">Change Order</a></p>';
 		
 		
 		}else{

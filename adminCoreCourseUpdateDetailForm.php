@@ -55,7 +55,9 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		$feedback =  '<p class="adminGreen">'.$courseTitle.' has been updated.</p>';
+		$feedback = '<p class="adminGreen">'.$courseTitle.' has been updated. <a href="training.php">&#8617; View Training Page</a></p>';
+			
+			
 		}
 		
 		else{
@@ -124,7 +126,7 @@ if(isset($_POST['submitButton']))
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			$feedback =  '<p class="adminGreen">'.$courseTitle.' has been updated.</p>';
+			$feedback = '<p class="adminGreen">'.$courseTitle.' has been updated. <a href="training.php">&#8617; View Training Page</a></p>';
 			
 			}else{
 				//let the user try again
@@ -257,5 +259,9 @@ if(isset($_POST['submitButton']))
   <input type="hidden" name="old_image" value="<?php echo $found['photo']; ?>">
   <button type="submit" class="btn btn-default" name="submitButton">Update <?php echo $found['courseTitle']; ?></button>
 </form>
+
+<?php //WE'RE DONE SO HANG UP
+mysqli_close($dbc);
+?>
 
 <?php require_once('footer.php'); ?>

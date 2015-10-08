@@ -55,7 +55,7 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		$feedback =  '<p class="adminGreen">'.$courseTitle.' has been updated.</p>';
+		$feedback = '<p class="adminGreen">'.$courseTitle.' has been updated. <a href="training.php">&#8617; View Training Page</a></p>';
 		}
 		
 		else{
@@ -124,7 +124,7 @@ if(isset($_POST['submitButton']))
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			$feedback =  '<p class="adminGreen">'.$courseTitle.' has been updated.</p>';
+			$feedback = '<p class="adminGreen">'.$courseTitle.' has been updated. <a href="training.php">&#8617; View Training Page</a></p>';
 			
 			}else{
 				//let the user try again

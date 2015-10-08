@@ -24,8 +24,8 @@ require_once('header.php');
 	
 	// terminate the connection with the database
 	mysqli_close($dbc);
-
-	$feedback = '<p class="adminGreen">Your question has been added.</p>';
+	
+	$feedback = '<p class="adminGreen">Your question has been added. <a href="faq.php">&#8617; View FAQ Page</a></p>';
 	
 	}else{
 	

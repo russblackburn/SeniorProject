@@ -42,7 +42,7 @@ if(isset($_POST['submitButton'])){
 	// terminate the connection
 	mysqli_close($dbc);
 	
-	$feedback2 =  '<p class="adminGreen">The Exercise page has been updated </p>';
+	$feedback = '<p class="adminGreen">The Exercise page has been updated. <a href="exercises.php">&#8617; View EXERCISE Page</a></p>';
 
 }
 
@@ -55,7 +55,6 @@ if(isset($_POST['submitButton'])){
 <hr>
 
 <?php echo $feedback;?>
-<?php echo $feedback2;?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_exercises">
 
