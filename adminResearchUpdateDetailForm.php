@@ -48,7 +48,7 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		header('Location: adminResearchUpdateText.php');
+		$feedback = '<p class="adminGreen">'.$researchTitle.' has been updated. <a href="research.php">&#8617; View RESEARCH Page</a> &middot; <a href="adminResearchUpdateText.php">Update Research</a></p>';
 		}
 		
 		else{
@@ -117,7 +117,7 @@ if(isset($_POST['submitButton']))
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			$feedback =  '<p class="adminGreen">'.$researchTitle.' has been updated.</p>';
+			$feedback = '<p class="adminGreen">'.$researchTitle.' has been updated. <a href="research.php">&#8617; View RESEARCH Page</a> &middot; <a href="adminResearchUpdateText.php">Update Research</a></p>';
 			
 			}else{
 				//let the user try again
