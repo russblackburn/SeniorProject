@@ -9,37 +9,23 @@
 	
 	//BUILD THE DATABASE CONNECTION WITH host, user, pass, database
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
-	
-	//BUILD THE QUERY
-	$query = "SELECT * FROM photoGallery WHERE id=$photo_id";
-
-	//TRY AND TALK TO THE DB
-	$result = mysqli_query($dbc, $query) or die('query failed');
-	
-	//put what is found from the query into a variable
-	$found = mysqli_fetch_array($result);
 
 	if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
 	$id = $_POST[id];
-	$photoDescription = mysqli_real_escape_string($dbc, trim($_POST[photoDescription]));
+	$photoDescription = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[photoDescription])));
 	$photo = $_POST[photo];
 	$old_image = $_POST[old_image];
 	$image_name = 'newPhoto';
 	
 	if($_FILES['photo']['size'] == 0){
-		// build the database connection with host, user, password, database
-		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 		
 		//build the query
 		$query = "UPDATE photoGallery SET photoDescription='$photoDescription' WHERE id=$id";
 		
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
-		
-		// terminate the connection
-		mysqli_close($dbc);
 		
 		$feedback = '<p class="adminGreen">The photo has been updated. <a href="photos.php">&#8617; View PHOTOS Page</a></p>';
 		}
@@ -98,18 +84,12 @@
 				@unlink('images/gallery/photo/photo/'.$old_image);
 				
 			//upload the information to the database since all photo conditions are met and true
-			
-			// build the database connection with host, user, password, database
-			$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 			 
 			 //build the query
 		$query = "UPDATE photoGallery SET photoDescription='$photoDescription', photo='$filename' WHERE id=$id ";
 			
 			// communicate the query with the database
 			$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
-			
-			// terminate the connection with the database
-			mysqli_close($dbc);
 			
 			$feedback = '<p class="adminGreen">The photo has been updated. <a href="photos.php">&#8617; View PHOTOS Page</a></p>';
 			
@@ -120,6 +100,18 @@
 			}//end of else statement
 	
 	};//end of if submit/isset
+	
+	//BUILD THE QUERY
+	$query01 = "SELECT * FROM photoGallery WHERE id=$photo_id";
+
+	//TRY AND TALK TO THE DB
+	$result01 = mysqli_query($dbc, $query01) or die('query failed');
+	
+	//put what is found from the query into a variable
+	$found = mysqli_fetch_array($result01);
+	
+	// terminate the connection with the database
+	mysqli_close($dbc);
 
 ?>
 <?php $page = admin; ?>
@@ -131,15 +123,21 @@
 
 <hr>
 
-<?php echo $feedback;?>
-<?php echo $feedback2;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
+<?php
+$feedback2 = stripslashes($feedback2);
+echo $feedback2;
+?>
 
 <h3>Update the Photo</h3>
 
 
 <label for="oldImage">Old Image</label>
 <div class="row">
-<img class="col-xs-12 col-sm-4" src="images/gallery/photo/photo/<?php echo $found['photo'];?>">
+<img class="col-xs-12 col-sm-6 col-md-4" src="images/gallery/photo/photo/<?php echo $found['photo'];?>">
 </div>
 
 <br>

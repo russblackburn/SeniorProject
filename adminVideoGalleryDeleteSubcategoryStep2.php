@@ -77,7 +77,7 @@
 <?php
 //DISPLAY WHAT WE FOUND
 echo '<div class="row">';
-echo '<img class="col-xs-12 col-sm-4" src="images/gallery/video/subcategory/'.$found['photo'].'">';
+echo '<img class="col-xs-12 col-sm-6 col-md-4" src="images/gallery/video/subcategory/'.$found['photo'].'">';
 echo '</div>';
 echo '<h2>'.$found['subcategory']. '</h2>';
 

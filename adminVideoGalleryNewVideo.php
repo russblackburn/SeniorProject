@@ -49,7 +49,11 @@ require_once('header.php');
 
 <hr>
 
-<?php echo $feedback;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
+
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_video">
 

@@ -20,7 +20,7 @@ if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
 	$id = $_POST[id];
-	$subcategory = mysqli_real_escape_string($dbc, trim($_POST[subcategory]));
+	$subcategory = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[subcategory])));
 	$photo = $_POST[photo];
 	$image_name = 'newPhotoSubcategory';
 	$old_image = $_POST[old_image];
@@ -125,8 +125,14 @@ if(isset($_POST['submitButton']))
 
 <hr>
 
-<?php echo $feedback;?>
-<?php echo $feedback2;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
+<?php
+$feedback2 = stripslashes($feedback2);
+echo $feedback2;
+?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_subcategory">
 

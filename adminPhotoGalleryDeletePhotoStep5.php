@@ -57,7 +57,7 @@
 
 <label for="oldImage">Photo</label>
 <div class="row">
-<img class="paddingBottom col-xs-12 col-sm-4" src="images/gallery/photo/photo/<?php echo $found['photo'];?>">
+<img class="paddingBottom col-xs-12 col-sm-6 col-md-4" src="images/gallery/photo/photo/<?php echo $found['photo'];?>">
 </div>
 
 

@@ -20,7 +20,7 @@ if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
 	$id = $_POST[id];
-	$category = mysqli_real_escape_string($dbc, trim($_POST[category]));
+	$category = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[category])));
 	$photo = $_POST[photo];
 	$image_name = 'newPhotoCategory';
 	$old_image = $_POST[old_image];
