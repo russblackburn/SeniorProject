@@ -10,17 +10,17 @@ require_once('header.php');
 	if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
-	$researchTitle = mysqli_real_escape_string($dbc, trim($_POST[researchTitle]));
-	$paragraph1 = mysqli_real_escape_string($dbc, trim($_POST[paragraph1]));
-	$paragraph2 = mysqli_real_escape_string($dbc, trim($_POST[paragraph2]));
-	$paragraph3 = mysqli_real_escape_string($dbc, trim($_POST[paragraph3]));
-	$paragraph4 = mysqli_real_escape_string($dbc, trim($_POST[paragraph4]));
-	$paragraph5 = mysqli_real_escape_string($dbc, trim($_POST[paragraph5]));
-	$paragraph6 = mysqli_real_escape_string($dbc, trim($_POST[paragraph6]));
-	$paragraph7 = mysqli_real_escape_string($dbc, trim($_POST[paragraph7]));
-	$paragraph8 = mysqli_real_escape_string($dbc, trim($_POST[paragraph8]));
-	$paragraph9 = mysqli_real_escape_string($dbc, trim($_POST[paragraph9]));
-	$paragraph10 = mysqli_real_escape_string($dbc, trim($_POST[paragraph10]));
+	$researchTitle = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[researchTitle])));
+	$paragraph1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph1])));
+	$paragraph2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph2])));
+	$paragraph3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph3])));
+	$paragraph4 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph4])));
+	$paragraph5 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph5])));
+	$paragraph6 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph6])));
+	$paragraph7 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph7])));
+	$paragraph8 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph8])));
+	$paragraph9 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph9])));
+	$paragraph10 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph10])));
 	$hide = 'F';
 	$photo = $_POST[photo];
 	$image_name = 'newResearch';
@@ -99,8 +99,14 @@ require_once('header.php');
 
 <hr>
 
-<?php echo $feedback;?>
-<?php echo $feedback2;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
+<?php
+$feedback2 = stripslashes($feedback2);
+echo $feedback2;
+?>
 
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_research">
