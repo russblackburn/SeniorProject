@@ -85,9 +85,9 @@ require_once('header.php');
 		// terminate the connection with the database
 		mysqli_close($dbc);
 		
+		$feedback = '<p class="adminGreen">You have added a Core Course event to the calendar. <a href="events.php">&#8617; View EVENTS Page</a></p>';
+		
 	};//end of if submit/isset
-	
-	
 	
 	
 	// upload a third party course event
@@ -154,6 +154,8 @@ require_once('header.php');
 		// terminate the connection with the database
 		mysqli_close($dbc);
 		
+		$feedback = '<p class="adminGreen">You have added a Third Party event to the calendar. <a href="events.php">&#8617; View EVENTS Page</a></p>';
+		
 	};//end of if submit/isset
 	
 	
@@ -209,6 +211,8 @@ require_once('header.php');
 		// terminate the connection with the database
 		mysqli_close($dbc);
 		
+		$feedback = '<p class="adminGreen">You have added a custom event to the calendar. <a href="events.php">&#8617; View EVENTS Page</a></p>';
+		
 	};//end of if submit/isset
 	?>
 
@@ -220,7 +224,10 @@ require_once('header.php');
 
 <hr>
 
-<?php echo $feedback;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_event">
   

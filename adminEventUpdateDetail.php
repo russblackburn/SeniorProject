@@ -79,12 +79,14 @@ if(isset($_POST['submitButton']))
 			// talk with the database
 			$result = mysqli_query($dbc, $query) or die('your query has failed 1');
 			
-			header('Location: adminEventUpdate.php');
 			
 			}
 		
 		// terminate the connection
 		mysqli_close($dbc);
+		
+		$feedback = '<p class="adminGreen">Your event has been updated. <a href="events.php">&#8617; View EVENTS Page</a></p>';
+		
 	};//end of if submit/isset
 
 ?>
@@ -94,6 +96,11 @@ if(isset($_POST['submitButton']))
 <h1>Update <?php echo $found['courseTitle'];?></h1>
 
 <hr>
+
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_event">
 
