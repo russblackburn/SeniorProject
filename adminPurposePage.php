@@ -45,13 +45,10 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		$feedback =  '<p class="adminGreen">The purpose has been updated.</p>';
+		$feedback = '<p class="adminGreen">The purpose has been updated. <a href="purpose.php">&#8617; View Purpose Page</a></p>';
 		}
 		
-		else{
-			//delete the photo associated with the old slider
-			@unlink('images/purpose/'.$old_image);
-			
+		else{		
 			//------original photo upload code starts here-------------------------------------------------------
 			//--------make dynamic photo path and name-------------
 			$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
@@ -99,6 +96,9 @@ if(isset($_POST['submitButton']))
 				move_uploaded_file($tmp_name, "$filepath$filename");
 				@unlink($_FILES['photo']['tmp_name']);
 				
+				//delete the photo associated with the old slider
+				@unlink('images/purpose/'.$old_image);
+				
 			//upload the information to the database since all photo conditions are met and true
 			
 			// build the database connection with host, user, password, database
@@ -113,7 +113,7 @@ if(isset($_POST['submitButton']))
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			$feedback =  '<p class="adminGreen">The purpose has been updated.</p>';
+			$feedback = '<p class="adminGreen">The purpose has been updated. <a href="purpose.php">&#8617; View Purpose Page</a></p>';
 			
 			}else{
 				//let the user try again

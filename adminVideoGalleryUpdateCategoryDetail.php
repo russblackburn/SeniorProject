@@ -42,9 +42,6 @@ if(isset($_POST['submitButton']))
 		}
 		
 		else{
-			//delete the photo associated with the old slider
-			@unlink('images/gallery/video/category/'.$old_image);
-			
 			//------original photo upload code starts here-------------------------------------------------------
 			//--------make dynamic photo path and name-------------
 			$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
@@ -55,13 +52,24 @@ if(isset($_POST['submitButton']))
 			$validImage = true;
 			//check to see if the image is missing
 			if($_FILES['photo']['size'] == 0){
-				echo 'You did not select an image!';
+				$feedback =  '<p class="adminRed">You did not select an image!</p>';
 				$validImage = false;
 				};
 				
 			//check to see if the image size is to large
 			if($_FILES['photo']['size'] > 1000000){
-				echo 'Your image is to large, it must be smaller than 1MB.';
+				$feedback =  '<p class="adminRed">Your image is to large, it must be smaller than 1MB.</p>';
+				$validImage = false;
+				};
+				
+			//check to see if the image dimensions match 715 x 572
+			$filetmpname=$_FILES['photo']['tmp_name'];
+			$dimension=getimagesize($filetmpname);
+			$width = $dimension[0];
+			$height = $dimension[1];
+
+			if ($width != 715 && $height != 572){
+				$feedback =  '<p class="adminRed">Upload failed, the image needs to be 715w X 572h.</p>';
 				$validImage = false;
 				};
 				
@@ -70,7 +78,7 @@ if(isset($_POST['submitButton']))
 				//that must be a proper format
 				}else{
 					//tell the user the file type is not correct
-					echo 'That is not the correct file format!';
+					$feedback =  '<p class="adminRed">That is not the correct file format!</p>';
 					$validImage = false;
 					};
 					
@@ -80,6 +88,9 @@ if(isset($_POST['submitButton']))
 				$tmp_name = $_FILES['photo']['tmp_name'];
 				move_uploaded_file($tmp_name, "$filepath$filename");
 				@unlink($_FILES['photo']['tmp_name']);
+				
+				//delete the photo associated with the old slider
+				@unlink('images/gallery/video/category/'.$old_image);
 				
 			//upload the information to the database since all photo conditions are met and true
 			
@@ -100,7 +111,7 @@ if(isset($_POST['submitButton']))
 			
 			}else{
 				//let the user try again
-				echo ' Please Try Again';
+				$feedback2 =  '<p class="adminRed">Please Try Again</p>';
 				};//end of upload the file if everything is ok
 			}//end of else statement
 	
@@ -114,6 +125,9 @@ if(isset($_POST['submitButton']))
 
 <hr>
 
+<?php echo $feedback;?>
+<?php echo $feedback2;?>
+
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_category">
 
 <div class="form-group">
@@ -124,7 +138,7 @@ if(isset($_POST['submitButton']))
   <div class="form-group">
     <label for="exampleInputFile">New Category Image</label>
     <input type="file" id="slideImage" name="photo">
-    <p class="help-block">Image size must be (width and height)</p>
+    <p class="help-block">Image size must be (715 Width X 572 Height)</p>
   </div>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
