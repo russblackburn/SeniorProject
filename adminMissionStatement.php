@@ -32,8 +32,7 @@ if(isset($_POST['submitButton'])){
 	// terminate the connection
 	mysqli_close($dbc);
 	
-	header('Location: adminLanding.php');
-
+	$feedback = '<p class="adminGreen">The Mission Statement has been updated. <a href="index.php">&#8617; View HOME Page</a></p>';
 }
 
 ?>
@@ -43,6 +42,8 @@ if(isset($_POST['submitButton'])){
 <h1>Update Mission Statement</h1>
 
 <hr>
+
+<?php echo $feedback;?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_mission_statement">
   

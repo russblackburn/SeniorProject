@@ -38,8 +38,7 @@
 			// terminate the connection
 			mysqli_close($dbc);
 			
-			$feedback = '<p>The personnel order has been updated. <a href="adminPersonnelOrder.php">Change Order</a></p>';
-		
+			$feedback = '<p class="adminGreen">The Priority Has Been Updated. <a href="personnel.php">&#8617; View Personnel Page</a> &middot; <a href="adminPersonnelOrder.php">Change Order</a></p>';
 		
 		}else{
 			//An account already exists for this username, so display an error message

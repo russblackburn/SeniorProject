@@ -39,13 +39,10 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		header('Location: adminLanding.php');
+		$feedback = '<p class="adminGreen">Slide 3 has been updated. <a href="index.php">&#8617; View HOME Page</a></p>';
 		}
 		
 		else{
-			//delete the photo associated with the old slider
-			@unlink('images/home/'.$old_image);
-			
 			//------original photo upload code starts here-------------------------------------------------------
 			//--------make dynamic photo path and name-------------
 			$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
@@ -56,13 +53,24 @@ if(isset($_POST['submitButton']))
 			$validImage = true;
 			//check to see if the image is missing
 			if($_FILES['photo']['size'] == 0){
-				echo 'You did not select an image!';
+				$feedback =  '<p class="adminRed">You did not select an image!</p>';
 				$validImage = false;
 				};
 				
 			//check to see if the image size is to large
 			if($_FILES['photo']['size'] > 1000000){
-				echo 'Your image is to large, it must be smaller than 1MB.';
+				$feedback =  '<p class="adminRed">Your image is to large, it must be smaller than 1MB.</p>';
+				$validImage = false;
+				};
+				
+			//check to see if the image dimensions match 1142 x 248
+			$filetmpname=$_FILES['photo']['tmp_name'];
+			$dimension=getimagesize($filetmpname);
+			$width = $dimension[0];
+			$height = $dimension[1];
+
+			if ($width != 1142 && $height != 248){
+				$feedback =  '<p class="adminRed">Upload failed, the image needs to be 1142w X 248h.</p>';
 				$validImage = false;
 				};
 				
@@ -71,7 +79,7 @@ if(isset($_POST['submitButton']))
 				//that must be a proper format
 				}else{
 					//tell the user the file type is not correct
-					echo 'That is not the correct file format!';
+					$feedback =  '<p class="adminRed">That is not the correct file format!</p>';
 					$validImage = false;
 					};
 					
@@ -81,6 +89,9 @@ if(isset($_POST['submitButton']))
 				$tmp_name = $_FILES['photo']['tmp_name'];
 				move_uploaded_file($tmp_name, "$filepath$filename");
 				@unlink($_FILES['photo']['tmp_name']);
+				
+				//delete the photo associated with the old slider
+				@unlink('images/home/'.$old_image);
 				
 			//upload the information to the database since all photo conditions are met and true
 			
@@ -96,12 +107,11 @@ if(isset($_POST['submitButton']))
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			// redirect to the adminLanind page
-			header('Location: adminLanding.php');
+			$feedback = '<p class="adminGreen">Slide 3 has been updated. <a href="index.php">&#8617; View HOME Page</a></p>';
 			
 			}else{
 				//let the user try again
-				echo ' Please Try Again';
+				$feedback2 =  '<p class="adminRed">Please Try Again</p>';
 				};//end of upload the file if everything is ok
 			}//end of else statement
 	
@@ -114,6 +124,9 @@ if(isset($_POST['submitButton']))
 <h1>Update Slide 1</h1>
 
 <hr>
+
+<?php echo $feedback;?>
+<?php echo $feedback2;?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_slider_one">
 
@@ -140,7 +153,7 @@ if(isset($_POST['submitButton']))
   <div class="form-group">
     <label for="exampleInputFile">Slide Image</label>
     <input type="file" id="slideImage" name="photo">
-    <p class="help-block">Image size must be (width and height)</p>
+    <p class="help-block">Image size must be (1142 Width X 248 Height)</p>
   </div>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">

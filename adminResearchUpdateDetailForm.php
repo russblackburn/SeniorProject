@@ -52,8 +52,6 @@ if(isset($_POST['submitButton']))
 		}
 		
 		else{
-			//delete the photo associated with the old slider
-			@unlink('images/research/'.$old_image);
 			
 			//------original photo upload code starts here-------------------------------------------------------
 			//--------make dynamic photo path and name-------------
@@ -101,6 +99,9 @@ if(isset($_POST['submitButton']))
 				$tmp_name = $_FILES['photo']['tmp_name'];
 				move_uploaded_file($tmp_name, "$filepath$filename");
 				@unlink($_FILES['photo']['tmp_name']);
+				
+				//delete the photo associated with the old slider
+				@unlink('images/research/'.$old_image);
 				
 			//upload the information to the database since all photo conditions are met and true
 			

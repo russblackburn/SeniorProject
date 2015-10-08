@@ -38,6 +38,7 @@ if(isset($_POST['submitButton']))
 	$old_image = $_POST[old_image];
 	$image_name = 'personnel';
 	
+	
 	if($_FILES['photo']['size'] == 0){
 		// build the database connection with host, user, password, database
 		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
@@ -55,9 +56,6 @@ if(isset($_POST['submitButton']))
 		}
 		
 		else{
-			//delete the photo associated with the old slider
-			@unlink('images/personnel/'.$old_image);
-			
 			//------original photo upload code starts here-------------------------------------------------------
 			//--------make dynamic photo path and name-------------
 			$ext = pathinfo($_FILES['photo']['name'], PATHINFO_EXTENSION);
@@ -104,6 +102,8 @@ if(isset($_POST['submitButton']))
 				$tmp_name = $_FILES['photo']['tmp_name'];
 				move_uploaded_file($tmp_name, "$filepath$filename");
 				@unlink($_FILES['photo']['tmp_name']);
+				//delete the photo associated with the old slider
+				@unlink('images/personnel/'.$old_image);
 				
 			//upload the information to the database since all photo conditions are met and true
 			
