@@ -33,6 +33,13 @@ if(isset($_POST['submitButton']))
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
 		
+		// UPDATE THE EVENTS TO SHOW AS HIDDEN OR VISIBLE
+			//build the query
+			$query1 = "UPDATE events SET hide='$hide' WHERE courseID=$id AND thirdParty='2'";
+			
+			// talk with the database
+			$result1 = mysqli_query($dbc, $query1) or die('your query has failed 2');
+		
 		// terminate the connection
 		mysqli_close($dbc);
 		

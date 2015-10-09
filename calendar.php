@@ -5,7 +5,7 @@ require_once('adminVariables.php');
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 	
 	//BUILD THE QUERY
-	$query = "SELECT * FROM events";
+	$query = "SELECT * FROM events WHERE hide='F'";
 
 	//TRY AND TALK TO THE DB
 	$result = mysqli_query($dbc, $query) or die('query failed');
