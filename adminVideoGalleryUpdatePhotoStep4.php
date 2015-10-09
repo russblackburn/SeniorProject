@@ -9,15 +9,6 @@
 	
 	//BUILD THE DATABASE CONNECTION WITH host, user, pass, database
 	$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
-	
-	//BUILD THE QUERY
-	$query = "SELECT * FROM videoGallery WHERE id=$photo_id";
-
-	//TRY AND TALK TO THE DB
-	$result = mysqli_query($dbc, $query) or die('query failed');
-	
-	//put what is found from the query into a variable
-	$found = mysqli_fetch_array($result);
 
 	if(isset($_POST['submitButton']))
 	{
@@ -31,9 +22,6 @@
 	$id = $_POST[id];
 	$videoLink = mysqli_real_escape_string($dbc, trim($newstring));
 	$videoDescription = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[videoDescription])));
-	
-		// build the database connection with host, user, password, database
-		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 		
 		//build the query
 		$query = "UPDATE videoGallery SET videoLink='$videoLink', videoDescription='$videoDescription' WHERE id=$id";
@@ -41,12 +29,21 @@
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
 		
-		// terminate the connection
-		mysqli_close($dbc);
-		
 		$feedback = '<p class="adminGreen">The video has been updated. <a href="videos.php">&#8617; View VIDEOS Page</a></p>';
 	
 	};//end of if submit/isset
+	
+	//BUILD THE QUERY
+	$query01 = "SELECT * FROM videoGallery WHERE id=$photo_id";
+
+	//TRY AND TALK TO THE DB
+	$result01 = mysqli_query($dbc, $query01) or die('query failed');
+	
+	//put what is found from the query into a variable
+	$found = mysqli_fetch_array($result01);
+	
+	// terminate the connection
+	mysqli_close($dbc);
 
 ?>
 <?php $page = admin; ?>

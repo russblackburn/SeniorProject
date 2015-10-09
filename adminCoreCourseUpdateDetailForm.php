@@ -41,6 +41,12 @@ if(isset($_POST['submitButton']))
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
 		
+				// UPDATE THE ASSOCIATED EVENTS SO THAT THE NEW COURSETITLE MATCHES ON THE EVENTS PAGE
+					$query03 = "UPDATE events SET courseTitle='$courseTitle' WHERE courseID=$id AND thirdParty='1'";
+					// talk with the database
+					$result03 = mysqli_query($dbc, $query03) or die('your query has failed 1');
+				
+		
 		$feedback = '<p class="adminGreen">'.$courseTitle.' has been updated. <a href="training.php">&#8617; View Training Page</a></p>';
 			
 			
@@ -105,6 +111,11 @@ if(isset($_POST['submitButton']))
 			
 			// communicate the query with the database
 			$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
+			
+					// UPDATE THE ASSOCIATED EVENTS SO THAT THE NEW COURSETITLE MATCHES ON THE EVENTS PAGE
+						$query03 = "UPDATE events SET courseTitle='$courseTitle' WHERE courseID=$id AND thirdParty='1'";
+						// talk with the database
+						$result03 = mysqli_query($dbc, $query03) or die('your query has failed 1');
 			
 			$feedback = '<p class="adminGreen">'.$courseTitle.' has been updated. <a href="training.php">&#8617; View Training Page</a></p>';
 			

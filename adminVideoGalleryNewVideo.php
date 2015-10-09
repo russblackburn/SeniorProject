@@ -24,7 +24,7 @@ require_once('header.php');
 		
 	// load the data from the form
 	$videoLink = mysqli_real_escape_string($dbc, trim($newstring));
-	$videoDescription = mysqli_real_escape_string($dbc, trim($_POST[videoDescription]));
+	$videoDescription = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[videoDescription])));
 	$subcategoryID = $_POST[subcategoryID];
 		
 	//upload the information to the database 

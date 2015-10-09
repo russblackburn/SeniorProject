@@ -22,6 +22,13 @@
 		
 		@unlink($_POST['photo']);
 		@unlink($_POST['photo2']);
+		
+		// DELETE ALL OF THE EVENTS THAT ARE ASSOCIATED WITH THE SELECTED COURSE
+			// BUILD A SELECT QUERY
+			$query1 = "DELETE FROM events WHERE courseID=$_POST[id] AND thirdParty='2'";
+			
+			//TRY AND DELETE THE RECORD
+			$result1 = mysqli_query($dbc, $query1) or die('delete query failed');
 	
 		
 		//REDIRECT
@@ -52,7 +59,7 @@
 ?>
 
 <h1>Delete Third Party Course Confirmation</h1>
-<em>(This will also delete the courses associated slider)</em>
+<em>(This will also delete the courses associated slider and events)</em>
 
 <hr>
 

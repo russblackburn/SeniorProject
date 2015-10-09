@@ -7,44 +7,33 @@ $course_id = $_GET[id];
 // build the database connection with host, user, password, database
 $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 
-// build the query to display the current mission statement
-$query = "SELECT * FROM thirdPartyCourse WHERE id=$course_id";
-
-//communicate with the database
-$result = mysqli_query($dbc, $query) or die('The query has failed!');
-
-//put what is found from the query into a variable
-$found = mysqli_fetch_array($result);
-
 if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
 	$id = $_POST[id];
-	$courseTitle = mysqli_real_escape_string($dbc, trim($_POST[courseTitle]));
-	$paragraph1 = mysqli_real_escape_string($dbc, trim($_POST[paragraph1]));
-	$paragraph2 = mysqli_real_escape_string($dbc, trim($_POST[paragraph2]));
-	$paragraph3 = mysqli_real_escape_string($dbc, trim($_POST[paragraph3]));
-	$paragraph4 = mysqli_real_escape_string($dbc, trim($_POST[paragraph4]));
-	$paragraph5 = mysqli_real_escape_string($dbc, trim($_POST[paragraph5]));
-	$paragraph6 = mysqli_real_escape_string($dbc, trim($_POST[paragraph6]));
-	$paragraph7 = mysqli_real_escape_string($dbc, trim($_POST[paragraph7]));
-	$paragraph8 = mysqli_real_escape_string($dbc, trim($_POST[paragraph8]));
-	$paragraph9 = mysqli_real_escape_string($dbc, trim($_POST[paragraph9]));
-	$paragraph10 = mysqli_real_escape_string($dbc, trim($_POST[paragraph10]));
-	$registrationInstructions = mysqli_real_escape_string($dbc, trim($_POST[registrationInstructions]));
-	$linkTitle1 = mysqli_real_escape_string($dbc, trim($_POST[linkTitle1]));
-	$link1 = mysqli_real_escape_string($dbc, trim($_POST[link1]));
-	$linkTitle2 = mysqli_real_escape_string($dbc, trim($_POST[linkTitle2]));
-	$link2 = mysqli_real_escape_string($dbc, trim($_POST[link2]));
-	$linkTitle3 = mysqli_real_escape_string($dbc, trim($_POST[linkTitle3]));
-	$link3 = mysqli_real_escape_string($dbc, trim($_POST[link3]));
+	$courseTitle = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[courseTitle])));
+	$paragraph1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph1])));
+	$paragraph2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph2])));
+	$paragraph3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph3])));
+	$paragraph4 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph4])));
+	$paragraph5 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph5])));
+	$paragraph6 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph6])));
+	$paragraph7 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph7])));
+	$paragraph8 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph8])));
+	$paragraph9 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph9])));
+	$paragraph10 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph10])));
+	$registrationInstructions = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[registrationInstructions])));
+	$linkTitle1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle1])));
+	$link1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link1])));
+	$linkTitle2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle2])));
+	$link2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link2])));
+	$linkTitle3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle3])));
+	$link3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link3])));
 	$photo = $_POST[photo];
 	$image_name = 'thirdPartyCourse';
 	$old_image = $_POST[old_image];
 	
 	if($_FILES['photo']['size'] == 0){
-		// build the database connection with host, user, password, database
-		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 		
 		//build the query
 		$query = "UPDATE thirdPartyCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3' WHERE id=$id ";
@@ -52,8 +41,10 @@ if(isset($_POST['submitButton']))
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
 		
-		// terminate the connection
-		mysqli_close($dbc);
+			// UPDATE THE ASSOCIATED EVENTS SO THAT THE NEW COURSETITLE MATCHES ON THE EVENTS PAGE
+						$query03 = "UPDATE events SET courseTitle='$courseTitle' WHERE courseID=$id AND thirdParty='2'";
+						// talk with the database
+						$result03 = mysqli_query($dbc, $query03) or die('your query has failed 1');
 		
 		$feedback = '<p class="adminGreen">'.$courseTitle.' has been updated. <a href="training.php">&#8617; View Training Page</a></p>';
 		}
@@ -111,9 +102,6 @@ if(isset($_POST['submitButton']))
 				@unlink('images/training/course/'.$old_image);
 				
 			//upload the information to the database since all photo conditions are met and true
-			
-			// build the database connection with host, user, password, database
-			$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 			 
 			 //build the query
 		$query = "UPDATE thirdPartyCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3', photo='$filename' WHERE id=$id ";
@@ -121,8 +109,10 @@ if(isset($_POST['submitButton']))
 			// communicate the query with the database
 			$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
 			
-			// terminate the connection with the database
-			mysqli_close($dbc);
+				// UPDATE THE ASSOCIATED EVENTS SO THAT THE NEW COURSETITLE MATCHES ON THE EVENTS PAGE
+						$query03 = "UPDATE events SET courseTitle='$courseTitle' WHERE courseID=$id AND thirdParty='2'";
+						// talk with the database
+						$result03 = mysqli_query($dbc, $query03) or die('your query has failed 1');
 			
 			$feedback = '<p class="adminGreen">'.$courseTitle.' has been updated. <a href="training.php">&#8617; View Training Page</a></p>';
 			
@@ -133,6 +123,18 @@ if(isset($_POST['submitButton']))
 			}//end of else statement
 	
 	};//end of if submit/isset
+	
+	// build the query to display the current mission statement
+	$query01 = "SELECT * FROM thirdPartyCourse WHERE id=$course_id";
+	
+	//communicate with the database
+	$result01 = mysqli_query($dbc, $query01) or die('The query has failed!');
+	
+	//put what is found from the query into a variable
+	$found = mysqli_fetch_array($result01);
+	
+	// terminate the connection with the database
+	mysqli_close($dbc);
 
 ?>
 <?php $page = admin; ?>
@@ -142,8 +144,14 @@ if(isset($_POST['submitButton']))
 
 <hr>
 
-<?php echo $feedback;?>
-<?php echo $feedback2;?>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
+<?php
+$feedback2 = stripslashes($feedback2);
+echo $feedback2;
+?>
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_research">
 
