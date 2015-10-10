@@ -33,6 +33,11 @@ $(document).ready(function() {
     // page is now ready, initialize the calendar...
 
     $('#calendar').fullCalendar({
+		header: {
+				left: 'prev,next today',
+				center: 'title',
+				right: 'month,agendaWeek'
+		},
         // put your options and callbacks here
 		eventLimit: true, // allow "more" link when too many events
 		events: <?php echo json_encode($return_arr); ?>
