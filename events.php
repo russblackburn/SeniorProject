@@ -23,12 +23,18 @@ require_once('adminVariables.php');
 	$result01 = mysqli_query($dbc, $query01) or die('query failed');
 ?>
 
+<?php
+// GET THE CURRENT DATE
+date_default_timezone_set('America/Denver');
+$date = date('Ymd');
+?>
+
 <ul class="list-group">
 <?php
 $i = 0;// keep track of the count
 	while($row01 = mysqli_fetch_array($result01)){
 		if ($i < 8){// set the number of events that will show on the events page
-			if ($row01['dateOrder'] >= '20151010'){// check the database date against the current date
+			if ($row01['dateOrder'] >= $date){// check the database date against the current date
 				if($row01['url'] == NULL){
 						echo '<div class="list-group-item">';
 					}
@@ -141,7 +147,7 @@ $i = 0;// keep track of the count
 	$result01 = mysqli_query($dbc, $query01) or die('query failed');
 	
 	while($row01 = mysqli_fetch_array($result01)){
-		if ($row01['dateOrder'] >= '20151010'){// check the database date against the current date
+		if ($row01['dateOrder'] >= $date){// check the database date against the current date
 			if($row01['url'] == NULL){
 					echo '<div class="list-group-item">';
 				}
