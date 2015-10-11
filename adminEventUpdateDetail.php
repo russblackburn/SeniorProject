@@ -15,6 +15,12 @@ $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connecti
 	
 	//put what is found from the query into a variable
 	$found = mysqli_fetch_array($result);
+	
+	// function to set the date to keep items in order when displayed on the events page
+	function DateOrder($month, $day, $year){
+			$ordered = $year.$month.$day;
+			return $ordered;
+		}
 
 if(isset($_POST['submitButton']))
 	{
@@ -57,11 +63,14 @@ if(isset($_POST['submitButton']))
 					$minEnd = $_POST[minEnd];
 					$endTime = 'T'.$hourEndPM.':'.$minEnd.':00';
 					}
+					
+			// put the date into the correct order for displaying in the correct order on the events page
+			$dateOrder = DateOrder($monthStart, $dayStart, $yearStart);
 		
 		if($found['thirdParty'] == 3) {
 			//UPLOAD THE CUSTOM COURSE WITH THE CHANGED COURSETITLE
 			//build the query
-			$query = "UPDATE events SET courseTitle='$courseTitle', monthStart='$monthStart', dayStart='$dayStart', yearStart='$yearStart', startTime='$startTime', monthEnd='$monthEnd', dayEnd='$dayEnd', yearEnd='$yearEnd', endTime='$endTime' WHERE id=$id ";
+			$query = "UPDATE events SET courseTitle='$courseTitle', monthStart='$monthStart', dayStart='$dayStart', yearStart='$yearStart', startTime='$startTime', monthEnd='$monthEnd', dayEnd='$dayEnd', yearEnd='$yearEnd', endTime='$endTime', dateOrder='$dateOrder' WHERE id=$id ";
 			
 			// talk with the database
 			$result = mysqli_query($dbc, $query) or die('your query has failed 1');
@@ -71,7 +80,7 @@ if(isset($_POST['submitButton']))
 		}else{
 			// UPLOAD THE COURE COURSE AND THE THIRD PARTY COURSE WITHOUT CHANGING THE COURSETITLE
 			//build the query
-		$query = "UPDATE events SET monthStart='$monthStart', dayStart='$dayStart', yearStart='$yearStart', startTime='$startTime', monthEnd='$monthEnd', dayEnd='$dayEnd', yearEnd='$yearEnd', endTime='$endTime' WHERE id=$id ";
+		$query = "UPDATE events SET monthStart='$monthStart', dayStart='$dayStart', yearStart='$yearStart', startTime='$startTime', monthEnd='$monthEnd', dayEnd='$dayEnd', yearEnd='$yearEnd', endTime='$endTime', dateOrder='$dateOrder' WHERE id=$id ";
 		
 			// talk with the database
 			$result = mysqli_query($dbc, $query) or die('your query has failed 1');

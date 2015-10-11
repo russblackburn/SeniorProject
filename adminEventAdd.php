@@ -20,6 +20,13 @@ require_once('header.php');
 	$result1 = mysqli_query($dbc, $query1) or die('The query has failed! 0');
 	
 	
+	// function to set the date to keep items in order when displayed on the events page
+	function DateOrder($month, $day, $year){
+			$ordered = $year.$month.$day;
+			return $ordered;
+		}
+	
+	
 	
 	// upload a core course event
 	if(isset($_POST['submitButton']))
@@ -75,9 +82,12 @@ require_once('header.php');
 						$minEnd = $_POST[minEnd];
 						$endTime = 'T'.$hourEndPM.':'.$minEnd.':00';
 						}
+						
+				// put the date into the correct order for displaying in the correct order on the events page
+				$dateOrder = DateOrder($monthStart, $dayStart, $yearStart);
 		
 		// build the query
-		$query = "INSERT INTO events (courseTitle, monthStart, dayStart, yearStart, startTime, monthEnd, dayEnd, yearEnd, endTime, url, courseID, thirdParty)". "VALUES ('$courseTitle','$monthStart','$dayStart','$yearStart','$startTime','$monthEnd','$dayEnd','$yearEnd','$endTime','$url','$courseID','$thirdParty')";
+		$query = "INSERT INTO events (courseTitle, monthStart, dayStart, yearStart, startTime, monthEnd, dayEnd, yearEnd, endTime, url, courseID, thirdParty, dateOrder)". "VALUES ('$courseTitle','$monthStart','$dayStart','$yearStart','$startTime','$monthEnd','$dayEnd','$yearEnd','$endTime','$url','$courseID','$thirdParty','$dateOrder')";
 		
 		// communicate the query with the database
 		$result = mysqli_query($dbc, $query) or die('The databse query has failed! 2');
@@ -144,9 +154,12 @@ require_once('header.php');
 						$minEnd = $_POST[minEnd];
 						$endTime = 'T'.$hourEndPM.':'.$minEnd.':00';
 						}
+						
+				// put the date into the correct order for displaying in the correct order on the events page
+				$dateOrder = DateOrder($monthStart, $dayStart, $yearStart);
 		
 		// build the query
-		$query = "INSERT INTO events (courseTitle, monthStart, dayStart, yearStart, startTime, monthEnd, dayEnd, yearEnd, endTime, url, courseID, thirdParty)". "VALUES ('$courseTitle','$monthStart','$dayStart','$yearStart','$startTime','$monthEnd','$dayEnd','$yearEnd','$endTime','$url','$courseID','$thirdParty')";
+		$query = "INSERT INTO events (courseTitle, monthStart, dayStart, yearStart, startTime, monthEnd, dayEnd, yearEnd, endTime, url, courseID, thirdParty, dateOrder)". "VALUES ('$courseTitle','$monthStart','$dayStart','$yearStart','$startTime','$monthEnd','$dayEnd','$yearEnd','$endTime','$url','$courseID','$thirdParty','$dateOrder')";
 		
 		// communicate the query with the database
 		$result = mysqli_query($dbc, $query) or die('The databse query has failed! 2');
@@ -201,9 +214,12 @@ require_once('header.php');
 						$minEnd = $_POST[minEnd];
 						$endTime = 'T'.$hourEndPM.':'.$minEnd.':00';
 						}
+						
+				// put the date into the correct order for displaying in the correct order on the events page
+				$dateOrder = DateOrder($monthStart, $dayStart, $yearStart);
 		
 		// build the query
-		$query = "INSERT INTO events (courseTitle, monthStart, dayStart, yearStart, startTime, monthEnd, dayEnd, yearEnd, endTime, url, courseID, thirdParty)". "VALUES ('$courseTitle','$monthStart','$dayStart','$yearStart','$startTime','$monthEnd','$dayEnd','$yearEnd','$endTime','$url','$courseID','$thirdParty')";
+		$query = "INSERT INTO events (courseTitle, monthStart, dayStart, yearStart, startTime, monthEnd, dayEnd, yearEnd, endTime, url, courseID, thirdParty, dateOrder)". "VALUES ('$courseTitle','$monthStart','$dayStart','$yearStart','$startTime','$monthEnd','$dayEnd','$yearEnd','$endTime','$url','$courseID','$thirdParty','$dateOrder')";
 		
 		// communicate the query with the database
 		$result = mysqli_query($dbc, $query) or die('The databse query has failed! 2');
