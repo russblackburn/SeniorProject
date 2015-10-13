@@ -36,6 +36,8 @@ header img {
 	}
 	
 /* nav */
+
+/* delete russ' code if site works-ish*/
 .adminNav {
 	background-color: #6b96c7;
 	}
@@ -43,7 +45,7 @@ header img {
 .adminWhite {
 	color: #fff;
 	}
-	
+/* END____delete russ' code if site works-ish*/
 .adminGray {
 	color: gray;
 	}

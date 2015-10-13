@@ -1,5 +1,5 @@
 <!-- Static navbar for the admin section -->
-    <nav class="navbar navbar-default navbar-static-top adminNav">
+    <nav class="navbar navbar-default navbar-static-top">
       <div class="container">
         <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -8,14 +8,14 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class="navbar-brand" href="index.php"><span class="adminWhite">Exit Admin</span></a>
+          <a class="navbar-brand" href="index.php">Exit Admin</a>
         </div>
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
           
           	<!-- home page admin -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">Home <span class="caret"></span></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Home <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Home (Update/Hide)</li>
                 <li><a href="adminSlideOne.php">Update Slide 1</a></li>
@@ -29,7 +29,7 @@
             
             <!-- about page admin -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">About <span class="caret"></span></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Purpose (Update)</li>
                 <li><a href="adminPurposePage.php">Update Purpose</a></li>
@@ -45,7 +45,7 @@
             
             <!-- services page admin -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">Services <span class="caret"></span></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Training (Add/Update/Hide/Delete)</li>
                 <li><a href="adminCoreCourseForm.php">Add a New Core Course</a></li>
@@ -72,7 +72,7 @@
             
             <!-- events page admin -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">Events <span class="caret"></span></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Events <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Events (Add/Update/Delete)</li>
                 <li><a href="adminEventAdd.php">Add a New Event</a></li>
@@ -84,7 +84,7 @@
             
             <!-- gallery page admin -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">Gallery <span class="caret"></span></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Gallery <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Photos (Add/Update/Delete)</li>
                 <li><a href="adminPhotoGalleryNewCategory.php">Add a New Category</a></li>
@@ -117,7 +117,7 @@
             
             <!-- register admin -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">Register <span class="caret"></span></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Register (Update)</li>
                 <li><a href="adminRegisterStudent.php">Update Student Registration</a></li>
@@ -130,7 +130,7 @@
             
             <!-- FAQ page admin -->
             <li class="dropdown">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">FAQ <span class="caret"></span></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">FAQ <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">FAQ (Add/Update/Change/Delete)</li>
                 <li><a href="adminFAQAdd.php">Add a New FAQ</a></li>

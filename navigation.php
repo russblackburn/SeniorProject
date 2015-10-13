@@ -22,6 +22,7 @@
               <ul class="dropdown-menu">
                 <li class="<?php if($secondaryPage=='purpose'){echo 'active';}?>"><a href="purpose.php">Purpose</a></li>
                 <li class="<?php if($secondaryPage=='personnel'){echo 'active';}?>"><a href="personnel.php">Personnel</a></li>
+                <li role="separator" class="divider desktopHidden"></li>
               </ul>
             </li>
             <!-- end of about -->
@@ -34,6 +35,7 @@
                 <li class="<?php if($secondaryPage=='exercises'){echo 'active';}?>"><a href="exercises.php">Exercises</a></li>
                 <li class="<?php if($secondaryPage=='assessment'){echo 'active';}?>"><a href="assessment.php">Assessment</a></li>
                 <li class="<?php if($secondaryPage=='research'){echo 'active';}?>"><a href="research.php">Research</a></li>
+                <li role="separator" class="divider desktopHidden"></li>
               </ul>
             </li>
             <!-- end of services -->
@@ -49,6 +51,7 @@
                 <li class="<?php if($secondaryPage=='photos'){echo 'active';}?>"><a href="photos.php">Photos</a></li>
                 <li class="<?php if($secondaryPage=='videos'){echo 'active';}?>"><a href="videos.php">Videos</a></li>
                 <li class="<?php if($secondaryPage=='virtualTour'){echo 'active';}?>"><a href="virtualTour.php">Virtual Tour</a></li>
+                <li role="separator" class="divider desktopHidden"></li>
               </ul>
             </li>
             <!-- end of gallery -->
@@ -60,6 +63,7 @@
                 <li class="<?php if($secondaryPage=='studentRegistration'){echo 'active';}?>"><a href="studentRegistration.php">Student Registration</a></li>
                 <li class="<?php if($secondaryPage=='instructorRegistration'){echo 'active';}?>"><a href="instructorRegistration.php">Instructor Registration</a></li>
                 <li class="<?php if($secondaryPage=='requestServiceProposal'){echo 'active';}?>"><a href="requestServiceProposal.php">Request Service Proposal</a></li>
+                <li role="separator" class="divider desktopHidden"></li>
               </ul>
             </li>
             <!-- end of register -->
