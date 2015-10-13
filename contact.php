@@ -29,26 +29,27 @@
 
 
 <div class="entireForm">
-<form>
+<form method="post" action="mail/FormToEmail.php">
   <div class="form-group">
     <label for="name">Full Name</label>
-    <input type="text" class="form-control" id="name" placeholder="Jane Smith" required>
+    <input type="text" class="form-control" name="Name" id="name" placeholder="Maggie Smith" required>
   </div>
   <div class="form-group">
     <label for="email">Email address</label>
-    <input type="email" class="form-control" id="email" placeholder="Email" required>
+    <input type="email" class="form-control" name="Email" id="email" placeholder="maggies@icdp.org" required>
   </div>
   <div class="form-group">
     <label for="phoneNumber">Phone Number</label>
-    <input type="tel" class="form-control" id="phoneNumber" placeholder="8015556789">
+    <input type="tel" class="form-control" name="Phone_Number" id="phoneNumber" placeholder="801-555-6789">
   </div>
   <div class="form-group">
     <label for="message">Message</label>
-    <textarea class="form-control" rows="4" name="message" placeholder="Type your message..."></textarea>
+    <textarea class="form-control" rows="4" name="Message" placeholder="Type your message..."></textarea>
   </div>
 
 
-  <button type="submit" class="btn btn-default">Send Message</button>
+  <button type="submit" class="btn btn-primary">Send Message</button>
+	<input name="redirect" type="hidden" value="/contactThanks.php">
 </form>
 
 </div> <!--end of form div-->
