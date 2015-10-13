@@ -114,6 +114,20 @@
             </li>
             <!-- end of gallery page admin -->
             
+            
+            <!-- register admin -->
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">Register <span class="caret"></span></span></a>
+              <ul class="dropdown-menu">
+              	<li class="dropdown-header">Register (Update)</li>
+                <li><a href="adminRegisterStudent.php">Update Student Registration</a></li>
+                <li><a href="adminRegisterInstructor.php">Update Instructor Registration</a></li>
+                <li><a href="adminRegisterProposal.php">Update Request Service Proposal</a></li>
+              </ul>
+            </li>
+            <!-- end of register admin -->
+            
+            
             <!-- FAQ page admin -->
             <li class="dropdown">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><span class="adminWhite">FAQ <span class="caret"></span></span></a>
