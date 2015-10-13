@@ -7,15 +7,6 @@ $category_id = $_GET[id];
 // build the database connection with host, user, password, database
 $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 
-// build the query to display the current mission statement
-$query = "SELECT * FROM videoSubcategory WHERE id=$category_id";
-
-//communicate with the database
-$result = mysqli_query($dbc, $query) or die('The query has failed!');
-
-//put what is found from the query into a variable
-$found = mysqli_fetch_array($result);
-
 if(isset($_POST['submitButton']))
 	{
 	// load the data from the form
@@ -26,17 +17,12 @@ if(isset($_POST['submitButton']))
 	$old_image = $_POST[old_image];
 	
 	if($_FILES['photo']['size'] == 0){
-		// build the database connection with host, user, password, database
-		$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 		
 		//build the query
 		$query = "UPDATE videoSubcategory SET subcategory='$subcategory' WHERE id=$id ";
 		
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
-		
-		// terminate the connection
-		mysqli_close($dbc);
 		
 		$feedback = '<p class="adminGreen">'.$subcategory.' has been updated. <a href="videosSubcategory.php?id='.$found['id'].'">&#8617; View Video Subcategory</a></p>';
 		}
@@ -93,18 +79,12 @@ if(isset($_POST['submitButton']))
 				@unlink('images/gallery/video/category/'.$old_image);
 				
 			//upload the information to the database since all photo conditions are met and true
-			
-			// build the database connection with host, user, password, database
-			$dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 			 
 			 //build the query
 		$query = "UPDATE videoSubcategory SET subcategory='$subcategory', photo='$filename' WHERE id=$id ";
 			
 			// communicate the query with the database
 			$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
-			
-			// terminate the connection with the database
-			mysqli_close($dbc);
 			
 			$feedback = '<p class="adminGreen">'.$subcategory.' has been updated. <a href="videosSubcategory.php?id='.$found['id'].'">&#8617; View Video Subcategory</a></p>';
 			
@@ -115,6 +95,18 @@ if(isset($_POST['submitButton']))
 			}//end of else statement
 	
 	};//end of if submit/isset
+	
+	// build the query to display the current mission statement
+	$query01 = "SELECT * FROM videoSubcategory WHERE id=$category_id";
+	
+	//communicate with the database
+	$result01 = mysqli_query($dbc, $query01) or die('The query has failed!');
+	
+	//put what is found from the query into a variable
+	$found = mysqli_fetch_array($result01);
+	
+	// terminate the connection with the database
+	mysqli_close($dbc);
 
 ?>
 <?php $page = admin; ?>
