@@ -204,7 +204,7 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
             <a class="noUnderline" href="virtualTour.php">
                 <div class="border pull-right rowTwoSize">
                     <img class="img-circle floatImage imagePadding sizeImage" src="images/home/assessment.jpg" alt="Virtual Tour">
-                    <h3 class="secondImageVerticalAlign paddingRight">Take a Virtual Tour of our Facility</h3>
+                    <h3 class="secondImageVerticalAlign paddingRight"><span class="mobileHidden">Take a Virtual Tour of our Facility</span><span class="desktopHidden">Virtual Tour</span></h3>
                     <div class="clear"></div>
                 </div>
             </a><!-- end of second image -->
