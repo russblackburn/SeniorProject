@@ -24,7 +24,8 @@
 	else if($secondaryPage=='instructorRegistration'){echo 'Instructor Registration';} 
 	else if($secondaryPage=='requestServiceProposal'){echo 'Request Service Proposal';} 
 	else if($page=='contact' && $secondaryPage == false){echo 'Contact';} 
-	else if($page=='faq' && $secondaryPage == false){echo 'FAQ';} 
+	else if($page=='faq' && $secondaryPage == false){echo 'FAQ';}
+	else if($page=='siteMap'){echo 'Site Map';}
 	else {echo 'ICDP';}?> | Intermountain Center for Disaster Preparedness</title>
 
     <!-- Bootstrap -->
@@ -32,6 +33,11 @@
     
     <!-- Custom styles for this template -->
     <link href="css/custom.css" rel="stylesheet">
+    <?php
+	if($page != 'admin'){
+			echo '<link href="css/customNav.css" rel="stylesheet">';
+		}
+	?>
     
     <!-- Social icon stylesheets -->
     <link href="css/facebook.css" rel="stylesheet">
