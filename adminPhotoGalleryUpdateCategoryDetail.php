@@ -38,7 +38,7 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		header('Location: adminPhotoGalleryUpdateCategory.php');
+		$feedback = '<p class="adminGreen">'.$category.' has been updated. <a href="photos.php">&#8617; View Photo Category</a></p>';
 		}
 		
 		else{		
@@ -106,8 +106,7 @@ if(isset($_POST['submitButton']))
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			// redirect to the adminLanind page
-			header('Location: adminPhotoGalleryUpdateCategory.php');
+			$feedback = '<p class="adminGreen">'.$category.' has been updated. <a href="photos.php">&#8617; View Photo Category</a></p>';
 			
 			}else{
 				//let the user try again

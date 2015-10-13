@@ -38,7 +38,7 @@ if(isset($_POST['submitButton']))
 		// terminate the connection
 		mysqli_close($dbc);
 		
-		header('Location: adminVideoGallerySubcategory.php');
+		$feedback = '<p class="adminGreen">'.$subcategory.' has been updated. <a href="videosSubcategory.php?id='.$found['id'].'">&#8617; View Video Subcategory</a></p>';
 		}
 		
 		else{
@@ -106,8 +106,7 @@ if(isset($_POST['submitButton']))
 			// terminate the connection with the database
 			mysqli_close($dbc);
 			
-			// redirect to the adminLanind page
-			header('Location: adminVideoGallerySubcategory.php');
+			$feedback = '<p class="adminGreen">'.$subcategory.' has been updated. <a href="videosSubcategory.php?id='.$found['id'].'">&#8617; View Video Subcategory</a></p>';
 			
 			}else{
 				//let the user try again

@@ -315,7 +315,7 @@ footer {
 		
 	.addressPhone{
 		height: 450px;
-		margin-top:0em;
+		margin-top:2em;
 	}
 		
 	.address{
@@ -351,6 +351,7 @@ footer {
 		margin-top: 45px;
 		}
 		
+		
 	/* gallery videos */
 	.videoiFrame {
 		height: 400px;
@@ -359,6 +360,13 @@ footer {
 	.hoverDiv{
 		padding-top:40% !important;
 		}
+		
+	/*contact*/
+	
+	.addressPhone{
+		height: 450px;
+		margin-top:0em;
+	}
 
 }
 
