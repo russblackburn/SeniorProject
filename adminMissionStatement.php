@@ -48,7 +48,7 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_mission_statement">
   
   <div class="form-group">
-    <label for="missionStatement">Mission Statement</label>
+    <label for="missionStatement" data-toggle="popover" title="Mission Statement" data-content="Introduction to the mission statement. Keep this shorter than three lines, the purpose page will display the full mission statement.">Mission Statement</label>
     <textarea class="form-control" rows="3" name="mission_statement" placeholder="Mission Statement"><?php echo $found['mission_statement']; ?></textarea>
   </div>
   

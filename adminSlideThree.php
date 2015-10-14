@@ -113,7 +113,7 @@ if(isset($_POST['submitButton']))
 <?php $page = admin; ?>
 <?php require_once('header.php'); ?>
 
-<h1>Update Slide 1</h1>
+<h1>Update Slide 3</h1>
 
 <hr>
 
@@ -129,27 +129,27 @@ echo $feedback2;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_slider_one">
 
   <div class="form-group">
-    <label for="title">Title</label>
+    <label for="title" data-toggle="popover" title="Title" data-content="Title for the slide.">Title</label>
     <input type="text" class="form-control" id="title" name="slider_title" placeholder="Title" value="<?php echo $found['slider_title']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="description">Description</label>
+    <label for="description" data-toggle="popover" title="Description" data-content="Description for the slide, keep this short. If it is to long some of the text will push outside of the slide image.">Description</label>
     <textarea class="form-control" rows="2" name="slider_description" placeholder="Description"><?php echo $found['slider_description']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="buttonText">Button Text</label>
+    <label for="buttonText" data-toggle="popover" title="Button Text" data-content="Label the button that is displayed on the slide (i.e. Learn more).">Button Text</label>
     <input type="text" class="form-control" id="buttonText" name="slider_button_description" placeholder="Button Text" value="<?php echo $found['slider_button_description']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="link">Link</label>
+    <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page that you want to display. Copy the entire section after .org/ from the URL (i.e. photos.php or photosDetail.php?id=3).">Link</label>
     <input type="text" class="form-control" id="link" name="slider_link" placeholder="Link" value="<?php echo $found['slider_link']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="exampleInputFile">Slide Image</label>
+    <label for="exampleInputFile" data-toggle="popover" title="Slide Image" data-content="Update the slide image. If the image does not need to be updated, skip this section and the current image will be used.">Slide Image</label>
     <input type="file" id="slideImage" name="photo">
     <p class="help-block">Image size must be (1142 Width X 248 Height)</p>
   </div>

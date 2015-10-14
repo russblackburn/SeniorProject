@@ -54,9 +54,9 @@
 
 //DISPLAY WHAT WE FOUND
 while($row = mysqli_fetch_array($result)){
-	echo '<h4>';
+	echo '<label for="priority" data-toggle="popover" title="Priority" data-content="Change the list order of the personnel. If one personnel is already assigned the priority needed, change their priority to a different number first.">';
 	echo $row['first_name'].' '. $row['last_name'].' | Priority: '. $row['priority'];
-	echo '</h4>';
+	echo '</label>';
 	//echo ' <a href="adminPersonnelOrderUpdate.php?id='. $row['id'].'">[update]</a>';
 	echo '<form action="'.$_SERVER['PHP_SELF'].'" method="POST" enctype="multipart/form-data" name="update_priority">';
 	
