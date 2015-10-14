@@ -134,17 +134,17 @@ echo $feedback2;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_slide">
   
   <div class="form-group">
-    <label for="description">Description</label>
+    <label for="description" data-toggle="popover" title="Description" data-content="Description for the slide, keep this short. If it is to long some of the text will push outside of the slide image.">Description</label>
     <textarea class="form-control" rows="2" name="slider_description" placeholder="Description"><?php echo $found['slider_description']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="buttonText">Button Text</label>
+    <label for="buttonText" data-toggle="popover" title="Button Text" data-content="Label the button that is displayed on the slide (i.e. Learn more).">Button Text</label>
     <input type="text" class="form-control" id="buttonText" name="slider_button_description" placeholder="Button Text" value="<?php echo $found['slider_button_description']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="exampleInputFile">Slide Image</label>
+    <label for="exampleInputFile" data-toggle="popover" title="Slide Image" data-content="Update/add the slide image, the first upload must have an image selected. If the image does not need to be updated, skip this section and the current image will be used.">Slide Image</label>
     <input type="file" id="slideImage" name="photo">
     <p class="help-block">Image size must be (1142 Width X 248 Height)</p>
   </div>

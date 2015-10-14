@@ -139,77 +139,77 @@ echo $feedback2;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_personnel">
 
 <div class="form-group">
-    <label for="firstName">First Name</label>
+    <label for="firstName" data-toggle="popover" title="First Name" data-content="Update the first name.">First Name</label>
     <input type="text" class="form-control" id="firstName" name="firstName" placeholder="Jane" value="<?php echo $found['first_name']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="lastName">Last Name</label>
+    <label for="lastName" data-toggle="popover" title="Last Name" data-content="Update the last name.">Last Name</label>
     <input type="text" class="form-control" id="lastName" name="lastName" placeholder="Doe" value="<?php echo $found['last_name']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="position">Position</label>
+    <label for="position" data-toggle="popover" title="Position" data-content="Update the position.">Position</label>
     <input type="text" class="form-control" id="position" name="position" placeholder="Position" value="<?php echo $found['position']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="qualifications">Qualifications</label>
+    <label for="qualifications" data-toggle="popover" title="Qualifications" data-content="Update the qualifications.">Qualifications</label>
     <textarea class="form-control" rows="2" name="qualifications" placeholder="Qualifications"><?php echo $found['qualifications']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph1">Paragraph 1</label>
+    <label for="paragraph1" data-toggle="popover" title="Paragraph 1" data-content="First paragraph for the page. Must have at least one paragraph. This is an about section for the personnel record.">Paragraph 1</label>
     <textarea class="form-control" rows="2" name="paragraph1" placeholder="Paragraph 1"><?php echo $found['paragraph_1']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph2">Paragraph 2</label>
+    <label for="paragraph2" data-toggle="popover" title="Paragraph 2" data-content="Second paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 2</label>
     <textarea class="form-control" rows="2" name="paragraph2" placeholder="Paragraph 2"><?php echo $found['paragraph_2']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph3">Paragraph 3</label>
+    <label for="paragraph3" data-toggle="popover" title="Paragraph 3" data-content="Third paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 3</label>
     <textarea class="form-control" rows="2" name="paragraph3" placeholder="Paragraph 3"><?php echo $found['paragraph_3']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph4">Paragraph 4</label>
+    <label for="paragraph4" data-toggle="popover" title="Paragraph 4" data-content="Fourth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 4</label>
     <textarea class="form-control" rows="2" name="paragraph4" placeholder="Paragraph 4"><?php echo $found['paragraph_4']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph5">Paragraph 5</label>
+    <label for="paragraph5" data-toggle="popover" title="Paragraph 5" data-content="Fifth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 5</label>
     <textarea class="form-control" rows="2" name="paragraph5" placeholder="Paragraph 5"><?php echo $found['paragraph_5']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph6">Paragraph 6</label>
+    <label for="paragraph6" data-toggle="popover" title="Paragraph 6" data-content="Sixth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 6</label>
     <textarea class="form-control" rows="2" name="paragraph6" placeholder="Paragraph 6"><?php echo $found['paragraph_6']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph7">Paragraph 7</label>
+    <label for="paragraph7" data-toggle="popover" title="Paragraph 7" data-content="Seventh paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 7</label>
     <textarea class="form-control" rows="2" name="paragraph7" placeholder="Paragraph 7"><?php echo $found['paragraph_7']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph8">Paragraph 8</label>
+    <label for="paragraph8" data-toggle="popover" title="Paragraph 8" data-content="Eighth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 8</label>
     <textarea class="form-control" rows="2" name="paragraph8" placeholder="Paragraph 8"><?php echo $found['paragraph_8']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph9">Paragraph 9</label>
+    <label for="paragraph9" data-toggle="popover" title="Paragraph 9" data-content="Ninth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 9</label>
     <textarea class="form-control" rows="2" name="paragraph9" placeholder="Paragraph 9"><?php echo $found['paragraph_9']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="paragraph10">Paragraph 10</label>
+    <label for="paragraph10" data-toggle="popover" title="Paragraph 10" data-content="Tenth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 10</label>
     <textarea class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"><?php echo $found['paragraph_10']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="exampleInputFile">New Image</label>
+    <label for="exampleInputFile" data-toggle="popover" title="Personnel Image" data-content="Update the image. If the image does not need to be updated, skip this section and the current image will be used.">Personnel Image</label>
     <input type="file" id="purposeImage" name="photo">
     <p class="help-block">Image size must be (572 Width X 715 Height)</p>
   </div>
