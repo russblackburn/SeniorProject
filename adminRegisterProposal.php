@@ -48,7 +48,7 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_instructor_registration">
   
   <div class="form-group">
-    <label for="description">Description</label>
+    <label for="description" data-toggle="popover" title="Description" data-content="Description or instructions to register. If there is no needed description, leave this blank.">Description</label>
     <textarea class="form-control" rows="3" name="description" placeholder="Description"><?php echo $found['description']; ?></textarea>
   </div>
   

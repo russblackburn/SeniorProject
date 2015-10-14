@@ -125,14 +125,14 @@ echo $feedback;
 	<?php
 	if($found['thirdParty'] == 3) {
 	echo '<div class="form-group">';
-        echo '<label for="customTitle">Custom Title</label>';
+        echo '<label for="customTitle" data-toggle="popover" title="Custom Title" data-content="Give the custom event a new title.">Custom Title</label>';
         echo '<input type="text" class="form-control" id="customTitle" name="courseTitle" placeholder="Custom Title" value="'.$found['courseTitle'].'">';
   	echo '</div>';
 	}
 	?>
 
 	<h3>Start Date and Time</h3>
-    <label for="month">Start Date: Month - Day - Year</label>
+    <label for="month" data-toggle="popover" title="Start Date: Month - Day - Year" data-content="Set a start date. Choose the month, day, and year.">Start Date: Month - Day - Year</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthStart">
@@ -195,7 +195,7 @@ echo $feedback;
 		$myArray = explode(':', $found['startTime']);
 	?>
     
-    <label for="month">Start Time</label>
+    <label for="month" data-toggle="popover" title="Start Time" data-content="Set the start time. Choose the hour, minute, and am or pm.">Start Time</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="hourStart">
@@ -262,7 +262,7 @@ echo $feedback;
     <br>
     
     <h3>End Date and Time</h3>
-    <label for="month">End Date: Month - Day - Year</label>
+    <label for="month" data-toggle="popover" title="End Date: Month - Day - Year" data-content="Set a end date. Choose the month, day, and year. The end date must be on the same start date or after.">End Date: Month - Day - Year</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthEnd">
@@ -325,7 +325,7 @@ echo $feedback;
 		$myArray1 = explode(':', $found['endTime']);
 	?>
     
-    <label for="month">End Time</label>
+    <label for="month" data-toggle="popover" title="End Time" data-content="Set the end time. Choose the hour, minute, and am or pm. If the start date and end date are the same, make sure the end time is after the start time.">End Time</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="hourEnd">

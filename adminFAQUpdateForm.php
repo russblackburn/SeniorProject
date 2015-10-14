@@ -53,12 +53,12 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_personnel">
 
 <div class="form-group">
-    <label for="question">Question</label>
+    <label for="question" data-toggle="popover" title="Question" data-content="Update the frequently asked question.">Question</label>
     <textarea class="form-control" rows="2" name="question" placeholder="Add Question"><?php echo $found['question']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="answer">Answer</label>
+    <label for="answer" data-toggle="popover" title="Answer" data-content="Update the answer for the question.">Answer</label>
     <textarea class="form-control" rows="2" name="answer" placeholder="Add Answer"><?php echo $found['answer']; ?></textarea>
   </div>
   

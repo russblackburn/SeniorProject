@@ -9,21 +9,21 @@
 	
 	// BUILD THE QUERY FOR CORE COURSES
 		//BUILD THE QUERY
-		$query1 = "SELECT * FROM events WHERE thirdParty='1' ORDER BY courseTitle ASC";
+		$query1 = "SELECT * FROM events WHERE thirdParty='1' ORDER BY courseTitle ASC, dateOrder ASC";
 	
 		//TRY AND TALK TO THE DB
 		$result1 = mysqli_query($dbc, $query1) or die('query failed');
 		
 	// BUILD THE QUERY FOR THIRD PARTY COURSES
 		//BUILD THE QUERY
-		$query2 = "SELECT * FROM events WHERE thirdParty='2' ORDER BY courseTitle ASC";
+		$query2 = "SELECT * FROM events WHERE thirdParty='2' ORDER BY courseTitle ASC, dateOrder ASC";
 	
 		//TRY AND TALK TO THE DB
 		$result2 = mysqli_query($dbc, $query2) or die('query failed');
 		
 	// BUILD THE QUERY FOR CUSTOM EVENTS
 		//BUILD THE QUERY
-		$query3 = "SELECT * FROM events WHERE thirdParty='3' ORDER BY courseTitle ASC";
+		$query3 = "SELECT * FROM events WHERE thirdParty='3' ORDER BY courseTitle ASC, dateOrder ASC";
 	
 		//TRY AND TALK TO THE DB
 		$result3 = mysqli_query($dbc, $query3) or die('query failed');

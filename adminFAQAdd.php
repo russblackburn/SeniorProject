@@ -48,12 +48,12 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_personnel" data-toggle="validator">
   
   <div class="form-group">
-    <label for="question">Question</label>
+    <label for="question" data-toggle="popover" title="Question" data-content="Add a new frequently asked question.">Question</label>
     <textarea class="form-control" rows="2" name="question" placeholder="Add Question" required ></textarea>
   </div>
   
   <div class="form-group">
-    <label for="answer">Answer</label>
+    <label for="answer" data-toggle="popover" title="Answer" data-content="Answer for the question.">Answer</label>
     <textarea class="form-control" rows="2" name="answer" placeholder="Add Answer" required ></textarea>
   </div>
 

@@ -248,7 +248,7 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_event">
   
   <div class="form-group">
-    	<label for="courseTitle">Select a Course</label>
+    	<label for="courseTitle" data-toggle="popover" title="Select a Course" data-content="Select a core course to add an event.">Select a Course</label>
         <select class="form-control" name="courseID">
         <?php
         while($row0 = mysqli_fetch_array($result0)){
@@ -261,7 +261,7 @@ echo $feedback;
     
     
     <h3>Start Date and Time</h3>
-    <label for="month">Start Date: Month - Day - Year</label>
+    <label for="month" data-toggle="popover" title="Start Date: Month - Day - Year" data-content="Set a start date. Choose the month, day, and year.">Start Date: Month - Day - Year</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthStart">
@@ -321,7 +321,7 @@ echo $feedback;
     
     <br>
     
-    <label for="month">Start Time</label>
+    <label for="month" data-toggle="popover" title="Start Time" data-content="Set the start time. Choose the hour, minute, and am or pm.">Start Time</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="hourStart">
@@ -365,7 +365,7 @@ echo $feedback;
     <br>
     
     <h3>End Date and Time</h3>
-    <label for="month">End Date: Month - Day - Year</label>
+    <label for="month" data-toggle="popover" title="End Date: Month - Day - Year" data-content="Set a end date. Choose the month, day, and year. The end date must be on the same start date or after.">End Date: Month - Day - Year</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthEnd">
@@ -425,7 +425,7 @@ echo $feedback;
     
     <br>
     
-    <label for="month">End Time</label>
+    <label for="month" data-toggle="popover" title="End Time" data-content="Set the end time. Choose the hour, minute, and am or pm. If the start date and end date are the same, make sure the end time is after the start time.">End Time</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="hourEnd">
@@ -487,7 +487,7 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_event">
   
   <div class="form-group">
-    	<label for="courseTitle">Select a Course</label>
+    	<label for="courseTitle" data-toggle="popover" title="Select a Course" data-content="Select a third party course to add an event.">Select a Course</label>
         <select class="form-control" name="courseID">
         <?php
         while($row1 = mysqli_fetch_array($result1)){
@@ -500,7 +500,7 @@ echo $feedback;
     
     
     <h3>Start Date and Time</h3>
-    <label for="month">Start Date: Month - Day - Year</label>
+    <label for="month" data-toggle="popover" title="Start Date: Month - Day - Year" data-content="Set a start date. Choose the month, day, and year.">Start Date: Month - Day - Year</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthStart">
@@ -560,7 +560,7 @@ echo $feedback;
     
     <br>
     
-    <label for="month">Start Time</label>
+    <label for="month" data-toggle="popover" title="Start Time" data-content="Set the start time. Choose the hour, minute, and am or pm.">Start Time</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="hourStart">
@@ -604,7 +604,7 @@ echo $feedback;
     <br>
     
     <h3>End Date and Time</h3>
-    <label for="month">End Date: Month - Day - Year</label>
+    <label for="month" data-toggle="popover" title="End Date: Month - Day - Year" data-content="Set a end date. Choose the month, day, and year. The end date must be on the same start date or after.">End Date: Month - Day - Year</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthEnd">
@@ -664,7 +664,7 @@ echo $feedback;
     
     <br>
     
-    <label for="month">End Time</label>
+    <label for="month" data-toggle="popover" title="End Time" data-content="Set the end time. Choose the hour, minute, and am or pm. If the start date and end date are the same, make sure the end time is after the start time.">End Time</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="hourEnd">
@@ -730,14 +730,14 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_event">
   
   <div class="form-group">
-    <label for="customTitle">Custom Title</label>
+    <label for="customTitle" data-toggle="popover" title="Custom Title" data-content="Make a custom event that is not related to a course. Give the custom event a title.">Custom Title</label>
     <input type="text" class="form-control" id="firstName" name="courseTitle" placeholder="Custom Title">
   </div>
     
     
     
     <h3>Start Date and Time</h3>
-    <label for="month">Start Date: Month - Day - Year</label>
+    <label for="month" data-toggle="popover" title="Start Date: Month - Day - Year" data-content="Set a start date. Choose the month, day, and year.">Start Date: Month - Day - Year</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthStart">
@@ -797,7 +797,7 @@ echo $feedback;
     
     <br>
     
-    <label for="month">Start Time</label>
+    <label for="month" data-toggle="popover" title="Start Time" data-content="Set the start time. Choose the hour, minute, and am or pm.">Start Time</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="hourStart">
@@ -841,7 +841,7 @@ echo $feedback;
     <br>
     
     <h3>End Date and Time</h3>
-    <label for="month">End Date: Month - Day - Year</label>
+    <label for="month" data-toggle="popover" title="End Date: Month - Day - Year" data-content="Set a end date. Choose the month, day, and year. The end date must be on the same start date or after.">End Date: Month - Day - Year</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="monthEnd">
@@ -901,7 +901,7 @@ echo $feedback;
     
     <br>
     
-    <label for="month">End Time</label>
+    <label for="month" data-toggle="popover" title="End Time" data-content="Set the end time. Choose the hour, minute, and am or pm. If the start date and end date are the same, make sure the end time is after the start time.">End Time</label>
     <div class="form-inline">
         <div class="form-group">
             <select class="form-control" name="hourEnd">
