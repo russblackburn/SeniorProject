@@ -33,7 +33,11 @@
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = home;
+$adminSecondaryPage = home4;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update Mission Statement</h1>

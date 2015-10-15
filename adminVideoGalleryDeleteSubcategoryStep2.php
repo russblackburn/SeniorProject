@@ -63,7 +63,9 @@
 
 <?php
 
-	$page = admin; 
+	$page = admin;
+	$adminPage = gallery;
+	$adminSecondaryPage = gallery17;
 	require_once('header.php');
 
 ?>

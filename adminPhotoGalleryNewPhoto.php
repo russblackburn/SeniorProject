@@ -1,7 +1,9 @@
 <?php
 require_once('adminAuthorize.php');
 require_once('adminVariables.php');
-$page = admin; 
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery3;
 require_once('header.php');
 
 	// build the database connection with host, user, password, database
@@ -108,7 +110,7 @@ echo $feedback2;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_photo">
 
 	<div class="form-group">
-    	<label for="category">Select a Subcategory</label>
+    	<label for="category" data-toggle="popover" title="Select a Subcategory" data-content="Select the subcategory that you want to link the photo too.">Select a Subcategory</label>
         <select class="form-control" name="subcategoryID">
         <?php
         while($row = mysqli_fetch_array($result1)){
@@ -119,13 +121,13 @@ echo $feedback2;
 	</div>
 
   <div class="form-group">
-    <label for="exampleInputFile">New Photo</label>
+    <label for="exampleInputFile" data-toggle="popover" title="Photo" data-content="Add the photo. It is best to upload all of the landscape photos together and all of the portrait photos together. There is no requirement as to which you should load first (the landscape or the portrait). An image must be uploaded at this time.">Photo</label>
     <input type="file" id="galleryImage" name="photo">
-    <p class="help-block">Image size must be (715 Width X 572 Height)</p>
+    <p class="help-block">Image size must be (715 Width X 572 Height -or- 572 Width X 715 Height)</p>
   </div>
   
   <div class="form-group">
-    <label for="photoDescription">Photo Description</label>
+    <label for="photoDescription" data-toggle="popover" title="Photo Description" data-content="Add a photo description (i.e. Left to right: name, name, name.). If there is no needed description, leave this blank.">Photo Description</label>
     <textarea class="form-control" rows="2" name="photoDescription" placeholder="Photo Description"></textarea>
   </div>
   

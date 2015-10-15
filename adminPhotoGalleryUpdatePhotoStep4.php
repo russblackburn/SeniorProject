@@ -114,7 +114,11 @@
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery6;
+?>
 <?php require_once('header.php'); ?>
 
 <p><a href="adminPhotoGalleryUpdatePhoto.php">Select the Photo's Category</a> ><a href="adminPhotoGalleryUpdatePhotoStep2.php?id=<?php echo $n1; ?>"> Select the Photo's Subcategory</a> ><a href="adminPhotoGalleryUpdatePhotoStep3.php?id=<?php echo $n2; ?>&n1=<?php echo $n1; ?>"> Select the Photo</a> > Update the Photo</p>
@@ -135,7 +139,7 @@ echo $feedback2;
 <h3>Update the Photo</h3>
 
 
-<label for="oldImage">Old Image</label>
+<label for="oldImage" data-toggle="popover" title="Old Image" data-content="This is the current image being used. If the photo does not need to be updated, skip the photo section at the bottom.">Old Image</label>
 <div class="row">
 <img class="col-xs-12 col-sm-6 col-md-4" src="images/gallery/photo/photo/<?php echo $found['photo'];?>">
 </div>
@@ -145,14 +149,14 @@ echo $feedback2;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_photo">
 
 <div class="form-group">
-    <label for="photoDescription">Photo Description</label>
+    <label for="photoDescription" data-toggle="popover" title="Photo Description" data-content="Add a photo description (i.e. Left to right: name, name, name.). If there is no needed description, leave this blank.">Photo Description</label>
     <textarea class="form-control" rows="2" name="photoDescription" placeholder="Photo Description"><?php echo $found['photoDescription']; ?></textarea>
   </div>
   
   <div class="form-group">
-    <label for="exampleInputFile">New Image</label>
+    <label for="exampleInputFile" data-toggle="popover" title="Photo" data-content="Update the photo. If the photo does not need to be updated, skip this section and the current photo will be used.">Photo</label>
     <input type="file" id="photoGallery" name="photo">
-    <p class="help-block">Image size must be (715 Width X 572 Height or 572 Width X 715 Height)</p>
+    <p class="help-block">Image size must be (715 Width X 572 Height -or- 572 Width X 715 Height)</p>
   </div>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">

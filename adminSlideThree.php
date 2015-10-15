@@ -110,7 +110,10 @@ if(isset($_POST['submitButton']))
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = home;
+$adminSecondaryPage = home3;?>
 <?php require_once('header.php'); ?>
 
 <h1>Update Slide 3</h1>

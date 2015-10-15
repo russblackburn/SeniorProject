@@ -109,7 +109,11 @@ if(isset($_POST['submitButton']))
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery14;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update <?php echo $found['subcategory'];?> Subcategory</h1>
@@ -128,12 +132,12 @@ echo $feedback2;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_subcategory">
 
 <div class="form-group">
-    <label for="subcategory">Subcategory Title</label>
+    <label for="subcategory" data-toggle="popover" title="Subcategory Title" data-content="Title for the subcategory.">Subcategory Title</label>
     <input type="text" class="form-control" id="subcategory" name="subcategory" placeholder="Subcategory Title" value="<?php echo $found['subcategory']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="exampleInputFile">New Subcategory Image</label>
+    <label for="exampleInputFile" data-toggle="popover" title="Subcategory Image" data-content="Update the image. If the image does not need to be updated, skip this section and the current image will be used.">Subcategory Image</label>
     <input type="file" id="slideImage" name="photo">
     <p class="help-block">Image size must be (715 Width X 572 Height)</p>
   </div>

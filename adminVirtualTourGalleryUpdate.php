@@ -34,7 +34,11 @@ $found = mysqli_fetch_array($result01);
 mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery19;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update Virtual Tour Description</h1>
@@ -49,7 +53,7 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_virtualTour">
   
   <div class="form-group">
-    <label for="virtualTour">Virtual Tour Description</label>
+    <label for="virtualTour" data-toggle="popover" title="Virtual Tour Description" data-content="Description for the virtual tour. If there is no needed description, leave this blank.">Virtual Tour Description</label>
     <textarea class="form-control" rows="3" name="virtualTour" placeholder="Virtual Tour Description"><?php echo $found['description']; ?></textarea>
   </div>
   

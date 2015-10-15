@@ -115,7 +115,11 @@ if(isset($_POST['submitButton']))
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = home;
+$adminSecondaryPage = home2;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update/Add <?php echo $found['courseTitle'];?> Slide</h1>

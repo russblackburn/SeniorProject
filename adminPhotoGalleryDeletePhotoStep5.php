@@ -43,7 +43,11 @@
 	$found = mysqli_fetch_array($result);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery9;
+?>
 <?php require_once('header.php'); ?>
 
 <p><a href="adminPhotoGalleryDeletePhoto.php">Select the Photo's Category</a> ><a href="adminPhotoGalleryDeletePhotoStep2.php?id=<?php echo $n1; ?>"> Select the Photo's Subcategory</a> ><a href="adminPhotoGalleryDeletePhotoStep3.php?id=<?php echo $n2; ?>&n1=<?php echo $n1; ?>"> Select the Photo</a> > Delete the Photo Confirmation</p>

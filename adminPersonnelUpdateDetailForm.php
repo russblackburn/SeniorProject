@@ -122,7 +122,11 @@ if(isset($_POST['submitButton']))
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = about;
+$adminSecondaryPage = about3;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update <?php echo $found['first_name'].' '.$found['last_name'];?></h1>

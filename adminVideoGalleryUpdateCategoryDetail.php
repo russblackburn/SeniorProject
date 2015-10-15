@@ -112,7 +112,11 @@ if(isset($_POST['submitButton']))
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery13;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update <?php echo $found['category'];?> Category</h1>
@@ -131,12 +135,12 @@ echo $feedback2;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_category">
 
 <div class="form-group">
-    <label for="category">Category Title</label>
+    <label for="category" data-toggle="popover" title="Category Title" data-content="Title for the category.">Category Title</label>
     <input type="text" class="form-control" id="category" name="category" placeholder="Course Title" value="<?php echo $found['category']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="exampleInputFile">New Category Image</label>
+    <label for="exampleInputFile" data-toggle="popover" title="Category Image" data-content="Update the image. If the image does not need to be updated, skip this section and the current image will be used.">Category Image</label>
     <input type="file" id="slideImage" name="photo">
     <p class="help-block">Image size must be (715 Width X 572 Height)</p>
   </div>

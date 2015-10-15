@@ -38,7 +38,11 @@ if(isset($_POST['submitButton']))
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = faq;
+$adminSecondaryPage = faq2;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update FAQ</h1>

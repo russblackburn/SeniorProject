@@ -1,7 +1,9 @@
 <?php
 require_once('adminAuthorize.php');
 require_once('adminVariables.php');
-$page = admin; 
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery12;
 require_once('header.php');
 
 	// build the database connection with host, user, password, database
@@ -58,7 +60,7 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_video">
 
 	<div class="form-group">
-    	<label for="category">Select a Subcategory</label>
+    	<label for="category" data-toggle="popover" title="Select a Subcategory" data-content="Select the subcategory that you want to link the video too.">Select a Subcategory</label>
         <select class="form-control" name="subcategoryID">
         <?php
         while($row = mysqli_fetch_array($result1)){
@@ -69,12 +71,12 @@ echo $feedback;
 	</div>
     
     <div class="form-group">
-    <label for="videoLink">Video Link</label>
+    <label for="videoLink" data-toggle="popover" title="Video Link" data-content="Copy and paste the embed link from the YouTube video. To find the embed link click SHARE then EMBED. If there are problems uploading a video, only copy the src section of the embed link (i.e. src=&quot;https://www.yo...&quot;).">Video Link</label>
     <input type="text" class="form-control" id="videoLink" name="videoLink" placeholder="Video Link">
   </div>
   
   <div class="form-group">
-    <label for="photoDescription">Video Description</label>
+    <label for="photoDescription" data-toggle="popover" title="Video Description" data-content="Add a video description. If there is no needed description, leave this blank.">Video Description</label>
     <textarea class="form-control" rows="2" name="videoDescription" placeholder="Video Description"></textarea>
   </div>
   

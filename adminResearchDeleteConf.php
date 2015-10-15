@@ -45,7 +45,9 @@
 
 <?php
 
-	$page = admin; 
+	$page = admin;
+	$adminPage = services;
+	$adminSecondaryPage = services12;
 	require_once('header.php');
 
 ?>

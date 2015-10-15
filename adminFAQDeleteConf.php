@@ -43,7 +43,9 @@
 
 <?php
 
-	$page = admin; 
+	$page = admin;
+	$adminPage = faq;
+	$adminSecondaryPage = faq4;
 	require_once('header.php');
 
 ?>

@@ -40,7 +40,11 @@
 	$found = mysqli_fetch_array($result);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery18;
+?>
 <?php require_once('header.php'); ?>
 
 <p><a href="adminVideoGalleryDeleteVideo.php">Select the Video's Category</a> ><a href="adminVideoGalleryDeleteVideoStep2.php?id=<?php echo $n1; ?>"> Select the Video's Subcategory</a> ><a href="adminVideoGalleryDeleteVideoStep3.php?id=<?php echo $n2; ?>&n1=<?php echo $n1; ?>"> Select the Video</a> > Delete the Video Confirmation</p>
@@ -53,9 +57,11 @@
 
 
 <label for="oldImage">Video</label>
-<div class="row">
-<p><?php echo $found['videoLink'];?></p>
-</div>
+<?php
+	echo '<div class="centeriFrame">';
+	echo '<iframe class="videoiFrame paddingTop"'. $found['videoLink'].' frameborder="0" allowfullscreen></iframe>';
+	echo '</div><!-- end of centeriFrame -->';
+?>
 
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST">

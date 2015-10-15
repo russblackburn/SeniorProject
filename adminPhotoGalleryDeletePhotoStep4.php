@@ -20,7 +20,11 @@
 	$found = mysqli_fetch_array($result);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery9;
+?>
 <?php require_once('header.php'); ?>
 
 <p><a href="adminPhotoGalleryDeletePhoto.php">Select the Photo's Category</a> ><a href="adminPhotoGalleryDeletePhotoStep2.php?id=<?php echo $n1; ?>"> Select the Photo's Subcategory</a> ><a href="adminPhotoGalleryDeletePhotoStep3.php?id=<?php echo $n2; ?>&n1=<?php echo $n1; ?>"> Select the Photo</a> > Delete the Photo</p>
@@ -38,7 +42,7 @@
 </div>
 
 
-<a href="adminPhotoGalleryDeletePhotoStep5.php?id=<?php echo $photo_id;?>&subcategoryID=<?php echo $subcategory_id; ?>&n1=<?php echo $n1; ?>&n2=<?php echo $n2; ?>" type="submit" class="btn btn-danger" name="submit">DELETE</a>
+<a href="adminPhotoGalleryDeletePhotoStep5.php?id=<?php echo $photo_id;?>&subcategoryID=<?php echo $subcategory_id; ?>&n1=<?php echo $n1; ?>&n2=<?php echo $n2; ?>" type="submit" name="submit">[delete]</a>
 
 <?php
 //WE'RE DONE SO HANG UP

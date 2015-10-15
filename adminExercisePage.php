@@ -44,7 +44,11 @@ $found = mysqli_fetch_array($result01);
 mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = services;
+$adminSecondaryPage = services6;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update Exercises</h1>

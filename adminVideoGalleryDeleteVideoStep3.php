@@ -1,7 +1,9 @@
 <?php 
 	require_once('adminAuthorize.php'); 
 	require_once('adminVariables.php');
-	$page = admin; 
+	$page = admin;
+	$adminPage = gallery;
+	$adminSecondaryPage = gallery18;
 	require_once('header.php');
 	
 	$subcategory_id = $_GET[id];

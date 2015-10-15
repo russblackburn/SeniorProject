@@ -106,7 +106,9 @@
 
 <?php
 
-	$page = admin; 
+	$page = admin;
+	$adminPage = gallery;
+	$adminSecondaryPage = gallery7;
 	require_once('header.php');
 
 ?>

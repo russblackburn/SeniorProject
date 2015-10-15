@@ -2,6 +2,8 @@
 	require_once('adminAuthorize.php'); 
 	require_once('adminVariables.php');
 	$page = admin; 
+	$adminPage = about;
+	$adminSecondaryPage = about5;
 	require_once('header.php'); 
 	
 	//BUILD THE DATABASE CONNECTION WITH host, user, pass, database

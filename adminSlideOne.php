@@ -2,6 +2,9 @@
 require_once('adminAuthorize.php');
 require_once('adminVariables.php');
 
+$adminPage = home;
+$adminSecondaryPage = home1;
+
 // build the database connection with host, user, password, database
 $dbc = mysqli_connect(HOST,USER,PASSWORD,DATABASE) or die('The database connection has failed!');
 

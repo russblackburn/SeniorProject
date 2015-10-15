@@ -40,7 +40,11 @@ if(isset($_POST['submitButton']))
 	};//end of if submit/isset
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = home;
+$adminSecondaryPage = home5;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Hide/Un-hide</h1>

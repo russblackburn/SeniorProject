@@ -90,7 +90,9 @@ require_once('adminVariables.php');
 	
 	?>
     <?php
-$page = admin; 
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery11;
 require_once('header.php');
 ?>
 
@@ -110,7 +112,7 @@ echo $feedback2;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_subcategory">
 
 	<div class="form-group">
-    	<label for="category">Select a Category</label>
+    	<label for="category" data-toggle="popover" title="Select a Category" data-content="Select the category that you want to link the subcategory too.">Select a Category</label>
         <select class="form-control" name="categoryID">
         <?php
         while($row = mysqli_fetch_array($result)){
@@ -121,12 +123,12 @@ echo $feedback2;
     </div>
 
   <div class="form-group">
-    <label for="researchTitle">Subcategory Title</label>
+    <label for="researchTitle" data-toggle="popover" title="Subcategory Title" data-content="Title for the subcategory.">Subcategory Title</label>
     <input type="text" class="form-control" id="category" name="subcategory" placeholder="Subcategory">
   </div>
   
   <div class="form-group">
-    <label for="exampleInputFile">New Image</label>
+    <label for="exampleInputFile" data-toggle="popover" title="Subcategory Image" data-content="Add the subcategory image. An image must be uploaded at this time.">Subcategory Image</label>
     <input type="file" id="category" name="photo">
     <p class="help-block">Image size must be (715 Width X 572 Height)</p>
   </div>

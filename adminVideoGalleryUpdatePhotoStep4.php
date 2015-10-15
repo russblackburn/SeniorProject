@@ -46,7 +46,11 @@
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = gallery;
+$adminSecondaryPage = gallery15;
+?>
 <?php require_once('header.php'); ?>
 
 <p><a href="adminVideoGalleryUpdateVideo.php">Select the Video's Category</a> ><a href="adminVideoGalleryUpdatePhotoStep2.php?id=<?php echo $n1; ?>"> Select the Video's Subcategory</a> ><a href="adminVideoGalleryUpdatePhotoStep3.php?id=<?php echo $n2; ?>&n1=<?php echo $n1; ?>"> Select the Video</a> > Update the Video</p>
@@ -64,7 +68,7 @@ echo $feedback;
 <h3>Update the Video</h3>
 
 
-<label for="oldVideo">Old Video</label>
+<label for="oldVideo" data-toggle="popover" title="Old Video" data-content="This is the current video being used. If the video does not need to be updated, skip the video link section.">Old Video</label>
 <?php
 	echo '<div class="centeriFrame">';
 	echo '<iframe class="videoiFrame paddingTop"'. $found['videoLink'].' frameborder="0" allowfullscreen></iframe>';
@@ -76,12 +80,12 @@ echo $feedback;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="update_video">
 
 <div class="form-group">
-    <label for="videoLink">Video Link</label>
+    <label for="videoLink" data-toggle="popover" title="Video Link" data-content="Copy and paste the embed link from the YouTube video. To find the embed link click SHARE then EMBED. If there are problems uploading a video, only copy the src section of the embed link (i.e. src=&quot;https://www.yo...&quot;). If the video does not need to be updated, skip this section and the current video will be used.">Video Link</label>
     <input type="text" class="form-control" id="videoLink" name="videoLink" placeholder="Video Link" value="<?php echo htmlentities($found['videoLink']); ?>">
   </div>
   
   <div class="form-group">
-    <label for="photoDescription">Video Description</label>
+    <label for="photoDescription" data-toggle="popover" title="Video Description" data-content="Add a video description. If there is no needed description, leave this blank.">Video Description</label>
     <textarea class="form-control" rows="2" name="videoDescription" placeholder="Video Description"><?php echo $found['videoDescription']; ?></textarea>
   </div>
   

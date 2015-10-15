@@ -137,7 +137,11 @@ if(isset($_POST['submitButton']))
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = services;
+$adminSecondaryPage = services3;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update <?php echo $found['courseTitle'];?></h1>

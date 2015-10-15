@@ -82,7 +82,9 @@ require_once('adminVariables.php');
 	
 	?>
     <?php
-	$page = admin; 
+	$page = admin;
+	$adminPage = gallery;
+	$adminSecondaryPage = gallery1;
 	require_once('header.php');
 	?>
 
@@ -102,12 +104,12 @@ echo $feedback2;
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_category">
 
   <div class="form-group">
-    <label for="researchTitle">Category Title</label>
+    <label for="researchTitle" data-toggle="popover" title="Category Title" data-content="Title for the category.">Category Title</label>
     <input type="text" class="form-control" id="category" name="category" placeholder="Category">
   </div>
   
   <div class="form-group">
-    <label for="exampleInputFile">New Image</label>
+    <label for="exampleInputFile" data-toggle="popover" title="Category Image" data-content="Add the category image. An image must be uploaded at this time.">Category Image</label>
     <input type="file" id="category" name="photo">
     <p class="help-block">Image size must be (715 Width X 572 Height)</p>
   </div>

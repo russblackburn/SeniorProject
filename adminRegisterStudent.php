@@ -33,7 +33,11 @@
 	mysqli_close($dbc);
 
 ?>
-<?php $page = admin; ?>
+<?php
+$page = admin;
+$adminPage = register;
+$adminSecondaryPage = register1;
+?>
 <?php require_once('header.php'); ?>
 
 <h1>Update Student Registration</h1>

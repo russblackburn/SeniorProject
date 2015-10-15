@@ -42,7 +42,9 @@
 
 <?php
 
-	$page = admin; 
+	$page = admin;
+	$adminPage = events;
+	$adminSecondaryPage = events3;
 	require_once('header.php');
 
 ?>
