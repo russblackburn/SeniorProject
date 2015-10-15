@@ -23,40 +23,13 @@
                 </article>
             </address>
             
-            <div class="socialIcons">
-            	<div class="facebook">
-                    <!-- facebook icon -->
-                    <a href="https://www.facebook.com/pages/Intermountain-Center-for-Disaster-Preparedness/369673569780460" target="_blank">
-                    <div class="logo-facebook-small">
-                    <div class="longpiece"></div>
-                    <div class="longpiece-none"></div>
-                    <div class="shortpiece"></div>
-                    <div class="shortpiece-none"></div>
-                    </div>
-                    </a>
-                </div>
-                
-                <div class="twitter">
-                    <!-- twitter icon -->
-                    <a href="https://twitter.com/INterDisaster" target="_blank">
-                    <div class="logo-twitter-small">
-                    <div class="body"></div>
-                    <div class="body-none"></div>
-                    <div class="beak-bottom"></div>
-                    <div class="beak-bottom-none"></div>
-                    <div class="wing-bottom"></div>
-                    <div class="wing-bottom-none"></div>
-                    <div class="wing-middle"></div>
-                    <div class="wing-middle-none"></div>
-                    <div class="wing-top"></div>
-                    <div class="wing-top-none"></div>
-                    <div class="beak-top"></div>
-                    <div class="beak-top-none"></div>
-                    <div class="head"></div>
-                    </div>
-                    </a>
-                </div>
-            </div>
+            
+            <ul class="soc">
+    			<li><a class="soc-facebook" href="https://www.facebook.com/pages/Intermountain-Center-for-Disaster-Preparedness/369673569780460" target="_blank"></a></li>
+    			<li><a class="soc-twitter" href="https://twitter.com/INterDisaster" target="_blank"></a></li>
+    			<li><a class="soc-google soc-icon-last" href="#"></a></li>
+			</ul>
+
             
         </div><!-- end of container --> 
     </footer>

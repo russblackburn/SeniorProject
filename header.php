@@ -39,10 +39,6 @@
 		}
 	?>
     
-    <!-- Social icon stylesheets -->
-    <link href="css/facebook.css" rel="stylesheet">
-    <link href="css/twitter.css" rel="stylesheet">
-    
     <!-- CSS transitions for images -->
     <link href="css/transitionsCSS/set1.css" rel="stylesheet" type="text/css">
     
