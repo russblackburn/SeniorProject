@@ -23,7 +23,7 @@
                 </article>
             </address>
             
-            
+            <!-- social icons -->
             <ul class="soc">
     			<li><a class="soc-facebook" href="https://www.facebook.com/pages/Intermountain-Center-for-Disaster-Preparedness/369673569780460" target="_blank"></a></li>
     			<li><a class="soc-twitter" href="https://twitter.com/INterDisaster" target="_blank"></a></li>
