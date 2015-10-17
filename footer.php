@@ -4,7 +4,7 @@
     <footer>
     	<div class="container" id="footer">
     		<p class="text-center paddingTop">&copy; Intermountain Center for Disaster Preparedness</p>
-            <p class="text-center"><a href="siteMap.php">Site Map</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="adminLanding.php">Admin</a></p>
+            <p class="text-center"><a href="<?php if($adminPage == zip){echo '../';} ?>siteMap.php">Site Map</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="<?php if($adminPage == zip){echo '../';} ?>adminLanding.php">Admin</a></p>
             
             
             <address itemscope itemtype="http://schema.org/Organization">
@@ -41,13 +41,16 @@
 		}
     ?>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.min.js"></script>
+    <script src="<?php if($adminPage == zip){echo '../';} ?>js/bootstrap.min.js"></script>
     <?php
-	if($page == 'admin'){
+	if($page == 'admin' && $adminPage != 'zip'){
 			echo '<script src="js/tooltip.js"></script>';
+		}
+	if($adminPage == zip){
+			echo '<script src="../js/tooltip.js"></script>';
 		}
 	?>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
-    <script src="js/ie10-viewport-bug-workaround.js"></script>
+    <script src="<?php if($adminPage == zip){echo '../';} ?>js/ie10-viewport-bug-workaround.js"></script>
   </body>
 </html>

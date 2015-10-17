@@ -29,10 +29,10 @@
 	else {echo 'ICDP';}?> | Intermountain Center for Disaster Preparedness</title>
 
     <!-- Bootstrap -->
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="<?php if($adminPage == zip){echo '../';} ?>css/bootstrap.min.css" rel="stylesheet">
     
     <!-- Custom styles for this template -->
-    <link href="css/custom.css" rel="stylesheet">
+    <link href="<?php if($adminPage == zip){echo '../';} ?>css/custom.css" rel="stylesheet">
     <?php
 	if($page != 'admin'){
 			echo '<link href="css/customNav.css" rel="stylesheet">';
@@ -40,7 +40,7 @@
 	?>
     
     <!-- CSS transitions for images -->
-    <link href="css/transitionsCSS/set1.css" rel="stylesheet" type="text/css">
+    <link href="<?php if($adminPage == zip){echo '../';} ?>css/transitionsCSS/set1.css" rel="stylesheet" type="text/css">
     
     <!-- Google fonts open sans -->
     <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
@@ -63,7 +63,7 @@
   	<div id="wrap">
     <header>
         <div class="container">
-        	<a href="index.php"><img class="logo" src="images/header/logoHighRes.png"></a>
+        	<a href="<?php if($adminPage == zip){echo '../';} ?>index.php"><img class="logo" src="<?php if($adminPage == zip){echo '../';} ?>images/header/logoHighRes.png"></a>
         </div>
     </header>
     
