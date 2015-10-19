@@ -144,10 +144,11 @@
             
             <!--  upload zipped course admin -->
             <li class="dropdown <?php if($adminPage=='zip'){echo 'active';}?>">
-              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage a Course <span class="caret"></span></a>
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Course Content <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              	<li class="dropdown-header">Manage a Course (Upload)</li>
-                <li class="<?php if($adminSecondaryPage=='zip1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo 'zipper.php';}else{echo 'courses/zipper.php';} ?>">Upload a Course</a></li>
+              	<li class="dropdown-header">Manage Course Content (Upload/Delete)</li>
+                <li class="<?php if($adminSecondaryPage=='zip1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo 'zipper.php';}else{echo 'courses/zipper.php';} ?>">Upload Course Content</a></li>
+                <li class="<?php if($adminSecondaryPage=='zip2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo 'adminZipperDelete.php';}else{echo 'courses/adminZipperDelete.php';} ?>">Delete Course Content</a></li>
               </ul>
             </li>
             <!-- end of upload zipped course admin -->
