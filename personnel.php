@@ -32,7 +32,7 @@
                     echo '<img src="images/personnel/'.$row['photo'].'" alt="exercises">';
                     echo '<figcaption>';
 					echo '<div class="hoverDiv">';
-                        echo '<h2>'.$row['first_name'].' <span>'.$row['last_name'].'</span></h2>';
+                        echo '<h2>'.$row['first_name'].' <br><span>'.$row['last_name'].'</span></h2>';
                         echo '<p>'.$row['position'].'</p>';
 						echo '</div>';
                         echo '<a href="personnelDetail.php?id='. $row['id'].'">View</a>';

@@ -40,7 +40,7 @@ $subcategory_id = $_GET[id];
 	<?php
 		while($row2 = mysqli_fetch_array($result2)){
 			echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
-				echo '<figure class="effect-lily">';
+				echo '<figure class="effect-lily3">';
 					echo '<img src="images/gallery/photo/photo/'.$row2['photo'].'">';
 					echo '<figcaption>';
 						echo '<h2><span></span></h2>';
