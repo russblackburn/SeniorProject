@@ -146,8 +146,10 @@
             <li class="dropdown <?php if($adminPage=='zip'){echo 'active';}?>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Course Content <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              	<li class="dropdown-header">Manage Course Content (Upload/Delete)</li>
+              	<li class="dropdown-header">Manage Course Content (Instructions/Upload/Manage/Delete)</li>
+                <li><a href="../zipInstructions.php" target="_blank">Instructions for Zip Preparation</a></li>
                 <li class="<?php if($adminSecondaryPage=='zip1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo 'zipper.php';}else{echo 'courses/zipper.php';} ?>">Upload Course Content</a></li>
+                <li class="<?php if($adminSecondaryPage=='zip3'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo 'adminZipperManagePath.php';}else{echo 'courses/adminZipperManagePath.php';} ?>">Manage Course Content Path</a></li>
                 <li class="<?php if($adminSecondaryPage=='zip2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo 'adminZipperDelete.php';}else{echo 'courses/adminZipperDelete.php';} ?>">Delete Course Content</a></li>
               </ul>
             </li>

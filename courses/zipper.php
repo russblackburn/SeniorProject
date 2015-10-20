@@ -144,17 +144,17 @@ if($message2) echo '<p class="adminRed">'.$message2.'</p>';
 <form enctype="multipart/form-data" method="post" action="<?php $_SERVER['PHP_SELF']; ?>">
 
 <div class="form-group">
-    <label for="title" data-toggle="popover" title="Content Title" data-content="Directions." required>Content Title</label>
+    <label for="title" data-toggle="popover" title="Content Title" data-content="Give the content a title." required>Content Title</label>
     <input type="text" class="form-control" id="contentTitle" name="contentTitle" placeholder="Content Title">
   </div>
 
 <div class="form-group">
-    <label for="customTarget" data-toggle="popover" title="Custom Target" data-content="Directions.">Custom Target</label>
+    <label for="customTarget" data-toggle="popover" title="Custom Target" data-content="Target the file that runs the course. If the target file is named index, no custom target is needed.">Custom Target</label>
     <input type="text" class="form-control" id="customTarget" name="customTarget" placeholder="targetfile.htm">
   </div>
 
 <div class="form-group">
-<label for="exampleInputFile" data-toggle="popover" title="Zip File" data-content="Directions.">Zip File</label>
+<label for="exampleInputFile" data-toggle="popover" title="Zip File" data-content="Select the course zip file.">Zip File</label>
 <input type="file" id="zipFile" name="zip_file"></label>
 <p class="help-block">Must be a zip file format</p>
 </div>

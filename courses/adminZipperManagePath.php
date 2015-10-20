@@ -4,7 +4,7 @@ require_once('../adminVariables.php');
 
 $page = admin;
 $adminPage = zip;
-$adminSecondaryPage = zip2;
+$adminSecondaryPage = zip3;
 require_once('../header.php'); 
 	
 	//BUILD THE DATABASE CONNECTION WITH host, user, pass, database
@@ -17,7 +17,7 @@ require_once('../header.php');
 	$result = mysqli_query($dbc, $query) or die('query failed');
 ?>
 
-<h1>Delete Course Content</h1>
+<h1>Manage Course Content Path</h1>
 
 <hr>
 
@@ -32,7 +32,7 @@ while($row = mysqli_fetch_array($result)){
 	echo $row['fullURL'];
 	echo '</a>';
 	echo '&nbsp; - &nbsp;';
-	echo ' <a href="adminZipperDeleteConf.php?id='. $row['id'].'">[delete]</a>';
+	echo ' <a href="adminZipperManagePathDetail.php?id='. $row['id'].'">[manage]</a>';
 	echo '</p>';
 	};
 
