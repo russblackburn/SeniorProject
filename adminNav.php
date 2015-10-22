@@ -50,6 +50,7 @@
               	<li class="dropdown-header">Training (Add/Update/Hide/Delete)</li>
                 <li class="<?php if($adminSecondaryPage=='services1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminCoreCourseForm.php">Add a New Core Course</a></li>
                 <li class="<?php if($adminSecondaryPage=='services2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminThirdPartyCoursesForm.php">Add a New Third Party Course</a></li>
+                <li class="<?php if($adminSecondaryPage=='services13'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingLinkForm.php">Link a Course Form</a></li>
                 <li class="<?php if($adminSecondaryPage=='services3'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingUpdateText.php">Update a Course</a></li>
                 <li class="<?php if($adminSecondaryPage=='services4'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingHide.php">Hide/Un-hide a Course</a></li>
                 <li class="<?php if($adminSecondaryPage=='services5'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingDelete.php">Delete a Course</a></li>
