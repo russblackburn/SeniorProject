@@ -230,8 +230,13 @@ footer {
     width: 100%;
     z-index: 1;
 	}
-.carousel-caption{
-	text-shadow:0px 0px 2px #000;
+	
+.textcolor{
+	background-color:rgba(0, 0, 0, 0.5);
+	}
+.carousel-caption h1, .carousel-caption p{
+	text-shadow:0px 0px 0px #fff !important;
+	color: #fff;
 	}
 	
 /* personnel */	
@@ -414,6 +419,10 @@ footer {
 	.smallTabletHidden {
 		display: block;
 		}
+		
+	.textcolor{
+	margin-bottom:2em;
+	}
 	
 	/* home */
 	.sizeImage {

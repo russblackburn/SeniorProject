@@ -61,8 +61,10 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   <img class="first-slide" src="images/home/<?php echo $found1['slider_image']; ?>" alt="First slide">
                   <div class="container">
                     <div class="carousel-caption">
+                      <div class="textcolor">
                       <h1><?php echo $found1['slider_title']; ?></h1>
                       <p class="smallTabletHidden"><?php echo $found1['slider_description']; ?></p>
+                      </div>
                       <p><a class="btn btn-lg btn-primary" href="<?php echo $found1['slider_link']; ?>" role="button"><?php echo $found1['slider_button_description']; ?></a></p>
                     </div>
                   </div>
@@ -73,8 +75,10 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   echo '<img class="second-slide" src="images/training/slider/'.$row3['slide_image'].'" alt="course slide">';
                   echo '<div class="container">';
                     echo '<div class="carousel-caption">';
+					  echo '<div class="textcolor">';
                       echo '<h1>'.$row3['courseTitle'].'</h1>';
                       echo '<p class="smallTabletHidden">'.$row3['slider_description'].'</p>';
+					  echo '</div>';
                       echo '<p><a class="btn btn-lg btn-primary" href="'.$row3['slider_link'].'" role="button">'.$row3['slider_button_description'].'</a></p>';
                     echo '</div>';
                   echo '</div>';
@@ -87,8 +91,10 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   echo '<img class="second-slide" src="images/training/slider/'.$row4['slide_image'].'" alt="course slide">';
                   echo '<div class="container">';
                     echo '<div class="carousel-caption">';
+					  echo '<div class="textcolor">';
                       echo '<h1>'.$row4['courseTitle'].'</h1>';
                       echo '<p class="smallTabletHidden">'.$row4['slider_description'].'</p>';
+					  echo '</div>';
                       echo '<p><a class="btn btn-lg btn-primary" href="'.$row4['slider_link'].'" role="button">'.$row4['slider_button_description'].'</a></p>';
                     echo '</div>';
                   echo '</div>';
@@ -99,8 +105,10 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   <img class="third-slide" src="images/home/<?php echo $found2['slider_image']; ?>" alt="Third slide">
                   <div class="container">
                     <div class="carousel-caption">
+                      <div class="textcolor">
                       <h1><?php echo $found2['slider_title']; ?></h1>
                       <p class="smallTabletHidden"><?php echo $found2['slider_description']; ?></p>
+                      </div>
                       <p><a class="btn btn-lg btn-primary" href="<?php echo $found2['slider_link']; ?>" role="button"><?php echo $found2['slider_button_description']; ?></a></p>
                     </div>
                   </div>
@@ -131,7 +139,6 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                     <img src="images/home/training.jpg" alt="training">
                     <figcaption>
                         <h2>Training <span></span></h2>
-                        <p>Small amount of training text here.</p>
                         <a href="training.php">View</a>
                     </figcaption>			
                 </figure>
@@ -144,7 +151,6 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                     <img src="images/home/exercises.jpg" alt="exercises">
                     <figcaption>
                         <h2>Exercises <span></span></h2>
-                        <p>Small amount of training text here.</p>
                         <a href="exercises.php">View</a>
                     </figcaption>			
                 </figure>
@@ -157,7 +163,6 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                     <img src="images/home/assessment.jpg" alt="assessment">
                     <figcaption>
                         <h2>Assessment <span></span></h2>
-                        <p>Small amount of training text here.</p>
                         <a href="assessment.php">View</a>
                     </figcaption>			
                 </figure>
@@ -170,7 +175,6 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                     <img src="images/home/research.jpg" alt="research">
                     <figcaption>
                         <h2>Research <span></span></h2>
-                        <p>Small amount of training text here.</p>
                         <a href="research.php">View</a>
                     </figcaption>			
                 </figure>

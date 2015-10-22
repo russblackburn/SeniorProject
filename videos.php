@@ -33,7 +33,6 @@ require_once('adminVariables.php');
 					echo '<img src="images/gallery/video/category/'.$row['photo'].'">';
 					echo '<figcaption>';
 						echo '<h2>'.$row['category'].'<span></span></h2>';
-						echo '<p></p>';
 						echo '<a href="videosSubcategory.php?id='. $row['id'].'">View</a>';
 					echo '</figcaption>';		
 				echo '</figure>';

@@ -44,7 +44,6 @@ $category_id = $_GET[id];
 					echo '<img src="images/gallery/photo/subcategory/'.$row2['photo'].'">';
 					echo '<figcaption>';
 						echo '<h2>'.$row2['subcategory'].'<span></span></h2>';
-						echo '<p></p>';
 						echo '<a href="photosDetail.php?id='. $row2['id'].'">View</a>';
 					echo '</figcaption>';		
 				echo '</figure>';

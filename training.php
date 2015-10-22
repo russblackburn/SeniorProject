@@ -55,7 +55,6 @@ if($found3[id] != NULL) {
 					echo '<img src="images/training/course/'.$row1['photo'].'">';
 					echo '<figcaption>';
 						echo '<h2>'.$row1['courseTitle'].'<span></span></h2>';
-						echo '<p></p>';
 						echo '<a href="coreCourseDetail.php?id='. $row1['id'].'">View</a>';
 					echo '</figcaption>';		
 				echo '</figure>';
@@ -76,7 +75,6 @@ if($found4[id] != NULL) {
 					echo '<img src="images/training/course/'.$row2['photo'].'">';
 					echo '<figcaption>';
 						echo '<h2>'.$row2['courseTitle'].'<span></span></h2>';
-						echo '<p></p>';
 						echo '<a href="thirdPartyCourseDetail.php?id='. $row2['id'].'">View</a>';
 					echo '</figcaption>';		
 				echo '</figure>';

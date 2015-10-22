@@ -37,12 +37,21 @@
 .grid figure figcaption {
 	padding: 2em;
 	color: #fff;
-	text-shadow:0px 0px 2px #000;
+	/*text-shadow:0px 0px 2px #000;*/
 	text-transform: uppercase;
 	font-size: 1.25em;
 	-webkit-backface-visibility: hidden;
 	backface-visibility: hidden;
 }
+
+figure.effect-lily h2, figure.effect-lily p{
+	padding:.5rem;
+	}
+figure.effect-lily:hover h2, figure.effect-lily:hover p{
+	color: #000;
+	background-color:rgba(224, 224, 224, 0.7);
+	padding:.5rem;
+	}
 
 .grid figure figcaption::before,
 .grid figure figcaption::after {
@@ -97,7 +106,7 @@ figure.effect-lily img {
 	max-width: none;
 	width: -webkit-calc(100% + 50px);
 	width: calc(100% + 50px);
-	opacity: 0.7;
+	opacity: 0.2;
 	-webkit-transition: opacity 0.35s, -webkit-transform 0.35s;
 	transition: opacity 0.35s, transform 0.35s;
 	-webkit-transform: translate3d(-40px,0, 0);
@@ -201,7 +210,7 @@ figure.effect-lily2 p {
 }
 
 figure.effect-lily2:hover img{
-	opacity: 0.7;
+	opacity: 0.2;
 }
 
 figure.effect-lily2:hover p {
@@ -271,7 +280,7 @@ figure.effect-lily3 p {
 }
 
 figure.effect-lily3:hover img{
-	opacity: 0.7;
+	opacity: 0.2;
 }
 figure.effect-lily3:hover p {
 	opacity: 1;
