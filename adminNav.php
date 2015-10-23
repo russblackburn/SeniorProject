@@ -47,11 +47,11 @@
             <li class="dropdown <?php if($adminPage=='services'){echo 'active';}?>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              	<li class="dropdown-header">Training (Add/Update/Hide/Delete)</li>
+              	<li class="dropdown-header">Training (Add/Update/Link/Hide/Delete)</li>
                 <li class="<?php if($adminSecondaryPage=='services1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminCoreCourseForm.php">Add a New Core Course</a></li>
                 <li class="<?php if($adminSecondaryPage=='services2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminThirdPartyCoursesForm.php">Add a New Third Party Course</a></li>
-                <li class="<?php if($adminSecondaryPage=='services13'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingLinkForm.php">Link a Course Form</a></li>
                 <li class="<?php if($adminSecondaryPage=='services3'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingUpdateText.php">Update a Course</a></li>
+                <li class="<?php if($adminSecondaryPage=='services13'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingLinkForm.php">Link a Course Form to Uploaded Content</a></li>
                 <li class="<?php if($adminSecondaryPage=='services4'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingHide.php">Hide/Un-hide a Course</a></li>
                 <li class="<?php if($adminSecondaryPage=='services5'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingDelete.php">Delete a Course</a></li>
                 <li role="separator" class="divider"></li>

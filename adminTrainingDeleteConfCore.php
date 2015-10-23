@@ -29,6 +29,16 @@
 			
 			//TRY AND DELETE THE RECORD
 			$result1 = mysqli_query($dbc, $query1) or die('delete query failed');
+			
+		// if there is course content associated with the course, set the courseID to 0
+					// set the value to zero
+					$zero = 0;
+					
+					//build the query
+					$query2 = "UPDATE courseContent SET courseID='$zero' WHERE courseID=$course_id";
+					
+					// talk with the database
+					$result2 = mysqli_query($dbc, $query2) or die('your query has failed 1');
 	
 		
 		//REDIRECT

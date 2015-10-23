@@ -17,6 +17,15 @@ $courseID = $_GET[id];
 	
 	//put what is found from the query into a variable
 	$found = mysqli_fetch_array($result);
+	
+	//BUILD THE QUERY for the form
+	//$query1 = "SELECT * FROM courseContent WHERE courseID=$courseID";
+
+	//TRY AND TALK TO THE DB
+	//$result1 = mysqli_query($dbc, $query1) or die('query failed');
+	
+	//put what is found from the query into a variable
+	//$found1 = mysqli_fetch_array($result1);
 ?>
 
 <div class="pagePadding">
@@ -350,6 +359,16 @@ if($found[registrationInstructions] != NULL || $found[link1] != NULL) {
 	}// end of first conditional
 ?>
 <!-- end of registration instructions -->
+
+<!-- registration form -->
+<?php
+	if($found['includeOnForm'] == 'yes'){
+		echo '<div class="clear"></div>';
+		echo '<hr>';
+		require_once('studentRegistrationForm.php');
+	}
+?>
+<!-- end of registration form -->
 
 
 </div><!-- end of pagePadding -->

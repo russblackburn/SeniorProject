@@ -29,14 +29,23 @@ if(isset($_POST['submitButton']))
 	$link2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link2])));
 	$linkTitle3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle3])));
 	$link3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link3])));
+	$includeOnForm = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[includeOnForm])));
 	$photo = $_POST[photo];
 	$image_name = 'coreCourse';
 	$old_image = $_POST[old_image];
 	
+	//determine if the checkbox is checked
+	if($includeOnForm == yes){
+			$includeOnForm = yes;
+		}
+		else{
+			$includeOnForm = no;
+			}
+	
 	if($_FILES['photo']['size'] == 0){
 		
 		//build the query
-		$query = "UPDATE coreCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3' WHERE id=$id ";
+		$query = "UPDATE coreCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3', includeOnForm='$includeOnForm' WHERE id=$id ";
 		
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
@@ -107,7 +116,7 @@ if(isset($_POST['submitButton']))
 			//upload the information to the database since all photo conditions are met and true
 			 
 			 //build the query
-		$query = "UPDATE coreCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3', photo='$filename' WHERE id=$id ";
+		$query = "UPDATE coreCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3', photo='$filename', includeOnForm='$includeOnForm' WHERE id=$id ";
 			
 			// communicate the query with the database
 			$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
@@ -259,6 +268,17 @@ echo $feedback2;
     <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display.">Link</label>
     <input type="text" class="form-control" id="link" name="link3" placeholder="Link" value="<?php echo $found['link3']; ?>">
   </div>
+  
+  <hr>
+  
+  <!-- choose to include a registration form with the course -->
+  <label for="checkbox" data-toggle="popover" title="Include in Registration Form" data-content="Check this box if you want to include this course on the student registration form (this will also add a form directly to the bottom of the course page).">Include in Registration Form</label>
+  <div class="checkbox">
+  <label>
+    <input type="checkbox" value="yes" name="includeOnForm" <?php if($found['includeOnForm'] == 'yes'){echo 'checked';} ?>>
+    Include
+  </label>
+</div>
   
   <hr>
   
