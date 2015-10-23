@@ -16,7 +16,7 @@
 	$result = mysqli_query($dbc, $query) or die('query failed');
 ?>
 
-<h1>Link a Course Form</h1>
+<h1>Link a Course Form to Uploaded Content</h1>
 
 <hr>
 

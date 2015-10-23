@@ -72,7 +72,7 @@ $adminSecondaryPage = services13;
 ?>
 <?php require_once('header.php'); ?>
 
-<h1>Link Form to <?php echo $found['courseTitle'];?></h1>
+<h1>Link <?php echo $found['courseTitle'];?> Form</h1>
 
 <hr>
 

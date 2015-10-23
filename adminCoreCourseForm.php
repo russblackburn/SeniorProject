@@ -31,11 +31,20 @@ require_once('header.php');
 	$linkTitle3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle3])));
 	$link3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link3])));
 	$hide = 'F';
+	$includeOnForm = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[includeOnForm])));
 	$photo = $_POST[photo];
 	$image_name = 'coreCourse';
 	
 	//load the data for the slider
 	$slide_hidden = 'T';
+	
+	//determine if the checkbox is checked
+	if($includeOnForm == yes){
+			$includeOnForm = yes;
+		}
+		else{
+			$includeOnForm = no;
+			}
 	
 	//-----------------------------------------------------upload the first photo------------------------------------------
 	//--------make dynamic photo path and name-------------
@@ -86,8 +95,8 @@ require_once('header.php');
 	//upload the information to the database since all photo conditions are met and true
 	
 	// build the query
-	$query = "INSERT INTO coreCourse(courseTitle, paragraph1, paragraph2, paragraph3, paragraph4, paragraph5, paragraph6, paragraph7, paragraph8, paragraph9, paragraph10, registrationInstructions, linkTitle1, link1, linkTitle2, link2, linkTitle3, link3, photo, hide, slide_hidden)". 
-	"VALUES ('$courseTitle','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10','$registrationInstructions','$linkTitle1','$link1','$linkTitle2','$link2','$linkTitle3','$link3','$filename','$hide','$slide_hidden')";
+	$query = "INSERT INTO coreCourse(courseTitle, paragraph1, paragraph2, paragraph3, paragraph4, paragraph5, paragraph6, paragraph7, paragraph8, paragraph9, paragraph10, registrationInstructions, linkTitle1, link1, linkTitle2, link2, linkTitle3, link3, photo, hide, slide_hidden, includeOnForm)". 
+	"VALUES ('$courseTitle','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10','$registrationInstructions','$linkTitle1','$link1','$linkTitle2','$link2','$linkTitle3','$link3','$filename','$hide','$slide_hidden','$includeOnForm')";
 	
 	// communicate the query with the database
 	$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
@@ -218,6 +227,17 @@ echo $feedback2;
     <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display.">Link</label>
     <input type="text" class="form-control" id="link" name="link3" placeholder="Link">
   </div>
+  
+  <hr>
+  
+  <!-- choose to include a registration form with the course -->
+  <label for="checkbox" data-toggle="popover" title="Include in Registration Form" data-content="Check this box if you want to include this course on the student registration form (this will also add a form directly to the bottom of the course page).">Include in Registration Form</label>
+  <div class="checkbox">
+  <label>
+    <input type="checkbox" value="yes" name="includeOnForm">
+    Include
+  </label>
+</div>
   
   <hr>
   
