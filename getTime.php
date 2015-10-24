@@ -32,7 +32,7 @@ $q = intval($_GET['q']);
 	echo '<label for="dateAndTime">Date and Time</label>';
 				echo '<div class="form-group">';
 					echo '<div class="form-group">';
-						echo '<select class="form-control" name="date">';
+						echo '<select class="form-control" name="date_time">';
 						   echo '<option value="0">Select</option>';
 	
 	while($row01 = mysqli_fetch_array($result01)){
