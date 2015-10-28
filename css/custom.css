@@ -309,6 +309,14 @@ footer {
       #footer {
         height: 270px;
       }
+	  
+	.gifborder{
+		border:1px solid #979797;
+		}
+	.gifborder img{
+		width:100%;
+		}
+
 
 	
 /*------------------------------------------ begin responsive elements ------------------------------------------*/
