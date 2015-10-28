@@ -29,6 +29,7 @@ if($found['description'] != NULL) {
 ?>
 
 <!-- begin form -->
+<?php require_once('requestServiceProposalForm.php'); ?>
 
 </div><!-- end of pagePadding -->
 

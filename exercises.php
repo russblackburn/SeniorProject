@@ -93,6 +93,13 @@ if($found[registration_instructions] != NULL) {
 <!-- end of registration instructions -->
 
 
+<!-- registration form -->
+<div class="clear"></div>
+<hr>
+<?php require_once('requestServiceProposalForm.php'); ?>
+<!-- end of registration form -->
+
+
 
 </div><!-- end of pagePadding -->
 <?php require_once('footer.php'); ?>
