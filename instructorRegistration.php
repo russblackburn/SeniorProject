@@ -29,6 +29,9 @@ if($found['description'] != NULL) {
 ?>
 
 <!-- begin form -->
+<?php
+require_once('instructorRegistrationForm.php');
+?>
 
 </div><!-- end of pagePadding -->
 

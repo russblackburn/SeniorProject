@@ -46,10 +46,14 @@ $date_time = str_replace('·', '--', $date_time1);
 	
 	$course = $found2['courseTitle'];
 	
+		//SET THE DATE THAT THE USER HAS REGISTERED ON -----------
+		$registered_on = date('Y\-m\-d');
+		
+	
 // SAVE THE FORM ELEMENTS INTO THE FORMS DATABASE
 	// build the query
-	$query3 = "INSERT INTO student_registration(name, email, course, date_time)". 
-	"VALUES ('$name','$email','$course','$date_time')";
+	$query3 = "INSERT INTO student_registration(name, email, course, date_time, registered_on)". 
+	"VALUES ('$name','$email','$course','$date_time','$registered_on')";
 	
 	// communicate the query with the database
 	$result3 = mysqli_query($dbc1, $query3) or die('The databse query has failed! 3');
@@ -69,10 +73,10 @@ $date_time = str_replace('·', '--', $date_time1);
 	
 	if($URL == true){// this message includes a link for the course content
 		
-			$message = "$name,\r\n\r\nThank you for registering.\r\n\r\n$course\r\n$courseURL\r\n\r\nThis email includes a link";
+			$message = "$name,\r\n\r\nThank you for registering.\r\n\r\n$course\r\n$courseURL\r\n\r\nThis email includes the course content link";
 			
 		}else{// this message does not include a link
-				$message = "$name,\r\n\r\nThank you for registering.\r\n\r\n$course\r\n$date_time1\r\n\r\nThis email does not have a link";
+				$message = "$name,\r\n\r\nThank you for registering.\r\n\r\n$course\r\n$date_time1\r\n\r\nThis email does not have a link, it has the course date and time";
 			}
 		
 		// SEND THE EMAIL THAT WAS BUILT
