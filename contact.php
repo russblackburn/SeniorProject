@@ -25,7 +25,7 @@
 </div>
 
 
-<hr>
+<hr id="contactform">
 
 
 <div class="entireForm">

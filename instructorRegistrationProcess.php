@@ -28,10 +28,10 @@ mysqli_close($dbc1);
 
 <div class="pagePadding">
 
-<h1>Form Submitted</h1>
+<h1>You Have Registered</h1>
 <hr>
 
-<p>Instructor form message here.</p>
+<p>Expect a reply from us in the next 7-10 business days. If you have any questions please contact us at <a href="tel:1-801-408-7061">801.408.7061</a> or send us a <a href="contact.php#contactform">message</a>.</p>
 
 
 
