@@ -26,6 +26,29 @@
 <iframe class="videoiFrame paddingTop" src="virtualTour/" frameborder="0"></iframe>
 </div>
 
+<!-- Button trigger modal -->
+<div class="row">
+<div class="text-center buttonVR">
+<button type="button" class="btn btn-default" data-toggle="modal" data-target="#myModal">
+  <div class="vrPadding">View Map</div>
+</button>
+</div>
+</div>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  	<div class="modal-dialog" role="document">
+    	<div class="modal-content">
+      	<div class="modal-header">
+        	<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        	<h4 class="modal-title" id="myModalLabel">Virtual Tour Map</h4>
+      	</div>
+      	<div class="modal-body">
+        	<img class="img-responsive-height text-center" src="images/gallery/vrMap/VRMap.png">
+      	</div>
+    	</div>
+  	</div>
+	</div>
 <?php
 
 	//DISPLAY WHAT WE FOUND
