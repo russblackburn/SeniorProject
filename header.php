@@ -37,6 +37,10 @@
 	if($page != 'admin'){
 			echo '<link href="css/customNav.css" rel="stylesheet">';
 		}
+		
+	if($secondaryPage == 'photos'){
+			echo '<link href="css/photoModal.css" rel="stylesheet">';
+		}
 	?>
     
     <!-- CSS transitions for images -->

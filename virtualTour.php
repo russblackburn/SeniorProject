@@ -46,6 +46,9 @@
       	<div class="modal-body">
         	<img class="img-responsive-height text-center" src="images/gallery/vrMap/VRMap.png">
       	</div>
+        <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
     	</div>
   	</div>
 	</div>

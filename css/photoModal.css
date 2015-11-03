@@ -1,0 +1,7 @@
+.modal.and.carousel {
+  position: absolute; 
+}
+
+.carousel-control.left, .carousel-control.right {
+    background-image: none
+}
