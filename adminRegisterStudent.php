@@ -40,7 +40,7 @@ $adminSecondaryPage = register1;
 ?>
 <?php require_once('header.php'); ?>
 
-<h1>Update Student Registration</h1>
+<h1>Update Student Registration Description</h1>
 
 <hr>
 
