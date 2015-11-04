@@ -83,7 +83,7 @@ $subcategory_id = $_GET[id];
 				if($i == 0){echo ' active';}
 				echo '">';
 				echo '<img src="images/gallery/photo/photo/'.$row3['photo'].'" alt="">';
-				echo '<div class="text-center mobileHidden"><p>'.$row3['photoDescription'].'</p></div>';
+				echo '<div><p>'.$row3['photoDescription'].'</p></div>';
 				echo '</div>';
 				
 				if($i == 0){
