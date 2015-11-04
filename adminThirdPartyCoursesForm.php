@@ -229,7 +229,7 @@ echo $feedback2;
     <p class="help-block">Image size must be (715 Width X 572 Height)</p>
   </div>
   
-  <button type="submit" class="btn btn-default" name="submitButton">Add Third Party Course</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Add Third Party Course</button>
 </form>
 
 <?php require_once('footer.php'); ?>

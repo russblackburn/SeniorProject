@@ -61,7 +61,7 @@ echo $feedback;
 
   <input type="hidden" name="priority" value="99">
   
-  <button type="submit" class="btn btn-default" name="submitButton">Add New FAQ</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Add New FAQ</button>
 </form>
 
 <?php require_once('footer.php'); ?>

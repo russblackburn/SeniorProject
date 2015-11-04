@@ -104,7 +104,7 @@ echo $feedback;
   
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton">Link</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Link</button>
 </form>
 
 <?php require_once('footer.php'); ?>

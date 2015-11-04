@@ -73,7 +73,7 @@ echo $feedback;
 
 
 <input type="hidden" name="id" value="<?php echo $found['id'];?>">
-<input type="submit" class="btn btn-default" name="submit" value="Update">
+<input type="submit" class="btn btn-primary" name="submit" value="Update">
 &nbsp; <a href="adminZipperManagePath.php"> Cancel</a>
 </fieldset>
 </form>

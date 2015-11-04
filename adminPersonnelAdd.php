@@ -193,7 +193,7 @@ echo $feedback2;
   
   <input type="hidden" name="priority" value="99">
   
-  <button type="submit" class="btn btn-default" name="submitButton">Add Personnel</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Add Personnel</button>
 </form>
 
 <?php require_once('footer.php'); ?>

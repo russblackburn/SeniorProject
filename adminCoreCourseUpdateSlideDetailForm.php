@@ -156,7 +156,7 @@ echo $feedback2;
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
   <input type="hidden" name="slider_link" value="coreCourseDetail.php?id=<?php echo $found['id']; ?>">
   <input type="hidden" name="old_image" value="<?php echo $found['slide_image']; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton">Update/Add <?php echo $found['courseTitle']; ?> Slide</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Update/Add <?php echo $found['courseTitle']; ?> Slide</button>
 </form>
 
 <?php require_once('footer.php'); ?>

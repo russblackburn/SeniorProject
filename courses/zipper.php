@@ -159,7 +159,7 @@ if($message2) echo '<p class="adminRed">'.$message2.'</p>';
 <p class="help-block">Must be a zip file format</p>
 </div>
 
-<input type="submit" class="btn btn-default" name="submitButton" value="Upload">
+<input type="submit" class="btn btn-primary" name="submitButton" value="Upload">
 </form>
 
 

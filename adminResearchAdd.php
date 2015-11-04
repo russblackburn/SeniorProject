@@ -174,7 +174,7 @@ echo $feedback2;
     <p class="help-block">Image size must be (width and height)</p>
   </div>
   
-  <button type="submit" class="btn btn-default" name="submitButton">Add Research</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Add Research</button>
 </form>
 
 <?php require_once('footer.php'); ?>

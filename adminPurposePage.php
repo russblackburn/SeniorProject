@@ -196,7 +196,7 @@ echo $feedback2;
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
   <input type="hidden" name="old_image" value="<?php echo $found['purpose_image']; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton">Update Purpose</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Update Purpose</button>
 </form>
 
 <?php require_once('footer.php'); ?>

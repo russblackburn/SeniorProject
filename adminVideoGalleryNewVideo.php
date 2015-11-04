@@ -80,7 +80,7 @@ echo $feedback;
     <textarea class="form-control" rows="2" name="videoDescription" placeholder="Video Description"></textarea>
   </div>
   
-  <button type="submit" class="btn btn-default" name="submitButton">Add Video</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Add Video</button>
 </form>
 
 <?php require_once('footer.php'); ?>

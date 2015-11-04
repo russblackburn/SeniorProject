@@ -91,7 +91,7 @@ echo $feedback;
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
   <input type="hidden" name="getSubcategoryID" value="<?php echo $subcategoryID; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton">Update</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Update</button>
 </form>
 
 <?php

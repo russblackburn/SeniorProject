@@ -395,7 +395,7 @@ echo $feedback;
     <br>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton">Update <?php echo $found['courseTitle']; ?></button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Update <?php echo $found['courseTitle']; ?></button>
 </form>
 
 <?php require_once('footer.php'); ?>

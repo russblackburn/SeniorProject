@@ -131,7 +131,7 @@ echo $feedback2;
     <textarea class="form-control" rows="2" name="photoDescription" placeholder="Photo Description"></textarea>
   </div>
   
-  <button type="submit" class="btn btn-default" name="submitButton">Add Photo</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Add Photo</button>
 </form>
 
 <?php require_once('footer.php'); ?>

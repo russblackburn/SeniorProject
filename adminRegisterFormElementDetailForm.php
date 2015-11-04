@@ -63,7 +63,7 @@ echo $feedback2;
   </div>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton">Update <?php echo $found['form_element']; ?></button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Update <?php echo $found['form_element']; ?></button>
 </form>
 
 <?php require_once('footer.php'); ?>

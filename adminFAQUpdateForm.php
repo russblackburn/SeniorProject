@@ -67,7 +67,7 @@ echo $feedback;
   </div>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton">Update FAQ</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Update FAQ</button>
 </form>
 
 <?php require_once('footer.php'); ?>

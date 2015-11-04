@@ -468,7 +468,7 @@ echo $feedback;
         </div>
     </div>
     <br>
-  <button type="submit" class="btn btn-default" name="submitButton">Add Core Course Event</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Add Core Course Event</button>
 </form>
 
 <br>
@@ -707,7 +707,7 @@ echo $feedback;
         </div>
     </div>
     <br>
-  <button type="submit" class="btn btn-default" name="submit">Add Third Party Course Event</button>
+  <button type="submit" class="btn btn-primary" name="submit">Add Third Party Course Event</button>
 </form>
 
 
@@ -944,7 +944,7 @@ echo $feedback;
         </div>
     </div>
     <br>
-  <button type="submit" class="btn btn-default" name="submitCustom">Add Custom Event</button>
+  <button type="submit" class="btn btn-primary" name="submitCustom">Add Custom Event</button>
 </form>
 
 <?php require_once('footer.php'); ?>

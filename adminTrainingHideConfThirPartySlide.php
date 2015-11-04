@@ -66,7 +66,7 @@ $adminSecondaryPage = home5;
 		  }
   ?>
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton"><?php
+  <button type="submit" class="btn btn-primary" name="submitButton"><?php
   
   if($found['slide_hidden'] == T){
 	  echo 'Un-hide';

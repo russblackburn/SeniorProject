@@ -67,7 +67,7 @@ $adminSecondaryPage = services11;
   
   ?>
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
-  <button type="submit" class="btn btn-default" name="submitButton"><?php
+  <button type="submit" class="btn btn-primary" name="submitButton"><?php
   
   if($found['hide'] == T){
 	  echo 'Un-hide';
