@@ -121,9 +121,14 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
               <ul class="dropdown-menu">
               	<li class="dropdown-header">Register (Update)</li>
-                <li class="<?php if($adminSecondaryPage=='register1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterStudent.php">Update Student Registration</a></li>
-                <li class="<?php if($adminSecondaryPage=='register2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterInstructor.php">Update Instructor Registration</a></li>
-                <li class="<?php if($adminSecondaryPage=='register3'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterProposal.php">Update Request Service Proposal</a></li>
+                <li class="<?php if($adminSecondaryPage=='register1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterStudent.php">Update Student Registration Description</a></li>
+                <li class="<?php if($adminSecondaryPage=='register2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterInstructor.php">Update Instructor Registration Description</a></li>
+                <li class="<?php if($adminSecondaryPage=='register3'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterProposal.php">Update Request Service Proposal Description</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Instructor Registration Form (Add/Update/Delete)</li>
+                <li class="<?php if($adminSecondaryPage=='register4'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterAddFormElement.php">Add a New Course/Topic of Interest</a></li>
+                <li class="<?php if($adminSecondaryPage=='register5'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterUpdateFormElement.php">Update a Course/Topic of Interest</a></li>
+                <li class="<?php if($adminSecondaryPage=='register6'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterDeleteFormElement.php">Delete a Course/Topic of Interest</a></li>
               </ul>
             </li>
             <!-- end of register admin -->
