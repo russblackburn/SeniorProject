@@ -40,7 +40,7 @@ $adminSecondaryPage = register3;
 ?>
 <?php require_once('header.php'); ?>
 
-<h1>Update Request Service Proposal</h1>
+<h1>Update Request Service Proposal Description</h1>
 
 <hr>
 
