@@ -115,7 +115,6 @@ if($found1[id] != NULL) {
 					echo '<img src="images/research/'.$row2['photo'].'">';
 					echo '<figcaption>';
 						echo '<h2>'.$row2['researchTitle'].'<span></span></h2>';
-						echo '<p></p>';
 						echo '<a href="researchDetail.php?id='. $row2['id'].'">View</a>';
 					echo '</figcaption>';		
 				echo '</figure>';
