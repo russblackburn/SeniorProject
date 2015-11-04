@@ -27,7 +27,7 @@
             <ul class="soc">
     			<li><a class="soc-facebook" href="https://www.facebook.com/pages/Intermountain-Center-for-Disaster-Preparedness/369673569780460" target="_blank"></a></li>
     			<li><a class="soc-twitter" href="https://twitter.com/INterDisaster" target="_blank"></a></li>
-    			<li><a class="soc-google soc-icon-last" href="#"></a></li>
+    			<li><a class="soc-google soc-icon-last" href="https://plus.google.com/118046388325260692264" target="_blank"></a></li>
 			</ul>
 
             
