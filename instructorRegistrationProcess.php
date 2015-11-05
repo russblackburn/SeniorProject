@@ -22,6 +22,7 @@ $topics_of_interest = stripslashes(mysqli_real_escape_string($dbc1, trim($_POST[
 
 $courses_topics_of_interest = implode(',', $form_element_checkbox);
 $courses_topics_of_interest = str_replace(',', '', $courses_topics_of_interest);
+$courses_topics_of_interest = stripslashes(mysqli_real_escape_string($dbc1, trim($courses_topics_of_interest)));
 
 
 //SET THE DATE THAT THE USER HAS REGISTERED ON -----------
