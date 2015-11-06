@@ -35,6 +35,17 @@ require_once('header.php');
 	$photo = $_POST[photo];
 	$image_name = 'coreCourse';
 	
+		//loop through the $myInputs array for list items
+		$myInputs = $_POST["myInputs"];
+		
+		$i = 1;
+		foreach ($myInputs as $eachInput) {
+			 if($eachInput != ''){
+			 ${'listItem' . $i} = stripslashes(mysqli_real_escape_string($dbc, trim($eachInput)));
+			 $i++;
+			 }
+		}
+	
 	//load the data for the slider
 	$slide_hidden = 'T';
 	
@@ -95,8 +106,8 @@ require_once('header.php');
 	//upload the information to the database since all photo conditions are met and true
 	
 	// build the query
-	$query = "INSERT INTO coreCourse(courseTitle, paragraph1, paragraph2, paragraph3, paragraph4, paragraph5, paragraph6, paragraph7, paragraph8, paragraph9, paragraph10, registrationInstructions, linkTitle1, link1, linkTitle2, link2, linkTitle3, link3, photo, hide, slide_hidden, includeOnForm)". 
-	"VALUES ('$courseTitle','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10','$registrationInstructions','$linkTitle1','$link1','$linkTitle2','$link2','$linkTitle3','$link3','$filename','$hide','$slide_hidden','$includeOnForm')";
+	$query = "INSERT INTO coreCourse(courseTitle, paragraph1, paragraph2, paragraph3, paragraph4, paragraph5, paragraph6, paragraph7, paragraph8, paragraph9, paragraph10, listItem1, listItem2, listItem3, listItem4, listItem5, listItem6, listItem7, listItem8, listItem9, listItem10, listItem11, listItem12, listItem13, listItem14, listItem15, listItem16, listItem17, listItem18, listItem19, listItem20, registrationInstructions, linkTitle1, link1, linkTitle2, link2, linkTitle3, link3, photo, hide, slide_hidden, includeOnForm)". 
+	"VALUES ('$courseTitle','$paragraph1','$paragraph2','$paragraph3','$paragraph4','$paragraph5','$paragraph6','$paragraph7','$paragraph8','$paragraph9','$paragraph10','$listItem1','$listItem2','$listItem3','$listItem4','$listItem5','$listItem6','$listItem7','$listItem8','$listItem9','$listItem10','$listItem11','$listItem12','$listItem13','$listItem14','$listItem15','$listItem16','$listItem17','$listItem18','$listItem19','$listItem20','$registrationInstructions','$linkTitle1','$link1','$linkTitle2','$link2','$linkTitle3','$link3','$filename','$hide','$slide_hidden','$includeOnForm')";
 	
 	// communicate the query with the database
 	$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
@@ -185,6 +196,36 @@ echo $feedback2;
     <textarea class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"></textarea>
   </div>
   
+  <hr>
+  <!-- adding the unordered list for the course -->
+  
+  <script>
+var counter = 1;
+var limit = 20;
+function addInput(divName){
+     if (counter == limit)  {
+          alert("You have reached the limit of adding " + counter + " inputs");
+     }
+     else {
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<div class='form-group'><label for='listItem' >List Item " + (counter + 1) + "</label><textarea class='form-control' rows='2' name='myInputs[]' placeholder='List Item " + (counter + 1) + "'></textarea></div>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+     }
+}
+  </script>
+  
+  <div class="form-group">
+    <label for="listItem" data-toggle="popover" title="List Items" data-content="Create an unordered list that will display after the paragraphs. Click the + Add another list item button for up to 20 list items. ">List Item 1</label>
+    <textarea class="form-control" rows="2" name="myInputs[]" placeholder="List Item 1"></textarea>
+  </div>
+  
+  <div id="dynamicInput"></div>
+  
+	<button type="button" class="btn btn-default" value="Add another text input" onClick="addInput('dynamicInput');">+ Add another list item</button>
+    
+<!-- end of the unordered list -->
+
   <hr>
   
   <div class="form-group">

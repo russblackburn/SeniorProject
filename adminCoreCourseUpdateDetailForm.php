@@ -34,6 +34,17 @@ if(isset($_POST['submitButton']))
 	$image_name = 'coreCourse';
 	$old_image = $_POST[old_image];
 	
+		//loop through the $myInputs array for list items
+		$myInputs = $_POST["myInputs"];
+		
+		$i = 1;
+		foreach ($myInputs as $eachInput) {
+			 if($eachInput != ''){
+			 ${'listItem' . $i} = stripslashes(mysqli_real_escape_string($dbc, trim($eachInput)));
+			 $i++;
+			 }
+		}
+	
 	//determine if the checkbox is checked
 	if($includeOnForm == yes){
 			$includeOnForm = yes;
@@ -45,7 +56,7 @@ if(isset($_POST['submitButton']))
 	if($_FILES['photo']['size'] == 0){
 		
 		//build the query
-		$query = "UPDATE coreCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3', includeOnForm='$includeOnForm' WHERE id=$id ";
+		$query = "UPDATE coreCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', listItem1='$listItem1', listItem2='$listItem2', listItem3='$listItem3', listItem4='$listItem4', listItem5='$listItem5', listItem6='$listItem6', listItem7='$listItem7', listItem8='$listItem8', listItem9='$listItem9', listItem10='$listItem10', listItem11='$listItem11', listItem12='$listItem12', listItem13='$listItem13', listItem14='$listItem14', listItem15='$listItem15', listItem16='$listItem16', listItem17='$listItem17', listItem18='$listItem18', listItem19='$listItem19', listItem20='$listItem20', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3', includeOnForm='$includeOnForm' WHERE id=$id ";
 		
 		// talk with the database
 		$result = mysqli_query($dbc, $query) or die('your query has failed 1');
@@ -116,7 +127,7 @@ if(isset($_POST['submitButton']))
 			//upload the information to the database since all photo conditions are met and true
 			 
 			 //build the query
-		$query = "UPDATE coreCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3', photo='$filename', includeOnForm='$includeOnForm' WHERE id=$id ";
+		$query = "UPDATE coreCourse SET courseTitle='$courseTitle', paragraph1='$paragraph1', paragraph2='$paragraph2', paragraph3='$paragraph3', paragraph4='$paragraph4', paragraph5='$paragraph5', paragraph6='$paragraph6', paragraph7='$paragraph7', paragraph8='$paragraph8', paragraph9='$paragraph9', paragraph10='$paragraph10', listItem1='$listItem1', listItem2='$listItem2', listItem3='$listItem3', listItem4='$listItem4', listItem5='$listItem5', listItem6='$listItem6', listItem7='$listItem7', listItem8='$listItem8', listItem9='$listItem9', listItem10='$listItem10', listItem11='$listItem11', listItem12='$listItem12', listItem13='$listItem13', listItem14='$listItem14', listItem15='$listItem15', listItem16='$listItem16', listItem17='$listItem17', listItem18='$listItem18', listItem19='$listItem19', listItem20='$listItem20', registrationInstructions='$registrationInstructions', linkTitle1='$linkTitle1', link1='$link1', linkTitle2='$linkTitle2', link2='$link2', linkTitle3='$linkTitle3', link3='$link3', photo='$filename', includeOnForm='$includeOnForm' WHERE id=$id ";
 			
 			// communicate the query with the database
 			$result = mysqli_query($dbc, $query) or die('The databse query has failed!');
@@ -225,6 +236,61 @@ echo $feedback2;
     <label for="paragraph10" data-toggle="popover" title="Paragraph 10" data-content="Tenth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 10</label>
     <textarea class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"><?php echo $found['paragraph10']; ?></textarea>
   </div>
+  
+  <hr>
+  
+  <!-- begin the list items ---------------------------------->
+  
+  <div class="form-group">
+    <label for="listItem" data-toggle="popover" title="List Items" data-content="Update the unordered list that will display after the paragraphs. Click the + Add another list item button for up to 20 list items. If there are no list items needed, leave this blank.">List Item 1</label>
+    <textarea class="form-control" rows="2" name="myInputs[0]" placeholder="List Item 1"><?php echo $found['listItem1']; ?></textarea>
+  </div>
+  
+  <?php
+  $listItemCount = 1;
+  
+  for ($x = 2; $x <= 20; $x++) {
+	  
+	  $listItemNumber = 'listItem' . $x;
+	  
+	  if($found[$listItemNumber] != ''){
+	  
+	  echo '<div class="form-group">';
+		echo '<label for="listItem" data-toggle="popover" title="List Items" data-content="Update the unordered list that will display after the paragraphs. Click the + Add another list item button for up to 20 list items. If there are no list items needed, leave this blank.">List Item '.$x.'</label>';
+		echo '<textarea class="form-control" rows="2" name="myInputs['.$x.']" placeholder="List Item '.$x.'">'.$found[$listItemNumber].'</textarea>';
+	  echo '</div>';
+	  
+	  $listItemCount++;
+	  
+	  }
+  
+  }
+  
+  ?>
+  
+  <script>
+var counter = <?php echo $listItemCount; ?>;
+var limit = 20;
+function addInput(divName){
+     if (counter == limit)  {
+          alert("You have reached the limit of adding " + counter + " inputs");
+     }
+     else {
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<div class='form-group'><label for='listItem' >List Item " + (counter + 1) + "</label><textarea class='form-control' rows='2' name='myInputs[" + (counter + 1) + "]' placeholder='List Item " + (counter + 1) + "'></textarea></div>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter++;
+     }
+}
+  </script>
+  
+  <div id="dynamicInput"></div>
+  
+  <button type="button" class="btn btn-default" value="Add another text input" onClick="addInput('dynamicInput');">+ Add another list item</button>
+  
+  <!-- end of the dynamic list -------------------------------------------->
+  
+  
   
   <hr>
   
