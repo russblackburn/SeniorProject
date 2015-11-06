@@ -15,19 +15,20 @@ if(isset($_POST['submitButton']))
 	$lastName = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[lastName])));
 	$position = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[position])));
 	$qualifications = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[qualifications])));
-	$paragraph1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph1])));
-	$paragraph2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph2])));
-	$paragraph3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph3])));
-	$paragraph4 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph4])));
-	$paragraph5 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph5])));
-	$paragraph6 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph6])));
-	$paragraph7 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph7])));
-	$paragraph8 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph8])));
-	$paragraph9 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph9])));
-	$paragraph10 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[paragraph10])));
 	$photo = $_POST[photo];
 	$old_image = $_POST[old_image];
 	$image_name = 'personnel';
+	
+		//loop through the $paragraph array for paragraphs
+		$paragraph = $_POST["paragraph"];
+		
+		$i = 1;
+		foreach ($paragraph as $eachInput) {
+			 if($eachInput != ''){
+			 ${'paragraph' . $i} = stripslashes(mysqli_real_escape_string($dbc, trim($eachInput)));
+			 $i++;
+			 }
+		}
 	
 	
 	if($_FILES['photo']['size'] == 0){
@@ -162,55 +163,58 @@ echo $feedback2;
     <textarea class="form-control" rows="2" name="qualifications" placeholder="Qualifications"><?php echo $found['qualifications']; ?></textarea>
   </div>
   
-  <div class="form-group">
-    <label for="paragraph1" data-toggle="popover" title="Paragraph 1" data-content="First paragraph for the page. Must have at least one paragraph. This is an about section for the personnel record.">Paragraph 1</label>
-    <textarea class="form-control" rows="2" name="paragraph1" placeholder="Paragraph 1"><?php echo $found['paragraph_1']; ?></textarea>
-  </div>
+  <hr>
   
   <div class="form-group">
-    <label for="paragraph2" data-toggle="popover" title="Paragraph 2" data-content="Second paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 2</label>
-    <textarea class="form-control" rows="2" name="paragraph2" placeholder="Paragraph 2"><?php echo $found['paragraph_2']; ?></textarea>
+    <label for="paragraph1" data-toggle="popover" title="Paragraphs" data-content="Paragraphs for the page. Must have at least one paragraph. This is a description of the page. Click the + Add a paragraph button for up to 10 paragraphs.">Paragraph 1</label>
+    <textarea class="form-control" rows="2" name="paragraph[0]" placeholder="Paragraph 1"><?php echo $found['paragraph_1']; ?></textarea>
   </div>
   
-  <div class="form-group">
-    <label for="paragraph3" data-toggle="popover" title="Paragraph 3" data-content="Third paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 3</label>
-    <textarea class="form-control" rows="2" name="paragraph3" placeholder="Paragraph 3"><?php echo $found['paragraph_3']; ?></textarea>
-  </div>
+  <?php
+  $paragraphCount = 1;
   
-  <div class="form-group">
-    <label for="paragraph4" data-toggle="popover" title="Paragraph 4" data-content="Fourth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 4</label>
-    <textarea class="form-control" rows="2" name="paragraph4" placeholder="Paragraph 4"><?php echo $found['paragraph_4']; ?></textarea>
-  </div>
+  for ($x = 2; $x <= 10; $x++) {
+	  
+	  $paragraphNumber = 'paragraph_' . $x;
+	  
+	  if($found[$paragraphNumber] != ''){
+	  
+	  echo '<div class="form-group">';
+		echo '<label for="listItem" data-toggle="popover" title="Paragraphs" data-content="Paragraphs for the page. Must have at least one paragraph. This is a description of the page. Click the + Add a paragraph button for up to 10 paragraphs. If there is no paragraph needed, leave this blank.">Paragraph '.$x.'</label>';
+		echo '<textarea class="form-control" rows="2" name="paragraph['.$x.']" placeholder="Paragraph '.$x.'">'.$found[$paragraphNumber].'</textarea>';
+	  echo '</div>';
+	  
+	  $paragraphCount++;
+	  
+	  }
   
-  <div class="form-group">
-    <label for="paragraph5" data-toggle="popover" title="Paragraph 5" data-content="Fifth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 5</label>
-    <textarea class="form-control" rows="2" name="paragraph5" placeholder="Paragraph 5"><?php echo $found['paragraph_5']; ?></textarea>
-  </div>
+  }
   
-  <div class="form-group">
-    <label for="paragraph6" data-toggle="popover" title="Paragraph 6" data-content="Sixth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 6</label>
-    <textarea class="form-control" rows="2" name="paragraph6" placeholder="Paragraph 6"><?php echo $found['paragraph_6']; ?></textarea>
-  </div>
+  ?>
   
-  <div class="form-group">
-    <label for="paragraph7" data-toggle="popover" title="Paragraph 7" data-content="Seventh paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 7</label>
-    <textarea class="form-control" rows="2" name="paragraph7" placeholder="Paragraph 7"><?php echo $found['paragraph_7']; ?></textarea>
-  </div>
+  <script>
+var counter1 = <?php echo $paragraphCount; ?>;
+var limit1 = 10;
+function addInput1(divName){
+     if (counter1 == limit1)  {
+          alert("You have reached the limit of adding " + counter1 + " inputs");
+     }
+     else {
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<div class='form-group'><label for='listItem' >Paragraph " + (counter1 + 1) + "</label><textarea class='form-control' rows='2' name='paragraph[" + (counter1 + 1) + "]' placeholder='Paragraph " + (counter1 + 1) + "'></textarea></div>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter1++;
+     }
+}
+  </script>
   
-  <div class="form-group">
-    <label for="paragraph8" data-toggle="popover" title="Paragraph 8" data-content="Eighth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 8</label>
-    <textarea class="form-control" rows="2" name="paragraph8" placeholder="Paragraph 8"><?php echo $found['paragraph_8']; ?></textarea>
-  </div>
+  <div id="dynamicInput1"></div>
   
-  <div class="form-group">
-    <label for="paragraph9" data-toggle="popover" title="Paragraph 9" data-content="Ninth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 9</label>
-    <textarea class="form-control" rows="2" name="paragraph9" placeholder="Paragraph 9"><?php echo $found['paragraph_9']; ?></textarea>
-  </div>
+  <button type="button" class="btn btn-default" value="Add another text input" onClick="addInput1('dynamicInput1');">+ Add another paragraph</button>
   
-  <div class="form-group">
-    <label for="paragraph10" data-toggle="popover" title="Paragraph 10" data-content="Tenth paragraph for the page. If there is no needed paragraph, leave this blank.">Paragraph 10</label>
-    <textarea class="form-control" rows="2" name="paragraph10" placeholder="Paragraph 10"><?php echo $found['paragraph_10']; ?></textarea>
-  </div>
+  <!-- end of the dynamic list -------------------------------------------->
+  
+  <hr>
   
   <div class="form-group">
     <label for="exampleInputFile" data-toggle="popover" title="Personnel Image" data-content="Update the image. If the image does not need to be updated, skip this section and the current image will be used.">Personnel Image</label>
