@@ -13,12 +13,6 @@ if(isset($_POST['submitButton']))
 	$id = $_POST[id];
 	$courseTitle = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[courseTitle])));
 	$registrationInstructions = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[registrationInstructions])));
-	$linkTitle1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle1])));
-	$link1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link1])));
-	$linkTitle2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle2])));
-	$link2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link2])));
-	$linkTitle3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle3])));
-	$link3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link3])));
 	$photo = $_POST[photo];
 	$image_name = 'thirdPartyCourse';
 	$old_image = $_POST[old_image];
@@ -41,6 +35,28 @@ if(isset($_POST['submitButton']))
 		foreach ($myInputs as $eachInput) {
 			 if($eachInput != ''){
 			 ${'listItem' . $i} = stripslashes(mysqli_real_escape_string($dbc, trim($eachInput)));
+			 $i++;
+			 }
+		}
+		
+		//loop through the $linkTitle array for list items
+		$linkTitle = $_POST["linkTitle"];
+		
+		$i = 1;
+		foreach ($linkTitle as $eachInput) {
+			 if($eachInput != ''){
+			 ${'linkTitle' . $i} = stripslashes(mysqli_real_escape_string($dbc, trim($eachInput)));
+			 $i++;
+			 }
+		}
+		
+		//loop through the $link array for list items
+		$link = $_POST["link"];
+		
+		$i = 1;
+		foreach ($link as $eachInput) {
+			 if($eachInput != ''){
+			 ${'link' . $i} = stripslashes(mysqli_real_escape_string($dbc, trim($eachInput)));
 			 $i++;
 			 }
 		}
@@ -223,7 +239,7 @@ function addInput1(divName){
   
   <div id="dynamicInput1"></div>
   
-  <button type="button" class="btn btn-default" value="Add another text input" onClick="addInput1('dynamicInput1');">+ Add another paragraph</button>
+  <button type="button" class="btn btn-info" value="Add another text input" onClick="addInput1('dynamicInput1');">+ Add another paragraph</button>
   
   <!-- end of the dynamic list -------------------------------------------->
   
@@ -276,7 +292,7 @@ function addInput(divName){
   
   <div id="dynamicInput"></div>
   
-  <button type="button" class="btn btn-default" value="Add another text input" onClick="addInput('dynamicInput');">+ Add another list item</button>
+  <button type="button" class="btn btn-info" value="Add another text input" onClick="addInput('dynamicInput');">+ Add another list item</button>
   
   <!-- end of the dynamic list -------------------------------------------->
   
@@ -289,39 +305,69 @@ function addInput(divName){
   
   <hr>
   
+  <!-- begin the list items ---------------------------------->
+  
   <div class="form-group">
-    <label for="linkTitle" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank.">Link Title</label>
-    <input type="text" class="form-control" id="linkTitle" name="linkTitle1" placeholder="Link Title" value="<?php echo $found['linkTitle1']; ?>">
+    <label for="listItem" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank. Click the + Add another link button for up to 3 links.">Link Title</label>
+    <input type="text" class="form-control" id="linkTitle" name="linkTitle[0]" placeholder="Link Title" value="<?php echo $found['linkTitle1']; ?>">
   </div>
   
   <div class="form-group">
-    <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display.">Link</label>
-    <input type="text" class="form-control" id="link" name="link1" placeholder="Link" value="<?php echo $found['link1']; ?>">
+    <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display. Click the + Add another link button for up to 3 links.">Link</label>
+    <input type="text" class="form-control" id="link" name="link[0]" placeholder="Link" value="<?php echo $found['link1']; ?>">
   </div>
   
-  <hr>
+  <?php
+  $linkTitleCount = 1;
   
-  <div class="form-group">
-    <label for="linkTitle" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank.">Link Title</label>
-    <input type="text" class="form-control" id="linkTitle" name="linkTitle2" placeholder="Link Title" value="<?php echo $found['linkTitle2']; ?>">
-  </div>
+  for ($x = 2; $x <= 3; $x++) {
+	  
+	  $linkTitleNumber = 'linkTitle' . $x;
+	  $linkNumber = 'link' .$x;
+	  
+	  if($found[$linkTitleNumber] != ''){
+		  
+		  echo '<hr>';
+	  
+	  echo '<div class="form-group">';
+		echo '<label for="listItem" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank. Click the + Add another link button for up to 3 links.">Link Title</label>';
+		echo '<input type="text" class="form-control" id="linkTitle" name="linkTitle['.$x.']" placeholder="Link Title" value="'.$found[$linkTitleNumber].'">';
+	  echo '</div>';
+	  
+	  	echo '<div class="form-group">';
+		echo '<label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display. Click the + Add another link button for up to 3 links.">Link</label>';
+		echo '<input type="text" class="form-control" id="link" name="link['.$x.']" placeholder="Link" value="'.$found[$linkNumber].'">';
+	  	echo '</div>';
+	  
+	  $linkTitleCount++;
+	  
+	  }
   
-  <div class="form-group">
-    <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display.">Link</label>
-    <input type="text" class="form-control" id="link" name="link2" placeholder="Link" value="<?php echo $found['link2']; ?>">
-  </div>
+  }
   
-  <hr>
+  ?>
   
-  <div class="form-group">
-    <label for="linkTitle" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank.">Link Title</label>
-    <input type="text" class="form-control" id="linkTitle" name="linkTitle3" placeholder="Link Title" value="<?php echo $found['linkTitle3']; ?>">
-  </div>
+  <script>
+var counter2 = <?php echo $linkTitleCount; ?>;
+var limit2 = 3;
+function addInput2(divName){
+     if (counter2 == limit2)  {
+          alert("You have reached the limit of adding " + counter2 + " inputs");
+     }
+     else {
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = "<hr><div class='form-group'><label for='listItem' >Link Title</label><textarea class='form-control' rows='2' name='linkTitle[" + (counter2 + 1) + "]' placeholder='Link Title'></textarea></div><div class='form-group'><label for='listItem' >Link</label><textarea class='form-control' rows='2' name='link[" + (counter2 + 1) + "]' placeholder='Link'></textarea></div>";
+          document.getElementById(divName).appendChild(newdiv);
+          counter2++;
+     }
+}
+  </script>
   
-  <div class="form-group">
-    <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display.">Link</label>
-    <input type="text" class="form-control" id="link" name="link3" placeholder="Link" value="<?php echo $found['link3']; ?>">
-  </div>
+  <div id="dynamicInput2"></div>
+  
+  <button type="button" class="btn btn-info" value="Add another text input" onClick="addInput2('dynamicInput2');">+ Add another link</button>
+  
+  <!-- end of the dynamic list -------------------------------------------->
   
   <hr>
   

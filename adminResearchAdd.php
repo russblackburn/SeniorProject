@@ -145,7 +145,7 @@ function addInput1(divName){
   
   <div id="dynamicInput1"></div>
   
-	<button type="button" class="btn btn-default" value="Add another text input" onClick="addInput1('dynamicInput1');">+ Add another paragraph</button>
+	<button type="button" class="btn btn-info" value="Add another text input" onClick="addInput1('dynamicInput1');">+ Add another paragraph</button>
     
 <!-- end of the paragraph list -->
 

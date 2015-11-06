@@ -14,12 +14,6 @@ require_once('header.php');
 	// load the data from the form
 	$courseTitle = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[courseTitle])));
 	$registrationInstructions = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[registrationInstructions])));
-	$linkTitle1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle1])));
-	$link1 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link1])));
-	$linkTitle2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle2])));
-	$link2 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link2])));
-	$linkTitle3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[linkTitle3])));
-	$link3 = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[link3])));
 	$hide = 'F';
 	$includeOnForm = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[includeOnForm])));
 	$photo = $_POST[photo];
@@ -43,6 +37,28 @@ require_once('header.php');
 		foreach ($myInputs as $eachInput) {
 			 if($eachInput != ''){
 			 ${'listItem' . $i} = stripslashes(mysqli_real_escape_string($dbc, trim($eachInput)));
+			 $i++;
+			 }
+		}
+		
+		//loop through the $linkTitle array for list items
+		$linkTitle = $_POST["linkTitle"];
+		
+		$i = 1;
+		foreach ($linkTitle as $eachInput) {
+			 if($eachInput != ''){
+			 ${'linkTitle' . $i} = stripslashes(mysqli_real_escape_string($dbc, trim($eachInput)));
+			 $i++;
+			 }
+		}
+		
+		//loop through the $linkTitle array for list items
+		$link = $_POST["link"];
+		
+		$i = 1;
+		foreach ($link as $eachInput) {
+			 if($eachInput != ''){
+			 ${'link' . $i} = stripslashes(mysqli_real_escape_string($dbc, trim($eachInput)));
 			 $i++;
 			 }
 		}
@@ -173,7 +189,7 @@ function addInput1(divName){
   
   <div id="dynamicInput1"></div>
   
-	<button type="button" class="btn btn-default" value="Add another text input" onClick="addInput1('dynamicInput1');">+ Add another paragraph</button>
+	<button type="button" class="btn btn-info" value="Add another text input" onClick="addInput1('dynamicInput1');">+ Add another paragraph</button>
     
 <!-- end of the paragraph list -->
   
@@ -204,7 +220,7 @@ function addInput(divName){
   
   <div id="dynamicInput"></div>
   
-	<button type="button" class="btn btn-default" value="Add another text input" onClick="addInput('dynamicInput');">+ Add another list item</button>
+	<button type="button" class="btn btn-info" value="Add another text input" onClick="addInput('dynamicInput');">+ Add another list item</button>
     
 <!-- end of the unordered list -->
 
@@ -217,39 +233,39 @@ function addInput(divName){
   
   <hr>
   
+  <!-- adding the link list for the course -->
+  
+  <script>
+var counter2 = 1;
+var limit2 = 3;
+function addInput2(divName){
+     if (counter2 == limit2)  {
+          alert("You have reached the limit of adding " + counter2 + " inputs");
+     }
+     else {
+          var newdiv = document.createElement('div');
+          newdiv.innerHTML = '<hr><div class="form-group"><label for="linkTitle" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank.">Link Title</label><input type="text" class="form-control" id="linkTitle" name="linkTitle[]" placeholder="Link Title"></div><div class="form-group"><label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display.">Link</label><input type="text" class="form-control" id="link" name="link[]" placeholder="Link"></div>';
+          document.getElementById(divName).appendChild(newdiv);
+          counter2++;
+     }
+}
+  </script>
+  
   <div class="form-group">
-    <label for="linkTitle" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank.">Link Title</label>
-    <input type="text" class="form-control" id="linkTitle" name="linkTitle1" placeholder="Link Title">
+    <label for="linkTitle" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank. Click the + Add another link button for up to 3 links.">Link Title</label>
+    <input type="text" class="form-control" id="linkTitle" name="linkTitle[]" placeholder="Link Title">
   </div>
   
   <div class="form-group">
-    <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display.">Link</label>
-    <input type="text" class="form-control" id="link" name="link1" placeholder="Link">
+    <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display. Click the + Add another link button for up to 3 links.">Link</label>
+    <input type="text" class="form-control" id="link" name="link[]" placeholder="Link">
   </div>
   
-  <hr>
+  <div id="dynamicInput2"></div>
   
-  <div class="form-group">
-    <label for="linkTitle" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank.">Link Title</label>
-    <input type="text" class="form-control" id="linkTitle" name="linkTitle2" placeholder="Link Title">
-  </div>
-  
-  <div class="form-group">
-    <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display.">Link</label>
-    <input type="text" class="form-control" id="link" name="link2" placeholder="Link">
-  </div>
-  
-  <hr>
-  
-  <div class="form-group">
-    <label for="linkTitle" data-toggle="popover" title="Link Title" data-content="Label the button that is displayed on the page (i.e. Name of the company or course you are creating the link for). If there is no link, leave this blank.">Link Title</label>
-    <input type="text" class="form-control" id="linkTitle" name="linkTitle3" placeholder="Link Title">
-  </div>
-  
-  <div class="form-group">
-    <label for="link" data-toggle="popover" title="Link" data-content="Copy and paste the link to the page or site that you want to display.">Link</label>
-    <input type="text" class="form-control" id="link" name="link3" placeholder="Link">
-  </div>
+	<button type="button" class="btn btn-info" value="Add another text input" onClick="addInput2('dynamicInput2');">+ Add another link</button>
+    
+<!-- end of the link list -->
   
   <hr>
   
