@@ -93,6 +93,28 @@ if($found['paragraph1'] != NULL) {
 ?>
 <!-- end of paragraphs -->
 
+<!-- list items -->
+<?php
+if($found[listItem1]){
+	
+	echo '<ul>';
+	
+	for($i=1; $i <= 20; $i++){
+		$listItem = 'listItem' . $i;
+		
+		if($found[$listItem]){
+			echo '<li>'.$found[$listItem].'</li>';
+			}
+			else{
+				break;
+				}
+		}
+		
+		echo '</ul>';
+		
+}
+?>
+<!-- end of list items -->
 
 <!-- upcoming events -->
 <?php
