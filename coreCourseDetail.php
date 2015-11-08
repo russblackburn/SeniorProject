@@ -97,13 +97,15 @@ if($found['paragraph1'] != NULL) {
 <?php
 if($found[listItem1]){
 	
-	echo '<ul>';
+	echo '<ul class="listWidth">';
 	
 	for($i=1; $i <= 20; $i++){
 		$listItem = 'listItem' . $i;
 		
 		if($found[$listItem]){
-			echo '<li>'.$found[$listItem].'</li>';
+			echo '<li><span class="gray">'.$found[$listItem].'</span></li>';
+			
+			echo '<div class="listSpacing"></div>';
 			}
 			else{
 				break;

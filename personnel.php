@@ -33,7 +33,7 @@
                     echo '<figcaption>';
 					echo '<div class="hoverDiv">';
                         echo '<h2>'.$row['first_name'].' <br><span>'.$row['last_name'].'</span></h2>';
-                        echo '<p>'.$row['position'].'</p>';
+                        echo '<p class="white">'.$row['position'].'</p>';
 						echo '</div>';
                         echo '<a href="personnelDetail.php?id='. $row['id'].'">View</a>';
                     echo '</figcaption>';			

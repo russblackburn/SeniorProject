@@ -53,7 +53,7 @@
     <input type="contactInformation" class="form-control" id="serviceDeadline" name="service_deadline" placeholder="Service Deadline" required>
 	</div>
     
-    <button type="submit" class="btn btn-default" name="submitButton">Register</button>
+    <button type="submit" class="btn btn-primary" name="submitButton">Register</button>
     
     </form>
     

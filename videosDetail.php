@@ -43,7 +43,9 @@ $subcategory_id = $_GET[id];
 			echo '</div><!-- end of centeriFrame -->';
 			
 			echo '<div class="centeriFrame alignLeft">';
+				echo '<p>';
 					echo $row2['videoDescription'];
+				echo '</p>';
 			echo '</div><!-- end of centeriFrame -->';
 			}
 	?>

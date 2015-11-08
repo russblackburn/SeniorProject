@@ -18,6 +18,27 @@ body {height: 100%;
 	-ms-backface-visibility: hidden; 
    	backface-visibility: hidden;
 	}
+	
+/* style the copy color and the unordered bullets */
+p, .gray {
+	color: #4d4d4c;
+	}
+	
+ul {
+    list-style-type: circle;
+}
+
+ul li {
+	color: #588cc7;
+	}
+	
+.white {
+	color: white;
+	}
+	
+.black {
+	color: black;
+	}
 
 /* header */
 header {
@@ -183,6 +204,10 @@ footer {
 	
 .adminGreen {
 	color: green;
+	}
+	
+.listSpacing {
+	margin: 15px;
 	}
 	
 /* home */
@@ -361,6 +386,10 @@ footer {
 		display: none;
 		}
 		
+	.listWidth {
+	width: 85%;
+	}
+		
 	.smallText {
 	font-size: 1em;
 	}
@@ -446,6 +475,10 @@ footer {
 		
 	.textcolor{
 	margin-bottom:2em;
+	}
+	
+	.listWidth {
+	width: 75%;
 	}
 	
 	/* home */

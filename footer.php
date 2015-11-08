@@ -3,7 +3,7 @@
     </div><!--jake oct5-->
     <footer>
     	<div class="container" id="footer">
-    		<p class="text-center paddingTop">&copy; Intermountain Center for Disaster Preparedness</p>
+    		<p class="text-center paddingTop black">&copy; Intermountain Center for Disaster Preparedness</p>
             <p class="text-center"><a href="<?php if($adminPage == zip){echo '../';} ?>siteMap.php">Site Map</a>&nbsp; &nbsp; &nbsp; &nbsp; &nbsp;<a href="<?php if($adminPage == zip){echo '../';} ?>adminLanding.php">Admin</a></p>
             
             

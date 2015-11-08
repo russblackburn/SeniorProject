@@ -154,6 +154,6 @@
 		  	}// end of the else statement for the course pages
     ?>
   
-  <button type="submit" class="btn btn-default" name="submitButton">Register</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Register</button>
 </form>
 </div><!-- end of entireForm -->

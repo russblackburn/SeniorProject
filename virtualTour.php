@@ -57,7 +57,9 @@
 	//DISPLAY WHAT WE FOUND
 	while($row = mysqli_fetch_array($result)){
 		echo '<div class="centeriFrame alignLeft">';
+		echo '<p>';
 		echo $row['description'];
+		echo '</p>';
 		echo '</div><!-- end of centeriFrame -->';
 	};
 

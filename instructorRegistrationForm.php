@@ -66,7 +66,7 @@
 	
 	while($row = mysqli_fetch_array($result)){
     echo '<div class="checkbox">';
-		echo '<label>';
+		echo '<label class="gray">';
 		echo '<input type="checkbox" name="form_element_checkbox[]" value="'.$row['form_element'].' - "> '.$row['form_element'].'';
 		echo '</label>';
   	echo '</div>';
@@ -81,7 +81,7 @@
 	</div>
     
     
-    <button type="submit" class="btn btn-default" name="submitButton">Register</button>
+    <button type="submit" class="btn btn-primary" name="submitButton">Register</button>
     
     </form>
     
