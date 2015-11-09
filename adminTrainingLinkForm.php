@@ -2,7 +2,7 @@
 	require_once('adminAuthorize.php'); 
 	require_once('adminVariables.php');
 	$page = admin;
-	$adminPage = services;
+	$adminPage = customZip;
 	$adminSecondaryPage = services13;
 	require_once('header.php'); 
 	

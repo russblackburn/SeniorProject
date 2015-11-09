@@ -47,11 +47,10 @@
             <li class="dropdown <?php if($adminPage=='services'){echo 'active';}?>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Services <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              	<li class="dropdown-header">Training (Add/Update/Link/Hide/Delete)</li>
+              	<li class="dropdown-header">Training (Add/Update/Hide/Delete)</li>
                 <li class="<?php if($adminSecondaryPage=='services1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminCoreCourseForm.php">Add a New Core Course</a></li>
                 <li class="<?php if($adminSecondaryPage=='services2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminThirdPartyCoursesForm.php">Add a New Third Party Course</a></li>
                 <li class="<?php if($adminSecondaryPage=='services3'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingUpdateText.php">Update a Course</a></li>
-                <li class="<?php if($adminSecondaryPage=='services13'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingLinkForm.php">Link a Course Form to Uploaded Content</a></li>
                 <li class="<?php if($adminSecondaryPage=='services4'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingHide.php">Hide/Un-hide a Course</a></li>
                 <li class="<?php if($adminSecondaryPage=='services5'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingDelete.php">Delete a Course</a></li>
                 <li role="separator" class="divider"></li>
@@ -120,15 +119,17 @@
             <li class="dropdown <?php if($adminPage=='register'){echo 'active';}?>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Register <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              	<li class="dropdown-header">Register (Update)</li>
+              	<li class="dropdown-header">Student Registration (Update)</li>
                 <li class="<?php if($adminSecondaryPage=='register1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterStudent.php">Update Student Registration Description</a></li>
-                <li class="<?php if($adminSecondaryPage=='register2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterInstructor.php">Update Instructor Registration Description</a></li>
-                <li class="<?php if($adminSecondaryPage=='register3'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterProposal.php">Update Request Service Proposal Description</a></li>
                 <li role="separator" class="divider"></li>
-                <li class="dropdown-header">Instructor Registration Form (Add/Update/Delete)</li>
+                <li class="dropdown-header">Instructor Registration (Add/Update/Delete)</li>
                 <li class="<?php if($adminSecondaryPage=='register4'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterAddFormElement.php">Add a New Course/Topic of Interest</a></li>
                 <li class="<?php if($adminSecondaryPage=='register5'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterUpdateFormElement.php">Update a Course/Topic of Interest</a></li>
+                <li class="<?php if($adminSecondaryPage=='register2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterInstructor.php">Update Instructor Registration Description</a></li>
                 <li class="<?php if($adminSecondaryPage=='register6'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterDeleteFormElement.php">Delete a Course/Topic of Interest</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Request Service Proposal (Update)</li>
+                <li class="<?php if($adminSecondaryPage=='register3'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminRegisterProposal.php">Update Request Service Proposal Description</a></li>
               </ul>
             </li>
             <!-- end of register admin -->
@@ -149,12 +150,13 @@
             
             
             <!--  upload zipped course admin -->
-            <li class="dropdown <?php if($adminPage=='zip'){echo 'active';}?>">
+            <li class="dropdown <?php if($adminPage=='zip' || $adminPage =='customZip'){echo 'active';}?>">
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Manage Course Content <span class="caret"></span></a>
               <ul class="dropdown-menu">
-              	<li class="dropdown-header">Manage Course Content (Instructions/Upload/Manage/Delete)</li>
+              	<li class="dropdown-header">Manage Course Content (Instructions/Upload/Link/Manage/Delete)</li>
                 <li><a href="../zipInstructions.php" target="_blank">Instructions for Zip Preparation</a></li>
                 <li class="<?php if($adminSecondaryPage=='zip1'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo 'zipper.php';}else{echo 'courses/zipper.php';} ?>">Upload Course Content</a></li>
+                <li class="<?php if($adminSecondaryPage=='services13'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo '../';} ?>adminTrainingLinkForm.php">Link Course Content to a Course Form</a></li>
                 <li class="<?php if($adminSecondaryPage=='zip3'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo 'adminZipperManagePath.php';}else{echo 'courses/adminZipperManagePath.php';} ?>">Manage Course Content Path</a></li>
                 <li class="<?php if($adminSecondaryPage=='zip2'){echo 'active';}?>"><a href="<?php if($adminPage == zip){echo 'adminZipperDelete.php';}else{echo 'courses/adminZipperDelete.php';} ?>">Delete Course Content</a></li>
               </ul>

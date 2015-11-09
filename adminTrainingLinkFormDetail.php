@@ -67,7 +67,7 @@ if(isset($_POST['submitButton']))
 ?>
 <?php
 $page = admin;
-$adminPage = services;
+$adminPage = customZip;
 $adminSecondaryPage = services13;
 ?>
 <?php require_once('header.php'); ?>
@@ -83,7 +83,7 @@ echo $feedback;
 
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="link_course">
 
-<label for="link" data-toggle="popover" title="Link Course Content" data-content="Directions.">Link Course Content</label>
+<label for="link" data-toggle="popover" title="Link Course Content" data-content="Choose the course content that you want linked to the course form that you selected.">Link Course Content</label>
     <div class="form-group">
         <div class="form-group">
             <select class="form-control" name="contentID">
