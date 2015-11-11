@@ -467,6 +467,11 @@ footer {
 /* Medium devices (desktops, 992px and up) */
 @media (min-width: 992px) {
 	
+	/*----- hover over nav desktop only -----*/
+	.dropdown:hover .dropdown-menu {
+		display: block;
+	}
+	
 	/*----- pages -----*/
 	/* all pages */
 	.smallTabletHidden {

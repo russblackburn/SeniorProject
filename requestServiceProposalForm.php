@@ -1,6 +1,6 @@
 	<div class="entireForm">
     
-    <form action="requestServiceProposalProcess.php" method="POST" enctype="multipart/form-data" name="requestServiceProposal_registration">
+    <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="requestServiceProposal_registration">
     
     <?php
 	
@@ -51,6 +51,14 @@
     <div class="form-group">
     <label for="serviceDeadline">Service Deadline</label>
     <input type="contactInformation" class="form-control" id="serviceDeadline" name="service_deadline" placeholder="Service Deadline" required>
+	</div>
+    
+    <div class="form-group">
+	<?php
+	echo '<label for="test">What number comes after '.$random_number1 . ' ?</label>';
+	?>
+	<input name="captchaResult" type="text" size="2" />
+	<input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
 	</div>
     
     <button type="submit" class="btn btn-primary" name="submitButton">Register</button>

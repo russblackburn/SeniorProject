@@ -1,5 +1,28 @@
 <?php $page = services; ?>
 <?php $secondaryPage = research; ?>
+<?php
+// init variables
+	$min_number = 0;
+	$max_number = 8;
+
+	// generating random numbers
+	$random_number1 = mt_rand($min_number, $max_number);
+	
+	if(isset($_POST['submitButton']))
+	{
+	
+	$captchaResult = $_POST["captchaResult"];
+		$firstNumber = $_POST["firstNumber"];
+
+		$checkTotal = $firstNumber + 1;
+
+		if ($captchaResult == $checkTotal) {
+			require_once('requestServiceProposalProcess.php');
+		} else {
+			$feedback = '<p class="adminRed">Wrong Answer. Please Try Again.</p>';
+		}
+	};
+?>
 <?php require_once('header.php');
 require_once('adminVariables.php');
 
@@ -38,6 +61,10 @@ require_once('adminVariables.php');
 
 
 <hr>
+<?php
+$feedback = stripslashes($feedback);
+echo $feedback;
+?>
 
 <img class="col-xs-12 col-sm-6 pull-right paddingBottom" src="images/home/research.jpg" alt="research">
 
