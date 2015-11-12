@@ -1,6 +1,6 @@
 	<div class="entireForm">
     
-    <form action="instructorRegistrationProcess.php" method="POST" enctype="multipart/form-data" name="instructor_registration">
+    <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="instructor_registration">
     
     <div class="form-group">
     <label for="firstName">First Name</label>
@@ -79,6 +79,20 @@
     <label for="topiceOfInterest">Topics of Interest</label>
     <textarea class="form-control" rows="3" name="topics_of_interest" placeholder="Provide subject matter topics you would be interested in teaching."></textarea>
 	</div>
+    
+    <div class="form-group">
+			<label for="message"><?php
+			$feedback2 = stripslashes($feedback2);
+			echo $feedback2;
+			?></label>
+            
+            <div class="row">
+            <div class="col-md-2">
+			<input name="captchaResult" class="form-control" type="text" size="2" maxlength="1" />
+            <input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
+            </div></div>
+
+		</div>
     
     
     <button type="submit" class="btn btn-primary" name="submitButton">Register</button>

@@ -7,7 +7,7 @@
 ?>
 
 <div class="entireForm">
-<form action="studentRegistrationProcess.php" method="POST" enctype="multipart/form-data" name="student_registration">
+<form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="student_registration">
 
   <div class="form-group">
     <label for="name">Name</label>
@@ -153,6 +153,20 @@
 				}// end of the conditional to check and see if there is a $dropdownPositive at all
 		  	}// end of the else statement for the course pages
     ?>
+    
+    <div class="form-group">
+			<label for="message"><?php
+			$feedback2 = stripslashes($feedback2);
+			echo $feedback2;
+			?></label>
+            
+            <div class="row">
+            <div class="col-md-2">
+			<input name="captchaResult" class="form-control" type="text" size="2" maxlength="1" />
+            <input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
+            </div></div>
+
+		</div>
   
   <button type="submit" class="btn btn-primary" name="submitButton">Register</button>
 </form>

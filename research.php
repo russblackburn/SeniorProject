@@ -1,12 +1,44 @@
 <?php $page = services; ?>
 <?php $secondaryPage = research; ?>
+
 <?php
+//CODE FOR CAPTCHA
 // init variables
 	$min_number = 0;
 	$max_number = 8;
 
 	// generating random numbers
-	$random_number1 = mt_rand($min_number, $max_number);
+	//$random_number1 = mt_rand($min_number, $max_number);
+	
+	switch ($random_number1 = mt_rand($min_number, $max_number)) {
+    case "0":
+        $feedback2 = "What number comes after zero?";
+        break;
+    case "1":
+        $feedback2 = "What number comes after one?";
+        break;
+	case "2":
+        $feedback2 = "What number comes after two?";
+        break;
+	case "3":
+        $feedback2 = "What number comes after three?";
+        break;
+	case "4":
+        $feedback2 = "What number comes after four?";
+        break;
+	case "5":
+        $feedback2 = "What number comes after five?";
+        break;
+	case "6":
+        $feedback2 = "What number comes after six?";
+        break;
+	case "7":
+        $feedback2 = "What number comes after seven?";
+        break;
+	case "8":
+        $feedback2 = "What number comes after eight?";
+        break;
+	}
 	
 	if(isset($_POST['submitButton']))
 	{
@@ -23,6 +55,7 @@
 		}
 	};
 ?>
+
 <?php require_once('header.php');
 require_once('adminVariables.php');
 

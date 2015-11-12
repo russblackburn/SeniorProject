@@ -54,12 +54,18 @@
 	</div>
     
     <div class="form-group">
-	<?php
-	echo '<label for="test">What number comes after '.$random_number1 . ' ?</label>';
-	?>
-	<input name="captchaResult" type="text" size="2" />
-	<input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
-	</div>
+			<label for="message"><?php
+			$feedback2 = stripslashes($feedback2);
+			echo $feedback2;
+			?></label>
+            
+            <div class="row">
+            <div class="col-md-2">
+			<input name="captchaResult" class="form-control" type="text" size="2" maxlength="1" />
+            <input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
+            </div></div>
+
+		</div>
     
     <button type="submit" class="btn btn-primary" name="submitButton">Register</button>
     
