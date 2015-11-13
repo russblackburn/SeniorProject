@@ -12,31 +12,31 @@
 	
 	switch ($random_number1 = mt_rand($min_number, $max_number)) {
     case "0":
-        $feedback2 = "What number comes after zero?";
+        $feedback2 = "What digit comes after zero?";
         break;
     case "1":
-        $feedback2 = "What number comes after one?";
+        $feedback2 = "What digit comes after one?";
         break;
 	case "2":
-        $feedback2 = "What number comes after two?";
+        $feedback2 = "What digit comes after two?";
         break;
 	case "3":
-        $feedback2 = "What number comes after three?";
+        $feedback2 = "What digit comes after three?";
         break;
 	case "4":
-        $feedback2 = "What number comes after four?";
+        $feedback2 = "What digit comes after four?";
         break;
 	case "5":
-        $feedback2 = "What number comes after five?";
+        $feedback2 = "What digit comes after five?";
         break;
 	case "6":
-        $feedback2 = "What number comes after six?";
+        $feedback2 = "What digit comes after six?";
         break;
 	case "7":
-        $feedback2 = "What number comes after seven?";
+        $feedback2 = "What digit comes after seven?";
         break;
 	case "8":
-        $feedback2 = "What number comes after eight?";
+        $feedback2 = "What digit comes after eight?";
         break;
 	}
 	
@@ -428,15 +428,15 @@ if($found[registrationInstructions] != NULL || $found[link1] != NULL) {
 	// -- links --
 	// CHECK LINKTITLE 1
 	if($found[linkTitle1] != NULL) {
-		echo '<p><a href="'.$found[link1].'"><button type="button" class="btn btn-primary">'.$found[linkTitle1].'</button></a></p>';
+		echo '<p><a href="'.$found[link1].'" target="_blank"><button type="button" class="btn btn-primary">'.$found[linkTitle1].'</button></a></p>';
 		
 		// CHECK LINKTITLE 2
 		if($found[linkTitle2] != NULL) {
-			echo '<p><a href="'.$found[link2].'"><button type="button" class="btn btn-primary">'.$found[linkTitle2].'</button></a></p>';
+			echo '<p><a href="'.$found[link2].'" target="_blank"><button type="button" class="btn btn-primary">'.$found[linkTitle2].'</button></a></p>';
 			
 			// CHECK LINKTITLE 3
 			if($found[linkTitle2] != NULL) {
-				echo '<p><a href="'.$found[link3].'"><button type="button" class="btn btn-primary">'.$found[linkTitle3].'</button></a></p>';
+				echo '<p><a href="'.$found[link3].'" target="_blank"><button type="button" class="btn btn-primary">'.$found[linkTitle3].'</button></a></p>';
 				}
 			}
 		}// -- end of links --

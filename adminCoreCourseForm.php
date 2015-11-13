@@ -214,7 +214,7 @@ function addInput(divName){
   </script>
   
   <div class="form-group">
-    <label for="listItem" data-toggle="popover" title="List Items" data-content="Create an unordered list that will display after the paragraphs. Click the + Add another list item button for up to 20 list items. ">Objective 1</label>
+    <label for="listItem" data-toggle="popover" title="Objective Items" data-content="Create an unordered list that will display after the paragraphs. Click the + Add another objective button for up to 20 objectives. ">Objective 1</label>
     <textarea class="form-control" rows="2" name="myInputs[]" placeholder="Objective 1"></textarea>
   </div>
   
@@ -286,7 +286,7 @@ function addInput2(divName){
     <p class="help-block">Image size must be (715 Width X 572 Height)</p>
   </div>
   
-  <button type="submit" class="btn btn-primary" name="submitButton">Add Core Course</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Add Course</button>
 </form>
 
 <?php require_once('footer.php'); ?>

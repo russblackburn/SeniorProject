@@ -62,8 +62,8 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   <div class="container">
                     <div class="carousel-caption">
                       <div class="textcolor">
-                      <h1><?php echo $found1['slider_title']; ?></h1>
-                      <p class="smallTabletHidden"><?php echo $found1['slider_description']; ?></p>
+                      <h1 class="sliderTitle"><?php echo $found1['slider_title']; ?></h1>
+                      <p class="smallTabletHidden sliderDescription"><?php echo $found1['slider_description']; ?></p>
                       </div>
                       <p><a class="btn btn-lg btn-primary" href="<?php echo $found1['slider_link']; ?>" role="button"><?php echo $found1['slider_button_description']; ?></a></p>
                     </div>
@@ -76,8 +76,8 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   echo '<div class="container">';
                     echo '<div class="carousel-caption">';
 					  echo '<div class="textcolor">';
-                      echo '<h1>'.$row3['courseTitle'].'</h1>';
-                      echo '<p class="smallTabletHidden">'.$row3['slider_description'].'</p>';
+                      echo '<h1 class="sliderTitle">'.$row3['courseTitle'].'</h1>';
+                      echo '<p class="smallTabletHidden sliderDescription">'.$row3['slider_description'].'</p>';
 					  echo '</div>';
                       echo '<p><a class="btn btn-lg btn-primary" href="'.$row3['slider_link'].'" role="button">'.$row3['slider_button_description'].'</a></p>';
                     echo '</div>';
@@ -92,8 +92,8 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   echo '<div class="container">';
                     echo '<div class="carousel-caption">';
 					  echo '<div class="textcolor">';
-                      echo '<h1>'.$row4['courseTitle'].'</h1>';
-                      echo '<p class="smallTabletHidden">'.$row4['slider_description'].'</p>';
+                      echo '<h1 class="sliderTitle">'.$row4['courseTitle'].'</h1>';
+                      echo '<p class="smallTabletHidden sliderDescription">'.$row4['slider_description'].'</p>';
 					  echo '</div>';
                       echo '<p><a class="btn btn-lg btn-primary" href="'.$row4['slider_link'].'" role="button">'.$row4['slider_button_description'].'</a></p>';
                     echo '</div>';
@@ -106,8 +106,8 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
                   <div class="container">
                     <div class="carousel-caption">
                       <div class="textcolor">
-                      <h1><?php echo $found2['slider_title']; ?></h1>
-                      <p class="smallTabletHidden"><?php echo $found2['slider_description']; ?></p>
+                      <h1 class="sliderTitle"><?php echo $found2['slider_title']; ?></h1>
+                      <p class="smallTabletHidden sliderDescription"><?php echo $found2['slider_description']; ?></p>
                       </div>
                       <p><a class="btn btn-lg btn-primary" href="<?php echo $found2['slider_link']; ?>" role="button"><?php echo $found2['slider_button_description']; ?></a></p>
                     </div>

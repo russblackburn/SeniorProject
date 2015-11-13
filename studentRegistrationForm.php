@@ -10,13 +10,28 @@
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="student_registration">
 
   <div class="form-group">
-    <label for="name">Name</label>
-    <input type="text" class="form-control" id="name" name="name" placeholder="Name" required>
+    <label for="firstName">First Name</label>
+    <input type="text" class="form-control" id="firstName" name="first_name" placeholder="First Name" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="lastName">Last Name</label>
+    <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Last Name" required>
   </div>
   
   <div class="form-group">
     <label for="email">Email</label>
     <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="telephone">Telephone</label>
+    <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Telephone" required>
+  </div>
+  
+  <div class="form-group">
+    <label for="organization">Organization</label>
+    <input type="text" class="form-control" id="organization" name="organization" placeholder="Organization">
   </div>
   
   <?php

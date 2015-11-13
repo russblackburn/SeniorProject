@@ -261,7 +261,7 @@ function addInput1(divName){
   <!-- begin the list items ---------------------------------->
   
   <div class="form-group">
-    <label for="listItem" data-toggle="popover" title="List Items" data-content="Update the unordered list that will display after the paragraphs. Click the + Add another list item button for up to 20 list items. If there are no list items needed, leave this blank.">Objective 1</label>
+    <label for="listItem" data-toggle="popover" title="Objective Items" data-content="Update the unordered list that will display after the paragraphs. Click the + Add another objective button for up to 20 objectives. If there are no objectives needed, leave this blank.">Objective 1</label>
     <textarea class="form-control" rows="2" name="myInputs[0]" placeholder="Objective 1"><?php echo $found['listItem1']; ?></textarea>
   </div>
   
@@ -275,7 +275,7 @@ function addInput1(divName){
 	  if($found[$listItemNumber] != ''){
 	  
 	  echo '<div class="form-group">';
-		echo '<label for="listItem" data-toggle="popover" title="List Items" data-content="Update the unordered list that will display after the paragraphs. Click the + Add another list item button for up to 20 list items. If there are no list items needed, leave this blank.">Objective '.$x.'</label>';
+		echo '<label for="listItem" data-toggle="popover" title="Objective Items" data-content="Update the unordered list that will display after the paragraphs. Click the + Add another objective button for up to 20 objectives. If there are no objectives needed, leave this blank.">Objective '.$x.'</label>';
 		echo '<textarea class="form-control" rows="2" name="myInputs['.$x.']" placeholder="Objective '.$x.'">'.$found[$listItemNumber].'</textarea>';
 	  echo '</div>';
 	  

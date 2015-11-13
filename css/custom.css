@@ -264,6 +264,12 @@ footer {
 	color: #fff;
 	}
 	
+.sliderTitle {
+	font-size: 1.25em;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	}
+	
 /* personnel */	
 	.thinText{
 		font-weight:300;
@@ -474,9 +480,7 @@ footer {
 	
 	/*----- pages -----*/
 	/* all pages */
-	.smallTabletHidden {
-		display: block;
-		}
+	
 		
 	.textcolor{
 	margin-bottom:2em;
@@ -500,6 +504,10 @@ footer {
 		margin-top: 45px;
 		}
 		
+	.sliderTitle {
+		font-size: 1.75em;
+		}
+		
 		
 	/* gallery videos */
 	.videoiFrame {
@@ -521,6 +529,17 @@ footer {
 
 /* Large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
+	.sliderTitle {
+		padding-bottom: 0px;
+	}
+	
+	.sliderDescription {
+		padding-bottom: 10px;
+		}
+	
+	.smallTabletHidden {
+		display: block;
+		}
 	
 	.pagePadding {
 		width:85%;
