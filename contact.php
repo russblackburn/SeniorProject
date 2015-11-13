@@ -12,31 +12,31 @@
 	
 	switch ($random_number1 = mt_rand($min_number, $max_number)) {
     case "0":
-        $feedback2 = "What number comes after zero?";
+        $feedback2 = "What digit comes after zero?";
         break;
     case "1":
-        $feedback2 = "What number comes after one?";
+        $feedback2 = "What digit comes after one?";
         break;
 	case "2":
-        $feedback2 = "What number comes after two?";
+        $feedback2 = "What digit comes after two?";
         break;
 	case "3":
-        $feedback2 = "What number comes after three?";
+        $feedback2 = "What digit comes after three?";
         break;
 	case "4":
-        $feedback2 = "What number comes after four?";
+        $feedback2 = "What digit comes after four?";
         break;
 	case "5":
-        $feedback2 = "What number comes after five?";
+        $feedback2 = "What digit comes after five?";
         break;
 	case "6":
-        $feedback2 = "What number comes after six?";
+        $feedback2 = "What digit comes after six?";
         break;
 	case "7":
-        $feedback2 = "What number comes after seven?";
+        $feedback2 = "What digit comes after seven?";
         break;
 	case "8":
-        $feedback2 = "What number comes after eight?";
+        $feedback2 = "What digit comes after eight?";
         break;
 	}
 	
