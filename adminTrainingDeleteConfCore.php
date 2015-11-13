@@ -70,7 +70,7 @@
 
 ?>
 
-<h1>Delete Core Course Confirmation</h1>
+<h1>Delete Course Confirmation</h1>
 <em>(This will also delete the courses associated slider and events)</em>
 
 <hr>

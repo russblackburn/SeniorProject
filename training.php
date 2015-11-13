@@ -45,7 +45,7 @@ require_once('adminVariables.php');
 
 <?php
 if($found3[id] != NULL) {
-	echo '<h1>Training <span class="thinText">| Core Courses</span></h1>';
+	echo '<h1>Training <span class="thinText">| Courses</span></h1>';
 	echo '<hr>';
 	echo '<div class="row">';
 
@@ -64,24 +64,26 @@ if($found3[id] != NULL) {
 	}
 ?>
 <?php
-if($found4[id] != NULL) {
-	echo '<h1>Training <span class="thinText">| Third Party Courses</span></h1>';
-	echo '<hr>';
-	echo '<div class="row">';
+// removing all third party course functions
+
+//if($found4[id] != NULL) {
+	//echo '<h1>Training <span class="thinText">| Third Party Courses</span></h1>';
+	//echo '<hr>';
+	//echo '<div class="row">';
 	
-		while($row2 = mysqli_fetch_array($result2)){
-			echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
-				echo '<figure class="effect-lily">';
-					echo '<img src="images/training/course/'.$row2['photo'].'">';
-					echo '<figcaption>';
-						echo '<h2>'.$row2['courseTitle'].'<span></span></h2>';
-						echo '<a href="thirdPartyCourseDetail.php?id='. $row2['id'].'">View</a>';
-					echo '</figcaption>';		
-				echo '</figure>';
-			echo '</div>';
-			}
-	echo '</div><!-- end of row -->';
-	}
+		//while($row2 = mysqli_fetch_array($result2)){
+			//echo '<div class="grid col-xs-12 col-sm-6 col-md-4">';
+				//echo '<figure class="effect-lily">';
+					//echo '<img src="images/training/course/'.$row2['photo'].'">';
+					//echo '<figcaption>';
+						//echo '<h2>'.$row2['courseTitle'].'<span></span></h2>';
+						//echo '<a href="thirdPartyCourseDetail.php?id='. $row2['id'].'">View</a>';
+					//echo '</figcaption>';		
+				//echo '</figure>';
+			//echo '</div>';
+			//}
+	//echo '</div><!-- end of row -->';
+	//}
 ?>
 
 

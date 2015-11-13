@@ -238,7 +238,7 @@ require_once('header.php');
 
 <hr>
 
-<h2>Core Courses</h2>
+<h2>Courses</h2>
 
 <hr>
 
@@ -468,7 +468,7 @@ echo $feedback;
         </div>
     </div>
     <br>
-  <button type="submit" class="btn btn-primary" name="submitButton">Add Core Course Event</button>
+  <button type="submit" class="btn btn-primary" name="submitButton">Add Course Event</button>
 </form>
 
 <br>
@@ -483,7 +483,7 @@ echo $feedback;
 
 
 
-<h2>Third Party Courses</h2>
+<!--<h2>Third Party Courses</h2>
 
 <hr>
 <form action="<?php $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data" name="add_event">
@@ -709,7 +709,7 @@ echo $feedback;
     <br>
   <button type="submit" class="btn btn-primary" name="submit">Add Third Party Course Event</button>
 </form>
-
+-->
 
 
 

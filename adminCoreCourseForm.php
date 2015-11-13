@@ -143,7 +143,7 @@ require_once('header.php');
 	
 	?>
 
-<h1>Add a New Core Course</h1>
+<h1>Add a New Course</h1>
 
 <hr>
 

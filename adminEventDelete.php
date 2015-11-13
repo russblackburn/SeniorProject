@@ -37,7 +37,7 @@
 
 
 <!-- core courses -->
-<h2>Core Courses</h2>
+<h2>Courses</h2>
 <hr>
 
 <?php
@@ -56,6 +56,7 @@ while($row1 = mysqli_fetch_array($result1)){
 <br>
 
 <!-- third party courses -->
+<!--
 <h2>Third Party Courses</h2>
 <hr>
 
@@ -73,7 +74,7 @@ while($row2 = mysqli_fetch_array($result2)){
 ?>
 
 <br>
-
+-->
 <!-- custom events -->
 <h2>Custom Events</h2>
 <hr>

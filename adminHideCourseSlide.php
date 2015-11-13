@@ -22,7 +22,7 @@
 
 <hr>
 
-<h3>Core Courses</h3>
+<h3>Courses</h3>
 
 <?php
 
@@ -42,7 +42,7 @@ while($row = mysqli_fetch_array($result)){
 	};
 ?>
 
-<h3>Third Party Courses</h3>
+<!--<h3>Third Party Courses</h3>-->
 
 <?php
 
