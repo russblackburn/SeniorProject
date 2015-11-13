@@ -76,7 +76,7 @@ echo $feedback;
 
 <div class="col-md-6 col-sm-12 addressPhone">
 <div class="address">
-<h3>Intermountain Center for Disaster Preparedness</h3>
+<h3>Intermountain Center for <br>Disaster Preparedness</h3>
 <p>8th Ave C St</p>
 <p>Salt Lake City, UT, 84143</p>
 <p>801.408.7061</p>

@@ -104,8 +104,10 @@ mysqli_close($dbc1);
 
 <div class="pagePadding">
 
-<h1>Form Submitted</h1>
+<h1>Your Form Was Submitted</h1>
 <hr>
+
+<p>If you have any questions please send us a <a href="contact.php#contactform">message</a>.</p>
 
 
 

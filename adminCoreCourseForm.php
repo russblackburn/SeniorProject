@@ -206,7 +206,7 @@ function addInput(divName){
      }
      else {
           var newdiv = document.createElement('div');
-          newdiv.innerHTML = "<div class='form-group'><label for='listItem' >List Item " + (counter + 1) + "</label><textarea class='form-control' rows='2' name='myInputs[]' placeholder='List Item " + (counter + 1) + "'></textarea></div>";
+          newdiv.innerHTML = "<div class='form-group'><label for='listItem' >Objective " + (counter + 1) + "</label><textarea class='form-control' rows='2' name='myInputs[]' placeholder='Objective " + (counter + 1) + "'></textarea></div>";
           document.getElementById(divName).appendChild(newdiv);
           counter++;
      }
@@ -214,13 +214,13 @@ function addInput(divName){
   </script>
   
   <div class="form-group">
-    <label for="listItem" data-toggle="popover" title="List Items" data-content="Create an unordered list that will display after the paragraphs. Click the + Add another list item button for up to 20 list items. ">List Item 1</label>
-    <textarea class="form-control" rows="2" name="myInputs[]" placeholder="List Item 1"></textarea>
+    <label for="listItem" data-toggle="popover" title="List Items" data-content="Create an unordered list that will display after the paragraphs. Click the + Add another list item button for up to 20 list items. ">Objective 1</label>
+    <textarea class="form-control" rows="2" name="myInputs[]" placeholder="Objective 1"></textarea>
   </div>
   
   <div id="dynamicInput"></div>
   
-	<button type="button" class="btn btn-info" value="Add another text input" onClick="addInput('dynamicInput');">+ Add another list item</button>
+	<button type="button" class="btn btn-info" value="Add another text input" onClick="addInput('dynamicInput');">+ Add another objective</button>
     
 <!-- end of the unordered list -->
 

@@ -19,7 +19,7 @@
                 </article>
                 
                 <article class="text-center">
-                    <span itemprop="telephone">801.408.7061</span><br>
+                    <span itemprop="telephone">801.408.7060</span> | <span itemprop="telephone">801.408.7061</span><br>
                 </article>
             </address>
             
