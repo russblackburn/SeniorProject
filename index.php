@@ -219,6 +219,9 @@ $result4 = mysqli_query($dbc, $query4) or die('The query has failed!');
         
 <?php
 //WE'RE DONE SO HANG UP
-mysqli_close($dbc);
-require_once('footer.php');
+mysqli_close($dbc);?>
+<div class="mobileHidden">
+<?php require_once('sidePanel.php');//newsletter panel?>
+</div>
+<?php require_once('footer.php');
 ?>

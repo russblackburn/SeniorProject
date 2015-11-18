@@ -42,6 +42,15 @@
     ?>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="<?php if($adminPage == zip){echo '../';} ?>js/bootstrap.min.js"></script>
+    <script src="<?php if($adminPage == zip){echo '../';} ?>js/BootSideMenu.js"></script>
+    
+	<script type="text/javascript">
+    $('#newsletter').BootSideMenu({
+	side:"right", // left or right
+	autoClose:true // auto close when page loads
+	});
+  	</script>
+    
     <?php
 	if($page == 'admin' && $adminPage != 'zip'){
 			echo '<script src="js/tooltip.js"></script>';

@@ -33,6 +33,10 @@
     
     <!-- Custom styles for this template -->
     <link href="<?php if($adminPage == zip){echo '../';} ?>css/custom.css" rel="stylesheet">
+    
+    <!-- Newsletter Panel -->
+    <link href="<?php if($adminPage == zip){echo '../';} ?>css/BootSideMenu.css" rel="stylesheet">
+    
     <?php
 	if($page != 'admin'){
 			echo '<link href="css/customNav.css" rel="stylesheet">';
@@ -62,6 +66,7 @@
 		require_once('calendar.php');
 		}
 	?>
+    
   </head>
   <body>
   	<div id="wrap">
