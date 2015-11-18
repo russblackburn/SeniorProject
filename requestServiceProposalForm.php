@@ -35,12 +35,12 @@
   
 	<div class="form-group">
     <label for="organizationDepartment">Organization/Department</label>
-    <input type="organizationDepartment" class="form-control" id="organizationDepartment" name="organization_department" placeholder="Organization/Department" required>
+    <input type="organizationDepartment" class="form-control" id="organizationDepartment" name="organization_department" placeholder="Organization/Department">
 	</div>
     
     <div class="form-group">
     <label for="contactInformation">Contact Information</label>
-    <input type="contactInformation" class="form-control" id="contactInformation" name="contact_information" placeholder="Contact Information" required>
+    <input type="contactInformation" class="form-control" id="contactInformation" name="contact_information" placeholder="Contact Information">
 	</div>
     
     <div class="form-group">
@@ -50,7 +50,7 @@
     
     <div class="form-group">
     <label for="serviceDeadline">Service Deadline</label>
-    <input type="contactInformation" class="form-control" id="serviceDeadline" name="service_deadline" placeholder="Service Deadline" required>
+    <input type="contactInformation" class="form-control" id="serviceDeadline" name="service_deadline" placeholder="Service Deadline">
 	</div>
     
     <div class="form-group">
