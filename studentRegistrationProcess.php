@@ -76,16 +76,16 @@ $date_time = str_replace('·', '--', $date_time1);
 	
 	if($URL == true){// this message includes a link for the course content
 		
-			$message = "$first_name,\r\n\r\nThank you for registering.\r\n\r\n$course\r\n$courseURL\r\n\r\nThis email includes the course content link";
+			$message = "$first_name,\r\n\r\nThank you for registering.\r\n\r\n$course\r\n$date_time1\r\n\r\n$courseURL\r\n\r\nICDP";
 			
 		}else{// this message does not include a link
-				$message = "$first_name,\r\n\r\nThank you for registering.\r\n\r\n$course\r\n$date_time1\r\n\r\nThis email does not have a link, it has the course date and time";
+				$message = "$first_name,\r\n\r\nThank you for registering.\r\n\r\n$course\r\n$date_time1\r\n\r\nICDP";
 			}
 		
 		// SEND THE EMAIL THAT WAS BUILT
 		// In case any of our lines are larger than 70 characters, we should use wordwrap()
 		$message = wordwrap($message, 70, "\r\n");
-		$sentFrom = 'someemail@gmail.com';//---------------PLACE YOUR EMAIL ADDRESS HERE------------------------------
+		$sentFrom = 'intermountaincdp@imail.org';//---------------PLACE YOUR EMAIL ADDRESS HERE------------------------------
 		$headers = 'From: '.$sentFrom.'' . "\r\n" .
 			   'Reply-To: '.$sentFrom.'' . "\r\n" .
 			   'X-Mailer: PHP/' . phpversion();

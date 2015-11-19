@@ -92,5 +92,11 @@ echo '</p>';
 </fieldset>
 </form>
 
+<script>
+function myFunction() {
+    alert("You are about to delete the course content for the selected course!");
+}
+</script>
+
 
 <?php require_once('../footer.php'); ?>

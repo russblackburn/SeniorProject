@@ -14,22 +14,22 @@
     
     <div class="form-group">
     <label for="mailingAddress">Mailing Address</label>
-    <input type="text" class="form-control" id="mailingAddress" name="mailing_address" placeholder="Mailing Address" required>
+    <input type="text" class="form-control" id="mailingAddress" name="mailing_address" placeholder="Mailing Address">
   	</div>
     
     <div class="form-group">
     <label for="city">City</label>
-    <input type="text" class="form-control" id="city" name="city" placeholder="City" required>
+    <input type="text" class="form-control" id="city" name="city" placeholder="City">
   	</div>
     
     <div class="form-group">
     <label for="state">State</label>
-    <input type="text" class="form-control" id="state" name="state" placeholder="State" required>
+    <input type="text" class="form-control" id="state" name="state" placeholder="State">
   	</div>
     
     <div class="form-group">
     <label for="zipCode">Zip Code</label>
-    <input type="text" class="form-control" id="zipCode" name="zip_code" placeholder="Zip Code" required>
+    <input type="text" class="form-control" id="zipCode" name="zip_code" placeholder="Zip Code">
   	</div>
   
 	<div class="form-group">

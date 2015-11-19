@@ -131,9 +131,15 @@ echo '<h2>'.$found['category']. '</h2>';
 
 <button type="submit" class="btn btn-danger" name="submit">DELETE</button>
 &nbsp; <a href="adminVideoGalleryDeleteCategory.php"> Cancel</a>
-<p class="help-block">This will also delete all associated subcategories and their photos</p>
+<p class="help-block">This will also delete all associated subcategories and their videos</p>
 </fieldset>
 </form>
+
+<script>
+function myFunction() {
+    alert("You are about to delete multiple items!");
+}
+</script>
 
 
 <?php require_once('footer.php'); ?>

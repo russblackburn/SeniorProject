@@ -71,7 +71,6 @@
 ?>
 
 <h1>Delete Course Confirmation</h1>
-<em>(This will also delete the courses associated slider and events)</em>
 
 <hr>
 
@@ -92,8 +91,14 @@ echo '<h2>'.$found['courseTitle']. '</h2>';
 
 <button type="submit" class="btn btn-danger" name="submit">DELETE</button>
 &nbsp; <a href="adminTrainingDelete.php"> Cancel</a>
+<p class="help-block">This will also delete the courses associated slider and events</p>
 </fieldset>
 </form>
 
+<script>
+function myFunction() {
+    alert("You are about to delete multiple items!");
+}
+</script>
 
 <?php require_once('footer.php'); ?>

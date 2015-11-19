@@ -26,7 +26,7 @@
   
   <div class="form-group">
     <label for="telephone">Telephone</label>
-    <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Telephone" required>
+    <input type="text" class="form-control" id="telephone" name="telephone" placeholder="Telephone">
   </div>
   
   <div class="form-group">
