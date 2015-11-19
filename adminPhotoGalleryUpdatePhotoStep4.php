@@ -156,7 +156,7 @@ echo $feedback2;
   <div class="form-group">
     <label for="exampleInputFile" data-toggle="popover" title="Photo" data-content="Update the photo. If the photo does not need to be updated, skip this section and the current photo will be used.">Photo</label>
     <input type="file" id="photoGallery" name="photo">
-    <p class="help-block">Image size must be (715 Width X 572 Height -or- 572 Width X 715 Height)</p>
+    <p class="help-block">Image size must be (715 Width X 572 Height -or- 572 Width X 715 Height)<br>Image format must be (jpeg, png, gif)</p>
   </div>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">

@@ -154,7 +154,7 @@ function addInput1(divName){
   <div class="form-group">
     <label for="exampleInputFile" data-toggle="popover" title="Research Image" data-content="Add the research image. An image must be uploaded at this time.">Research Image</label>
     <input type="file" id="slideImage" name="photo">
-    <p class="help-block">Image size must be (width and height)</p>
+    <p class="help-block">Image size must be (width and height)<br>Image format must be (jpeg, png, gif)</p>
   </div>
   
   <button type="submit" class="btn btn-primary" name="submitButton">Add Research</button>

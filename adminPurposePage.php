@@ -193,7 +193,7 @@ function addInput1(divName){
   <div class="form-group">
     <label for="exampleInputFile" data-toggle="popover" title="Purpose Image" data-content="Update the image. If the image does not need to be updated, skip this section and the current image will be used.">Purpose Image</label>
     <input type="file" id="purposeImage" name="photo">
-    <p class="help-block">Image size must be (715 Width X 572 Height)</p>
+    <p class="help-block">Image size must be (715 Width X 572 Height)<br>Image format must be (jpeg, png, gif)</p>
   </div>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">

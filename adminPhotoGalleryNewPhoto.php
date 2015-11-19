@@ -123,7 +123,7 @@ echo $feedback2;
   <div class="form-group">
     <label for="exampleInputFile" data-toggle="popover" title="Photo" data-content="Add the photo. It is best to upload all of the landscape photos together and all of the portrait photos together. There is no requirement as to which you should load first (the landscape or the portrait). An image must be uploaded at this time.">Photo</label>
     <input type="file" id="galleryImage" name="photo">
-    <p class="help-block">Image size must be (715 Width X 572 Height -or- 572 Width X 715 Height)</p>
+    <p class="help-block">Image size must be (715 Width X 572 Height -or- 572 Width X 715 Height)<br>Image format must be (jpeg, png, gif)</p>
   </div>
   
   <div class="form-group">

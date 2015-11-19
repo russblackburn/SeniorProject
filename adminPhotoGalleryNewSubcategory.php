@@ -130,7 +130,7 @@ echo $feedback2;
   <div class="form-group">
     <label for="exampleInputFile" data-toggle="popover" title="Subcategory Image" data-content="Add the subcategory image. An image must be uploaded at this time.">Subcategory Image</label>
     <input type="file" id="category" name="photo">
-    <p class="help-block">Image size must be (715 Width X 572 Height)</p>
+    <p class="help-block">Image size must be (715 Width X 572 Height)<br>Image format must be (jpeg, png, gif)</p>
   </div>
   
   <button type="submit" class="btn btn-primary" name="submitButton">Add Subcategory</button>

@@ -150,7 +150,7 @@ echo $feedback2;
   <div class="form-group">
     <label for="exampleInputFile" data-toggle="popover" title="Slide Image" data-content="Update/add the slide image, the first upload must have an image selected. If the image does not need to be updated, skip this section and the current image will be used.">Slide Image</label>
     <input type="file" id="slideImage" name="photo">
-    <p class="help-block">Image size must be (1142 Width X 248 Height)</p>
+    <p class="help-block">Image size must be (1142 Width X 248 Height)<br>Image format must be (jpeg, png, gif)</p>
   </div>
   
   <input type="hidden" name="id" value="<?php echo $found['id']; ?>">
