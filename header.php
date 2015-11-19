@@ -23,7 +23,8 @@
 	else if($secondaryPage=='studentRegistration'){echo 'Student Registration';} 
 	else if($secondaryPage=='instructorRegistration'){echo 'Instructor Registration';} 
 	else if($secondaryPage=='requestServiceProposal'){echo 'Request Service Proposal';} 
-	else if($page=='contact' && $secondaryPage == false){echo 'Contact';} 
+	else if($page=='contact' && $secondaryPage == 'contact1'){echo 'Contact Us';} 
+	else if($secondaryPage=='newsletter'){echo 'Subscribe to our Newsletter';}
 	else if($page=='faq' && $secondaryPage == false){echo 'FAQ';}
 	else if($page=='siteMap'){echo 'Site Map';}
 	else {echo 'ICDP';}?> | Intermountain Center for Disaster Preparedness</title>

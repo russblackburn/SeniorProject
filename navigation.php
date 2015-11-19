@@ -69,8 +69,15 @@
             <!-- end of register -->
             
             <!-- contact -->
-            <li class="<?php if($page=='contact'){echo 'active';}?>"><a href="contact.php">Contact</a></li>
+            <li class="dropdown <?php if($page=='contact'){echo 'active';}?>">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li class="<?php if($secondaryPage=='contact1'){echo 'active';}?>"><a href="contact.php">Contact Us</a></li>
+                <li class="<?php if($secondaryPage=='newsletter'){echo 'active';}?>"><a href="newsletter.php">Subscribe to our Newsletter</a></li>
+              </ul>
+            </li>
             <!-- end of contact -->
+      
             
             <!-- faq -->
             <li class="<?php if($page=='faq'){echo 'active';}?>"><a href="faq.php">FAQ</a></li>
