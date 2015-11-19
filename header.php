@@ -63,7 +63,7 @@
 		}
 	?>
   </head>
-  <body>
+  <body <?php if($adminSecondaryPage == services5){ echo 'onload="myFunction()"';}else if($adminSecondaryPage == gallery7){echo 'onload="myFunction()"';}else if($adminSecondaryPage == gallery8){echo 'onload="myFunction()"';}else if($adminSecondaryPage == gallery16){echo 'onload="myFunction()"';}else if($adminSecondaryPage == gallery17){echo 'onload="myFunction()"';}else if($adminSecondaryPage == zip2){echo 'onload="myFunction()"';} ?>>
   	<div id="wrap">
     <header>
         <div class="container">

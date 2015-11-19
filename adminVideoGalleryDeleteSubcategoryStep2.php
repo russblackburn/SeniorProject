@@ -95,5 +95,11 @@ echo '<h2>'.$found['subcategory']. '</h2>';
 </fieldset>
 </form>
 
+<script>
+function myFunction() {
+    alert("You are about to delete multiple items!");
+}
+</script>
+
 
 <?php require_once('footer.php'); ?>
