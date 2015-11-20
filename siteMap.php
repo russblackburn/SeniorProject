@@ -67,7 +67,8 @@
         <div class="col-xs-12 col-sm-4 col-md-4">
         <h3 class="thinText">Contact</h3>
         <hr>
-        <p><a href="contact.php">Contact</a></p>
+        <p><a href="contact.php">Contact Us</a></p>
+        <p><a href="newsletter.php">Subscribe to our Newsletter</a></p>
         </div>
         <!-- end of contact -->
         
