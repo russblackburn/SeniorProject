@@ -363,6 +363,16 @@ footer {
 	.gifborder img{
 		width:100%;
 		}
+		
+/* newsletter */
+.newsletterStyle {
+	/*background-color: rgba(109, 151, 197, 1);*/
+	border: solid 1px #dddddd;
+	border-radius: 5px;
+	padding: 30px 20px;
+	margin-left: auto;
+	margin-right: auto;
+	}
 
 
 	
@@ -463,6 +473,14 @@ footer {
 	.address{
 		height: 450px;
 		max-height:450px;
+		}
+		
+	.newsletterStyle {
+		width: 60%;
+		}
+		
+	.break {
+		padding-bottom: 50px;
 		}
 
 }
