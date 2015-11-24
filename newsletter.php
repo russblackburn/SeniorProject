@@ -44,6 +44,62 @@ if(isset($_POST['submitButton'])){
 <?php 
 	$page = contact;
 	$secondaryPage = newsletter;
+	
+	// init variables
+	$min_number = 0;
+	$max_number = 8;
+
+	// generating random numbers
+	//$random_number1 = mt_rand($min_number, $max_number);
+	
+	switch ($random_number1 = mt_rand($min_number, $max_number)) {
+    case "0":
+        $feedback2 = "What digit comes after zero?";
+        break;
+    case "1":
+        $feedback2 = "What digit comes after one?";
+        break;
+	case "2":
+        $feedback2 = "What digit comes after two?";
+        break;
+	case "3":
+        $feedback2 = "What digit comes after three?";
+        break;
+	case "4":
+        $feedback2 = "What digit comes after four?";
+        break;
+	case "5":
+        $feedback2 = "What digit comes after five?";
+        break;
+	case "6":
+        $feedback2 = "What digit comes after six?";
+        break;
+	case "7":
+        $feedback2 = "What digit comes after seven?";
+        break;
+	case "8":
+        $feedback2 = "What digit comes after eight?";
+        break;
+	}
+	
+	if(isset($_POST['submitButton']))
+	{
+	
+	$captchaResult = $_POST["captchaResult"];
+		$firstNumber = $_POST["firstNumber"];
+
+		$checkTotal = $firstNumber + 1;
+
+		if ($captchaResult == $checkTotal) {
+			
+			require_once('mail/ifElseEmail.php');
+
+			header("Location: contactThanks.php");
+		} else {
+			$feedback = '<p class="adminRed">Wrong Answer. Please Try Again.</p>';
+		}
+	};
+	
 	require_once('header.php');
 
 	
@@ -72,6 +128,20 @@ if(isset($_POST['submitButton'])){
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" name="email" placeholder="Email" required>
         </div>
+        
+        <div class="form-group">
+			<label for="message"><?php
+			$feedback2 = stripslashes($feedback2);
+			echo $feedback2;
+			?></label>
+            
+            <div class="row">
+            <div class="col-md-2">
+			<input name="captchaResult" class="form-control" type="text" size="2" maxlength="1" />
+            <input name="firstNumber" type="hidden" value="<?php echo $random_number1; ?>" />
+            </div></div>
+
+		</div> 
         
         <button type="submit" class="btn btn-primary" name="submitButton">Subscribe</button>
         
