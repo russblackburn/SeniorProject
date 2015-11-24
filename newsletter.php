@@ -1,51 +1,5 @@
 <?php
-if(isset($_POST['submitButton'])){
-	
-	// include the variables for the forms database
-	require_once('variables.php');
-	
-	// build the database connection with host, user, password, database to make sure there is not a duplicate email
-	$dbc = mysqli_connect(HOST1,USER1,PASSWORD1,DATABASE1) or die('The database connection has failed!');
-	
-	// make sure someone isn't already registered using this email
-		$query = "SELECT email FROM newsletter WHERE email='".mysqli_real_escape_string($dbc, trim($_POST[email]))."'";
-		$result = mysqli_query($dbc, $query) or die('query to check for existing email has failed!');
-		
-		
-		if(!empty($_POST[email])){
-			
-			if(mysqli_num_rows($result) == 0) {
-				// not in the database, add the email to the database and redirect to a thank you page
-				
-				// load the data from the form
-				$email = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[email])));
-	
-				// build the query
-				$query1 = "INSERT INTO newsletter(email)". 
-				"VALUES ('$email')";
-	
-				// communicate the query with the database
-				$result1 = mysqli_query($dbc, $query1) or die('The databse query has failed!');
-				
-				header("Location: newsletterThanks.php");
-			}
-			else{
-				// already in the database, send feedback to the user so that they know they are already registered
-				$feedback = '<span class="adminGreen">You have already subscribed to our Newsletter</span>';
-			}// end of conditional with else statement
-		}
-		else{
-				$feedback = '<span class="adminRed">Please type in your email</span>';
-			}// end of check to make sure that the email is not empty
-	}// end of isset
-	
-?>
-
-<?php 
-	$page = contact;
-	$secondaryPage = newsletter;
-	
-	// init variables
+// init variables
 	$min_number = 0;
 	$max_number = 8;
 
@@ -81,9 +35,19 @@ if(isset($_POST['submitButton'])){
         $feedback2 = "What digit comes after eight?";
         break;
 	}
+
+
+if(isset($_POST['submitButton'])){
 	
-	if(isset($_POST['submitButton']))
-	{
+	// include the variables for the forms database
+	require_once('variables.php');
+	
+	// build the database connection with host, user, password, database to make sure there is not a duplicate email
+	$dbc = mysqli_connect(HOST1,USER1,PASSWORD1,DATABASE1) or die('The database connection has failed!');
+	
+	// make sure someone isn't already registered using this email
+		$query = "SELECT email FROM newsletter WHERE email='".mysqli_real_escape_string($dbc, trim($_POST[email]))."'";
+		$result = mysqli_query($dbc, $query) or die('query to check for existing email has failed!');
 	
 	$captchaResult = $_POST["captchaResult"];
 		$firstNumber = $_POST["firstNumber"];
@@ -91,14 +55,44 @@ if(isset($_POST['submitButton'])){
 		$checkTotal = $firstNumber + 1;
 
 		if ($captchaResult == $checkTotal) {
+			// happens if true
+			if(!empty($_POST[email])){
 			
-			require_once('mail/ifElseEmail.php');
-
-			header("Location: contactThanks.php");
-		} else {
-			$feedback = '<p class="adminRed">Wrong Answer. Please Try Again.</p>';
+			if(mysqli_num_rows($result) == 0) {
+				// not in the database, add the email to the database and redirect to a thank you page
+				
+				// load the data from the form
+				$email = stripslashes(mysqli_real_escape_string($dbc, trim($_POST[email])));
+	
+				// build the query
+				$query1 = "INSERT INTO newsletter(email)". 
+				"VALUES ('$email')";
+	
+				// communicate the query with the database
+				$result1 = mysqli_query($dbc, $query1) or die('The databse query has failed!');
+				
+				header("Location: newsletterThanks.php");
+			}
+			else{
+				// already in the database, send feedback to the user so that they know they are already registered
+				$feedback = '<span class="adminGreen">You have already subscribed to our Newsletter</span>';
+			}// end of conditional with else statement
 		}
-	};
+		else{
+				$feedback = '<span class="adminRed">Please type in your email</span>';
+			}// end of check to make sure that the email is not empty
+	
+		} else {
+			$feedback = '<p class="adminRed">Wrong Digit Entered. Please Try Again.</p>';
+		}
+	}
+	
+?>
+
+<?php 
+	$page = contact;
+	$secondaryPage = newsletter;
+	
 	
 	require_once('header.php');
 
