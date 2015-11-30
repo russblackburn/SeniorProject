@@ -73,7 +73,7 @@
               <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Contact <span class="caret"></span></a>
               <ul class="dropdown-menu">
                 <li class="<?php if($secondaryPage=='contact1'){echo 'active';}?>"><a href="contact.php">Contact Us</a></li>
-                <li class="<?php if($secondaryPage=='newsletter'){echo 'active';}?>"><a href="newsletter.php">Subscribe to our Newsletter</a></li>
+                <li class="<?php if($secondaryPage=='newsletter'){echo 'active';}?>"><a href="newsletter.php">Subscribe for Information and Updates</a></li>
               </ul>
             </li>
             <!-- end of contact -->

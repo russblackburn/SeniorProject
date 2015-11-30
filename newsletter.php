@@ -101,7 +101,7 @@ if(isset($_POST['submitButton'])){
 ?>
 
 <div class="pagePadding">
-<h1>Subscribe to our Newsletter</h1>
+<h1>Subscribe for Information and Updates</h1>
 
 
 <hr>
