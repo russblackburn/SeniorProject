@@ -11,7 +11,7 @@ You can get the Pro version of this script here: http://formtoemail.com/formtoem
 
 STEP 1 Enter your email address on line 14 below.  You can enter more than one email address separated by commas, like so: $my_email = "info@example.com"; or $my_email = "bob@example.com,sales@example.co.uk,jane@example.com";*/
 
-$my_email = "jakersmedia@gmail.com";
+$my_email = "intermountaincdp@imail.org";
 
 /*
 ---------You do not need to make any changes below this line.-------------
