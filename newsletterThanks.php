@@ -7,7 +7,7 @@
 
 <hr>
 
-<p>Thanks! You have successfully subscribed to our Newsletter.</p>
+<p>Thanks! You have successfully subscribed to our Information and Updates.</p>
 
 </div>
 

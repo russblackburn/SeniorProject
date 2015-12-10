@@ -68,7 +68,7 @@
         <h3 class="thinText">Contact</h3>
         <hr>
         <p><a href="contact.php">Contact Us</a></p>
-        <p><a href="newsletter.php">Subscribe to our Newsletter</a></p>
+        <p><a href="newsletter.php">Subscribe for Information and Updates</a></p>
         </div>
         <!-- end of contact -->
         
